@@ -10,7 +10,17 @@
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx,.json --fix",
     "stylelint": "stylelint 'src/**/*.{css,scss}' --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css}\"",
-    "prepare": "husky install"
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "npm run format"
+    ],
+    "*.{css,scss}": [
+      "npm run format",
+      "npm run stylelint"
+    ]
   },
   "dependencies": {
     "react": "^19.0.0",
