@@ -1,0 +1,17 @@
+{
+    "course": {
+      "multiVariants": "Multiple Variants",
+      "discount": "Discount",
+      "title": "Beginner’s Guide to Design",
+      "description": "By Ronald Richards",
+      "rating": "1200 Ratings",
+      "hours":"total hours",
+      "lecs":"total lectures",
+      "lecsTitle": "22 Total Hours. 155 Lectures. Beginner",
+      "price": "$149.9",
+      "currency": "USD",
+      "originalPrice": "$199.9",
+      "addToCart": "Add to Cart"
+    }
+  }
+  

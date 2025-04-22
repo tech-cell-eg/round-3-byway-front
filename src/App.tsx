@@ -1,11 +1,25 @@
+import { createBrowserRouter, RouterProvider } from 'react-router';
+import { Layout } from './pages/Layout';
+import Home from './pages/Home';
+import { queryClient } from './api/queryClient';
+import { QueryClientProvider } from '@tanstack/react-query';
+
 function App() {
+  const router = createBrowserRouter(
+    [
+      {
+        path: '',
+        element: <Layout />,
+        children: [{ index: true, element: <Home /> }],
+      },
+    ]
+    // { basename: "/round-3-byway-front" }
+  );
   return (
-    <div className="flex flex-col items-center justify-center min-h-svh">
-      <h1 className="text-3xl font-bold underline text-red-500">
-        Hello world!
-      </h1>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div></div>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   );
 }
-
 export default App;
