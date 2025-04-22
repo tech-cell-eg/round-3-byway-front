@@ -11,20 +11,38 @@
 
   /* Backgrounds */
   --color-surface-light-primary: #fff;
-  --color-surface-light-secondary: #f8fafc; /* statistics section */
+  --color-surface-light-secondary: #f8fafc;
+
+  /* statistics section */
   --color-surface-dark-primary: #020617;
   --color-surface-dark-secondary: #0f172a;
   --color-surface-footer: #1e293b;
-  --color-surface-highlight: #e0f2fe; /* top-categories and progress bar bg */
+  --color-surface-highlight: #e0f2fe;
+
+  /* top-categories and progress bar bg */
 
   /* font colors */
-  --color-content-light: #fff; /* white-color text */
-  --color-content-dark: #334155; /* nav links */
-  --color-content-primary: #0f172a; /* headings */
-  --color-content-secondary: #334155; /* course info */
-  --color-content-tertiary: #f1f5f9; /* footer menu headings */
-  --color-footer-quaternary: #cbd5e1; /* footer links */
-  --color-placeholder: #94a3b8; /* input's placeholder */
+  --color-content-light: #fff;
+
+  /* white-color text */
+  --color-content-dark: #334155;
+
+  /* nav links */
+  --color-content-primary: #0f172a;
+
+  /* headings */
+  --color-content-secondary: #334155;
+
+  /* course info */
+  --color-content-tertiary: #f1f5f9;
+
+  /* footer menu headings */
+  --color-footer-quaternary: #cbd5e1;
+
+  /* footer links */
+  --color-placeholder: #94a3b8;
+
+  /* input's placeholder */
 
   /* buttons */
   --color-button-primary: #fff;
@@ -34,25 +52,50 @@
   --color-button-disabled: #94a3b8;
 
   /* border */
-  --color-border-light: #e2e8f0; /* inputs border */
-  --color-border-dark: #0f172a; /* searchbar border */
+  --color-border-light: #e2e8f0;
+
+  /* inputs border */
+  --color-border-dark: #0f172a;
+
+  /* searchbar border */
 
   /* icons */
-  --color-icon-light: #fff; /* icons in dark bg */
-  --color-icon-dark: #cbd5e1; /* camera icon in order-complete page */
-  --color-icon-primary: #334155; /* header icons */
+  --color-icon-light: #fff;
+
+  /* icons in dark bg */
+  --color-icon-dark: #cbd5e1;
+
+  /* camera icon in order-complete page */
+
+  --color-icon-primary: #334155;
+
+  /* header icons */
   --color-icon-accent: #3b82f6;
   --color-icon-filled-star: #fec84b;
   --color-icon-empty-star: #cbd5e1;
 
   /* font sizes */
-  --text-body-micro: 0.75rem; /* [12px] */
-  --text-body-small: 0.875rem; /* [14px] */
-  --text-body-base: 1rem; /* [16px] */
-  --text-body-medium: 1.125rem; /* [18px] */
-  --text-body-large: 1.25rem; /* [20px] */
-  --text-body-semilarge: 1.375rem; /* [22px] */
-  --text-body-big: 1.5rem; /* [24px] */
+  --text-body-micro: 0.75rem;
+
+  /* [12px] */
+  --text-body-small: 0.875rem;
+
+  /* [14px] */
+  --text-body-base: 1rem;
+
+  /* [16px] */
+  --text-body-medium: 1.125rem;
+
+  /* [18px] */
+  --text-body-large: 1.25rem;
+
+  /* [20px] */
+  --text-body-semilarge: 1.375rem;
+
+  /* [22px] */
+  --text-body-big: 1.5rem;
+
+  /* [24px] */
 
   /* border radius */
   --radius-small: 0.5rem;
@@ -60,8 +103,12 @@
   --radius-circle: 100%;
 
   /* box shadow */
-  --inset-primary: 0px 0px 8px 0px rgb(59 130 246 / 35%); /* course card */
-  --inset-secondary: 0px 11px 8px 0px rgb(59 130 246 / 25%); /* course card on hover */
+  --inset-primary: 0px 0px 8px 0px rgb(59 130 246 / 35%);
+
+  /* course card */
+  --inset-secondary: 0px 11px 8px 0px rgb(59 130 246 / 25%);
+
+  /* course card on hover */
 
   /* duration */
   --transition-duration-short: 200ms;
