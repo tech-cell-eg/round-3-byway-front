@@ -1,0 +1,30 @@
+{
+  "Request": {
+    "URL": "/api/signup/",
+    "Method": "POST",
+    "Parameters": null,
+    "Authentication": false,
+    "body": {
+      "first-name": "",
+      "last-name": "",
+      "username":"",
+      "email": "",
+      "password": ""
+    }
+  },
+  "Response": {
+    "message": "Account Created OR error (non-unique email/username - weak password)",
+    "user (if Account Created)": [
+      {
+        "user_id": 1,
+        "name": "",
+        "email": "",
+        "username": "",
+        "token": "",
+        "profile_picture_url": "",
+        "role": "",
+        "instructor_id (If instructor)": ""
+      }
+    ]
+  }
+}

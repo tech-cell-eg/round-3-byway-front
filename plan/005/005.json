@@ -1,0 +1,28 @@
+{
+  "Request": {
+    "URL": "/api/statistics/",
+    "Method": "GET",
+    "Parameters": null,
+    "Authentication": false
+  },
+  "Response": {
+    "statistics": [
+      {
+        "number": 250,
+        "text": "Number of instructors."
+      },
+      {
+        "number": 250,
+        "text": "Number of courses."
+      },
+      {
+        "number": 250,
+        "text": "Number of categories."
+      },
+      {
+        "number": 250,
+        "text": "Number of students."
+      }
+    ]
+  }
+}

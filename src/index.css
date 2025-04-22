@@ -8,6 +8,7 @@
   /* Accent */
   --color-accent-primary: #2563eb;
   --color-accent-secondary: #3b82f6;
+
   /* Backgrounds */
   --color-surface-light-primary: #fff;
   --color-surface-light-secondary: #f8fafc; /* statistics section */
@@ -15,6 +16,7 @@
   --color-surface-dark-secondary: #0f172a;
   --color-surface-footer: #1e293b;
   --color-surface-highlight: #e0f2fe; /* top-categories and progress bar bg */
+
   /* font colors */
   --color-content-light: #fff; /* white-color text */
   --color-content-dark: #334155; /* nav links */
@@ -23,15 +25,18 @@
   --color-content-tertiary: #f1f5f9; /* footer menu headings */
   --color-footer-quaternary: #cbd5e1; /* footer links */
   --color-placeholder: #94a3b8; /* input's placeholder */
+
   /* buttons */
   --color-button-primary: #fff;
   --color-button-secondary: #334155;
   --color-button-tertiary: #020617;
   --color-button-quaternary: #eff6ff;
   --color-button-disabled: #94a3b8;
+
   /* border */
   --color-border-light: #e2e8f0; /* inputs border */
   --color-border-dark: #0f172a; /* searchbar border */
+
   /* icons */
   --color-icon-light: #fff; /* icons in dark bg */
   --color-icon-dark: #cbd5e1; /* camera icon in order-complete page */
@@ -55,8 +60,8 @@
   --radius-circle: 100%;
 
   /* box shadow */
-  --inset-primary: 0px 0px 8px 0px rgba(59, 130, 246, 0.35); /* course card*/
-  --inset-secondary: 0px 11px 8px 0px rgba(59, 130, 246, 0.25); /* course card on hover*/
+  --inset-primary: 0px 0px 8px 0px rgb(59 130 246 / 35%); /* course card */
+  --inset-secondary: 0px 11px 8px 0px rgb(59 130 246 / 25%); /* course card on hover */
 
   /* duration */
   --transition-duration-short: 200ms;
@@ -64,8 +69,8 @@
   --transition-duration-large: 500ms;
 }
 
-:root {
-  /* --radius: 0.625rem;
+/* :root {
+  --radius: 0.625rem;
   --background: oklch(100% 0 0deg);
   --foreground: oklch(14.5% 0 0deg);
   --card: oklch(100% 0 0deg);
@@ -96,11 +101,11 @@
   --sidebar-accent: oklch(97% 0 0deg);
   --sidebar-accent-foreground: oklch(20.5% 0 0deg);
   --sidebar-border: oklch(92.2% 0 0deg);
-  --sidebar-ring: oklch(70.8% 0 0deg); */
-}
+  --sidebar-ring: oklch(70.8% 0 0deg); 
+} */
 
-.dark {
-  /* --background: oklch(14.5% 0 0deg);
+/* .dark {
+  --background: oklch(14.5% 0 0deg);
   --foreground: oklch(98.5% 0 0deg);
   --card: oklch(20.5% 0 0deg);
   --card-foreground: oklch(98.5% 0 0deg);
@@ -130,8 +135,8 @@
   --sidebar-accent: oklch(26.9% 0 0deg);
   --sidebar-accent-foreground: oklch(98.5% 0 0deg);
   --sidebar-border: oklch(100% 0 0deg / 10%);
-  --sidebar-ring: oklch(55.6% 0 0deg); */
-}
+  --sidebar-ring: oklch(55.6% 0 0deg); 
+} */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -181,20 +186,23 @@
     @apply bg-background text-foreground;
   }
 }
-/* stylelint-enable at-rule-no-deprecated */
 
 /* Section vertical padding */
 .responsive-primary-padding-y {
-  @apply py-8 md:py-10 lg:py-14;
+  @apply py-8 md:py-10 lg:py-14;
 }
+
 .responsive-secondary-padding-y {
-  @apply py-10 md:py-16 lg:py-20;
+  @apply py-10 md:py-16 lg:py-20;
 }
 
 /* Section horizontal padding */
 .responsive-primary-padding-x {
   @apply px-8 md:px-12 lg:px-20;
 }
+
 .responsive-secondary-padding-x {
   @apply px-10 md:px-20 lg:px-40;
 }
+
+/* stylelint-enable at-rule-no-deprecated */

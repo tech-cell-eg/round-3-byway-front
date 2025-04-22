@@ -1,21 +1,18 @@
 {
-
-    "Request": {
-      "URL": "/api",
-      "Method": "GET",
-      "Parameters": "null",
-      "Authentication": "Not"
-    },
-    "Response": {
-     "data":[
+  "Request": {
+    "URL": "/api/categories/",
+    "Method": "GET",
+    "Parameters": "null",
+    "Authentication": "Not"
+  },
+  "Response": {
+    "data": [
       {
         "name": "",
-        "id":1,
-        "icon":"",
+        "id": 1,
+        "icon": "",
         "number_courses": 5
       }
-     ]
-      
-    }
-   
+    ]
+  }
 }

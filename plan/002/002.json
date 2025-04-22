@@ -1,7 +1,7 @@
 {
-  "getCart": {
+  "get Cart": {
     "Request": {
-      "URL": "/api",
+      "URL": "/api/cart/",
       "Method": "GET",
       "Parameters": {
         "limit!": "5"
@@ -40,9 +40,9 @@
       }
     }
   },
-  "postCourestocart": {
+  "add Course/s to cart": {
     "Request": {
-      "URL": "/api",
+      "URL": "/api/cart/",
       "Method": "POST",
       "body": [
         "array of ids"
@@ -51,6 +51,19 @@
     },
     "Response": {
       "message": "success"
+    }
+  },
+  "Remove Course/s from cart": {
+    "Request": {
+      "URL": "/api/cart/",
+      "Method": "DELETE",
+      "body": [
+        "array of ids"
+      ],
+      "Authentication": "true"
+    },
+    "Response": {
+      "message": "Remove Successfully"
     }
   }
 }
