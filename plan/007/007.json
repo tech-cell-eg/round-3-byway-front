@@ -1,0 +1,20 @@
+{
+  "Request": {
+    "URL": "/api/instructors/",
+    "Method": "GET",
+    "Parameters": null,
+    "Authentication": false
+  },
+  "Response": {
+    "instructors": [
+      {
+        "id": 1,
+        "name": "",
+        "image": "",
+        "title": "",
+        "students": 1021,
+        "rating": 4.2
+      }
+    ]
+  }
+}

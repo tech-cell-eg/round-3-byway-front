@@ -1,0 +1,33 @@
+{
+  "Request": {
+    "URL": "/api/signup-instructor/",
+    "Method": "POST",
+    "Parameters": null,
+    "Authentication": false,
+    "body": {
+      "first-name": "",
+      "last-name": "",
+      "username": "",
+      "email": "",
+      "profile_picture_url!": "",
+      "bio": "",
+      "title": "",
+      "password": ""
+    }
+  },
+  "Response": {
+    "message": "Account Createad  OR error (non-unique email/username - weak password)",
+    "user (if Account Created)": [
+      {
+        "user_id": 1,
+        "name": "",
+        "email": "",
+        "username": "",
+        "token": "",
+        "profile_picture_url": "",
+        "role": "",
+        "instructor_id (If instructor)": "instructor"
+      }
+    ]
+  }
+}

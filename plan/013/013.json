@@ -1,0 +1,69 @@
+{
+  "Request": {
+    "URL": "/api/course/:course_id",
+    "Method": "GET",
+    "Parameters": {
+      "course_id": 1
+    },
+    "Authentication": "true OR False"
+  },
+  "Response": {
+    "data": {
+      "private info (IF User Logedin)": {
+        "is_favorited": true,
+        "is_enrolled": false,
+        "in_cart": true
+      },
+      "courses": [
+        {
+          "id": 1,
+          "course_name": "",
+          "short_description": "",
+          "description": "",
+          "instructor": {
+            "id": 4151,
+            "name": "",
+            "description": "",
+            "title": "",
+            "students": "",
+            "courses_count": 12,
+            "reviews_count": 30000
+          },
+          "subtitle_languages": [
+            "English",
+            "Arabic"
+          ],
+          "rating": {
+            "count": 250,
+            "rating": 3.5
+          },
+          "duration": "10:30:00",
+          "image": "",
+          "lecture_count": 113,
+          "students_count": 1015,
+          "level": "",
+          "price": {
+            "current": 200,
+            "initial": 200,
+            "discount": "0%"
+          },
+          "syllabus": {
+            "section_id": 1,
+            "section_duration": "2 hours",
+            "lesson_count": 3,
+            "lessons": [
+              {
+                "lesson_id": "lesson_001",
+                "lesson_number (Order in the course)": 1,
+                "title": "Introduction to Python",
+                "duration": "00:15:20",
+                "type": "video",
+                "description !": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

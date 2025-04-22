@@ -1,0 +1,21 @@
+{
+  "Request": {
+    "URL": "/api/testimonials/",
+    "Method": "GET",
+    "Parameters": null,
+    "Authentication": false
+  },
+  "Response": {
+    "testimonials": [
+      {
+        "id": 1,
+        "body": "",
+        "user": {
+          "image": "",
+          "name": "",
+          "title": ""
+        }
+      }
+    ]
+  }
+}

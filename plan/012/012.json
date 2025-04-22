@@ -1,0 +1,27 @@
+{
+  "Request": {
+    "URL": "/api/login/",
+    "Method": "POST",
+    "Parameters": null,
+    "Authentication": false,
+    "body": {
+      "email OR username": "",
+      "password": ""
+    }
+  },
+  "Response": {
+    "message": "Account Logedin OR error (Invalid email/username or password)",
+    "user (if Account Logedin)": [
+      {
+        "user_id": 1,
+        "name": "",
+        "email": "",
+        "username": "",
+        "token": "",
+        "profile_picture_url": "",
+        "role": "",
+        "instructor_id (If instructor)": ""
+      }
+    ]
+  }
+}
