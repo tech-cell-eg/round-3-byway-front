@@ -1,0 +1,29 @@
+{
+  "Request": {
+    "URL": "/api/upgrade-to-instructor-role/",
+    "Method": "POST",
+    "Parameters": null,
+    "Authentication": true,
+    "body": {
+      "first-name": "",
+      "last-name": "",
+      "username": "",
+      "email": "",
+      "profile_picture_url!": "",
+      "bio": "",
+      "title": ""
+    }
+  },
+  "Response": {
+    "message": "Account upgraded",
+    "user (if Account Created)": [
+      {
+        "user_id": 1,
+        "token": "",
+        "profile_picture_url": "",
+        "role": "",
+        "instructor_id (If instructor)": ""
+      }
+    ]
+  }
+}
