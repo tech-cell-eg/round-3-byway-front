@@ -10,7 +10,17 @@ function App() {
       {
         path: '',
         element: <Layout />,
-        children: [{ index: true, element: <Home /> }],
+        children: [
+          { index: true, element: <Home /> },
+          {
+            path: 'signup',
+            element: (
+              <ProtAuth>
+                <SignUp />
+              </ProtAuth>
+            ),
+          },
+        ],
       },
     ]
     // { basename: "/round-3-byway-front" }
