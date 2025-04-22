@@ -7,7 +7,7 @@ interface Props {
 }
 
 const ProtAuth = ({ children }: Props) => {
-  const userLocal = localStorage.getItem('user');
+  const userLocal = localStorage.getItem('user'); 
 
   if (userLocal) {
     toast.warn('You are already logged in');

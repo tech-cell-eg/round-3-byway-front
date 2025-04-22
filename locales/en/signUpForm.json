@@ -15,6 +15,6 @@
     "email": "Invalid email",
     "password": "Password must be at least 8 characters",
     "passwordLetters": "Password must contain at least one letter",
-    "confirmPassword": "Passwords don't match"
+    "confirmPassword": "Passwords don't match" 
   }
 }
