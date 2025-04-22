@@ -1,0 +1,56 @@
+{
+  "getCart": {
+    "Request": {
+      "URL": "/api",
+      "Method": "GET",
+      "Parameters": {
+        "limit!": "5"
+      },
+      "Authentication": "true"
+    },
+    "Response": {
+      "data": {
+        "cartinfo": {
+          "count_courses": 6,
+          "price": "290.00",
+          "discount": "150.00",
+          "tax": "20.00",
+          "total": "160.00"
+        },
+        "courses": [
+          {
+            "id": 1,
+            "course_name": "",
+            "instructor_name": "",
+            "rating": {
+              "count": 250,
+              "rating": 3.5
+            },
+            "duration": "10:30:00",
+            "image": "",
+            "lecture_count": 113,
+            "level": "",
+            "price": {
+              "current": 200,
+              "initial": 200,
+              "discount": "0%"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "postCourestocart": {
+    "Request": {
+      "URL": "/api",
+      "Method": "POST",
+      "body": [
+        "array of ids"
+      ],
+      "Authentication": "true"
+    },
+    "Response": {
+      "message": "success"
+    }
+  }
+}
