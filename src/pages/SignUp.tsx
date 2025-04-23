@@ -1,4 +1,4 @@
-import signUpImg from '@/assets/images/signup-banner.png';
+import signUpImg from '@/assets/images/signup/SignBannerImage.png';
 import { zodResolver } from '@hookForm/resolvers/zod';
 // import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router';
 
 // save user data in local storage
 function saveUserData(data: unknown) {
-  localStorage.setItem('user', JSON.stringify(data));  
+  localStorage.setItem('user', JSON.stringify(data));
 }
 
 // form validation
