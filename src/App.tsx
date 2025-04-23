@@ -3,6 +3,9 @@ import { Layout } from './pages/Layout';
 import Home from './pages/Home';
 import { queryClient } from './api/queryClient';
 import { QueryClientProvider } from '@tanstack/react-query';
+import { SignUp } from './pages/SignUp';
+
+import ProtAuth from './components/Auth/ProtAuth';
 
 import Login from './components/Login/Login';
 //import { SignUp } from './pages/SignUp';
@@ -19,14 +22,12 @@ function App() {
           { path: 'login', element: <Login /> },
 
           {
-            /**          {
             path: 'signup',
             element: (
               <ProtAuth>
                 <SignUp />
               </ProtAuth>
             ),
-          }, */
           },
         ],
       },

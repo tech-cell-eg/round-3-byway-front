@@ -2,7 +2,6 @@
 import img from '../../assets/loginImage.jpg';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
-
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import {
@@ -20,9 +19,8 @@ import { ArrowRight } from 'lucide-react';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
-
 import { useTranslation } from 'react-i18next';
-import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
+import { zodResolver } from '@hookForm/resolvers/zod';
 
 const loginSchema = z.object({
   email: z.string().email({ message: 'Invalid email address' }),
