@@ -56,10 +56,9 @@ interface IconProps {
   name: IconName;
   size?: number;
   className?: string;
-  onClick?: () => void;
 }
 
-function Icon({ name, size = 21, className = '', onClick }: IconProps) {
+function Icon({ name, size = 21, className = '' }: IconProps) {
   const IconComponent = iconMap[name];
 
   if (!IconComponent) {
@@ -69,7 +68,7 @@ function Icon({ name, size = 21, className = '', onClick }: IconProps) {
     return null;
   }
 
-  return <IconComponent size={size} className={className} onClick={onClick} />;
+  return <IconComponent size={size} className={className} />;
 }
 
 export default Icon;
