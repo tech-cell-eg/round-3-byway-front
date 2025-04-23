@@ -9,7 +9,7 @@
   "userName": "User Name",
   "button": "Create Account",
   "errors": {
-    "firstName": "First name must be at least 2 characters",
+    "firstName": "First name must be at least 2 characters ",
     "lastName": "Last name must be at least 2 characters",
     "userName": "User name must be at least 2 characters",
     "email": "Invalid email",
