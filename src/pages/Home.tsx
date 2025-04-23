@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import TestimonialSection from '@/components/CommonComponents/Testimonial';
+import HeroSection from './HeroSection';
 
 export default function Home() {
   const { t, i18n } = useTranslation(['home']);
 
   return (
     <>
+      <HeroSection />
       <TestimonialSection />
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h1>{t('home:welcome')}</h1>
