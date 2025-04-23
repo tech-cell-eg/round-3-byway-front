@@ -1,12 +1,14 @@
+import TopCources from '@/components/TopCourses/TopCourses';
+import TopInstructors from '@/components/TopInstructors/TopInstructors';
 import { useTranslation } from 'react-i18next';
 
 export default function Home() {
-  const { t, i18n } = useTranslation(['home']);
+  const { t, i18n } = useTranslation(['home/home']);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1>{t('home:welcome')}</h1>
-      <p>{t('home:description')}</p>
+    <div className="flex flex-col  justify-center min-h-screen">
+      <h1>{t('welcome')}</h1>
+      <p>{t('description')}</p>
 
       <div className="flex gap-2 my-4">
         <button
@@ -22,6 +24,8 @@ export default function Home() {
           عربي
         </button>
       </div>
+      <TopCources />
+      <TopInstructors />
     </div>
   );
 }
