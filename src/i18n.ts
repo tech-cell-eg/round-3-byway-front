@@ -9,7 +9,7 @@ i18next
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
-    ns: ['common', 'home', 'cardCourses', 'login'],
+    ns: ['common', 'home/home', 'home/topCourses', 'home/topInstructors'],
     defaultNS: 'common',
     debug: true,
     interpolation: {
