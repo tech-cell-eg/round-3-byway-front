@@ -1,4 +1,4 @@
-//import signUpImg from '@/assets/images/signup-banner.png';
+import signUpImg from '@/assets/images/signup/SignBannerImage.png';
 import { zodResolver } from '@hookForm/resolvers/zod';
 // import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
@@ -72,7 +72,7 @@ export const SignUp = () => {
       <div className="flex">
         {/* Image section */}
         <div className="hidden lg:block w-1/2 max-h-screen">
-          {/*<img src={signUpImg} alt="" className="w-full h-full object-cover" />*/}
+          <img src={signUpImg} alt="" className="w-full h-full object-cover" />
         </div>
 
         {/* Form section */}
