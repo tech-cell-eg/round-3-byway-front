@@ -7,6 +7,9 @@ import { SignUp } from './pages/SignUp';
 
 import ProtAuth from './components/Auth/ProtAuth';
 
+import Login from './components/Login/Login';
+//import { SignUp } from './pages/SignUp';
+
 function App() {
   const router = createBrowserRouter(
     [
@@ -15,6 +18,9 @@ function App() {
         element: <Layout />,
         children: [
           { index: true, element: <Home /> },
+
+          { path: 'login', element: <Login /> },
+
           {
             path: 'signup',
             element: (
