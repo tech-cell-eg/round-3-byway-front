@@ -1,0 +1,68 @@
+{
+    "topCourses":"أفضل الدورات",
+    "seeMore":"عرض المزيد",
+    "courses":{
+        "course1": {
+            "multiVariants": "متعدد",
+            "discount": "خصم",
+            "category": "دليل المبتدئين للتصميم",
+            "description": "بواسطة رونالد ريتشاردز",
+            "rating": "1200 تقييم",
+            "hours":" ساعات",
+            "lecs":" محاضرات",
+            "price": "149.9 دولار",
+            "currency": "دولار",
+            "originalPrice": "199.9 دولار",
+            "students":"طالب",
+            "level":"للمبتدئين"
+
+        },
+        "course2": {
+            "multiVariants": "متعدد",
+            "discount": "خصم",
+            "category": "دليل المبتدئين للتصميم",
+            "description": "بواسطة رونالد ريتشاردز",
+            "rating": "1200 تقييم",
+            "hours":" ساعات",
+            "lecs":" محاضرات",
+            "price": "149.9 دولار",
+            "currency": "دولار",
+            "originalPrice": "199.9 دولار",
+            "students":"طالب",
+            "level":"للمبتدئين"
+
+        }
+        ,
+        "course3": {
+            "multiVariants": "متعدد",
+            "discount": "خصم",
+            "category": "دليل المبتدئين للتصميم",
+            "description": "بواسطة رونالد ريتشاردز",
+            "rating": "1200 تقييم",
+            "hours":" ساعات",
+            "lecs":" محاضرات",
+            "price": "149.9 دولار",
+            "currency": "دولار",
+            "originalPrice": "199.9 دولار",
+            "students":"طالب",
+            "level":"للمبتدئين"
+
+        },
+        "course4": {
+            "multiVariants": "متعدد",
+            "discount": "خصم",
+            "category": "دليل المبتدئين للتصميم",
+            "description": "بواسطة رونالد ريتشاردز",
+            "rating": "1200 تقييم",
+            "hours":" ساعات",
+            "lecs":" محاضرات",
+            "price": "149.9 دولار",
+            "currency": "دولار",
+            "originalPrice": "199.9 دولار",
+            "students":"طالب",
+            "level":"للمبتدئين"
+
+
+        }
+    }
+}

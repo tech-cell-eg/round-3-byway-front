@@ -1,9 +1,11 @@
+import TopCources from '@/components/TopCourses/TopCourses';
+import TopInstructors from '@/components/TopInstructors/TopInstructors';
 import { useTranslation } from 'react-i18next';
 
 import TestimonialSection from '@/components/CommonComponents/Testimonial';
 
 export default function Home() {
-  const { t, i18n } = useTranslation(['home']);
+  const { t, i18n } = useTranslation(['home/home']);
 
   return (
     <>
@@ -26,6 +28,8 @@ export default function Home() {
             عربي
           </button>
         </div>
+        <TopCources />
+        <TopInstructors />
       </div>
     </>
   );
