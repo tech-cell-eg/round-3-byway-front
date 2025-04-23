@@ -1,5 +1,6 @@
 import HeroLeft from '@/components/Hero/HeroLeft';
 import HeroRightImage from '@/components/Hero/HeroRightImage';
+import StatisticsSection from './StatisticsSection';
 
 const HeroSection = () => {
   return (
@@ -26,6 +27,7 @@ const HeroSection = () => {
             <HeroRightImage />
           </div>
         </section>
+        <StatisticsSection />
       </main>
     </>
   );
