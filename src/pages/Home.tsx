@@ -1,3 +1,4 @@
+import Banner from '@/components/Banner/banner';
 import { useTranslation } from 'react-i18next';
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
           عربي
         </button>
       </div>
+      <Banner />
     </div>
   );
 }
