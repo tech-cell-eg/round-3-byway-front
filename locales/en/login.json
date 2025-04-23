@@ -1,0 +1,10 @@
+{
+
+      "signIn": "Sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign In",
+      "loggedInSuccess": "Logged in successfully!",
+      "error": "Something went wrong!"
+
+}
