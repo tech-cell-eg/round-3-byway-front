@@ -6,6 +6,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { SignUp } from './pages/SignUp';
 
 import ProtAuth from './components/Auth/ProtAuth';
+import { InstructorSignUp } from './pages/InstructorSignUp';
 
 function App() {
   const router = createBrowserRouter(
@@ -22,6 +23,10 @@ function App() {
                 <SignUp />
               </ProtAuth>
             ),
+          },
+          {
+            path: 'signup-instructor',
+            element: <InstructorSignUp />,
           },
         ],
       },
