@@ -2,7 +2,7 @@ const HeroLeft = () => {
   return (
     <>
       <div>
-        <h1 className="lg:text-5xl/tight font-bold text-3xl/tight text-content-primary ">
+        <h1 className="lg:text-5xl/tight font-bold text-2xl/tight text-content-primary ">
           Unlock Your Potential <br />
           With Byway
         </h1>
