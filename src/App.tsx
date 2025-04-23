@@ -8,6 +8,9 @@ import ProtAuth from './components/Auth/ProtAuth';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import Login from './components/Login/Login';
+//import { SignUp } from './pages/SignUp';
+
 function App() {
   const { i18n } = useTranslation();
 
@@ -26,6 +29,9 @@ function App() {
         element: <Layout />,
         children: [
           { index: true, element: <Home /> },
+
+          { path: 'login', element: <Login /> },
+
           {
             path: 'signup',
             element: (

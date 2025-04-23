@@ -1,6 +1,7 @@
 import TopCources from '@/components/TopCourses/TopCourses';
 import TopInstructors from '@/components/TopInstructors/TopInstructors';
 import { useTranslation } from 'react-i18next';
+
 import TestimonialSection from '@/components/CommonComponents/Testimonial';
 
 export default function Home() {
