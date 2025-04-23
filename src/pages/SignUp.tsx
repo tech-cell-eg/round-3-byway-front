@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router';
 
 // save user data in local storage
 function saveUserData(data: unknown) {
-  localStorage.setItem('user', JSON.stringify(data));
+  localStorage.setItem('user', JSON.stringify(data));  
 }
 
 // form validation
