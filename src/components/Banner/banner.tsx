@@ -2,14 +2,34 @@ import womanglasses from '../../assets/images/Banner/womanglasses.png';
 import manglasses from '../../assets/images/Banner/manglasses.png';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '../ui/button';
 
 const Banner = () => {
   const { t } = useTranslation(['banner']);
+  const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem('user') !== null;
+
+  const handleInstructorClick = () => {
+    if (isLoggedIn) {
+      navigate('/'); // instructor page
+    } else {
+      navigate('/Login'); // login page
+    }
+  };
+
+  const handleStudentClick = () => {
+    if (isLoggedIn) {
+      navigate('/'); //course page
+    } else {
+      navigate('/Login'); // login page
+    }
+  };
 
   return (
     <section className="flex flex-col items-center justify-center gap-16 py-16 px-4 bg-white">
       {/* Instructor  */}
-      <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl w-full">
+      <div className="flex flex-col md:flex-row items-center gap-20 max-w-5xl w-full">
         <img
           src={womanglasses}
           alt="Instructor"
@@ -23,15 +43,20 @@ const Banner = () => {
           <p className="text-[#1D2939] text-sm mb-4">
             {t('Instructor.description')}
           </p>
-          <button className="flex items-center justify-center gap-1 bg-black text-white rounded-[8px]  py-2 px-4">
-            {t('Instructor.button')}
-            <ArrowRight />
-          </button>
+
+          <Button
+            type="submit"
+            onClick={handleInstructorClick}
+            className="w-[60%] bg-black text-white rounded p-4 transition-all  hover:bg-gray-600 hover:text-surface-light-primary "
+          >
+            {t('Instructor.button')}{' '}
+            <ArrowRight className=" h-9 w-9 text-white" />
+          </Button>
         </div>
       </div>
 
       {/* Courses */}
-      <div className="flex flex-col md:flex-row-reverse items-center gap-8 max-w-5xl w-full">
+      <div className="flex flex-col md:flex-row-reverse items-center gap-20 max-w-5xl w-full">
         <img
           src={manglasses}
           alt="Student"
@@ -45,10 +70,13 @@ const Banner = () => {
           <p className="text-[#1D2939] text-sm mb-4">
             {t('Student.description')}
           </p>
-          <button className="flex items-center justify-center gap-1 bg-black text-white rounded-[8px]  py-2 px-4">
-            {t('Student.button')}
-            <ArrowRight />
-          </button>
+          <Button
+            type="submit"
+            onClick={handleStudentClick}
+            className="w-[40%] bg-black text-white rounded p-4 transition-all  hover:bg-gray-600 hover:text-surface-light-primary "
+          >
+            {t('Student.button')} <ArrowRight className=" h-9 w-9 text-white" />
+          </Button>
         </div>
       </div>
     </section>
