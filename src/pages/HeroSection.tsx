@@ -1,6 +1,7 @@
 import HeroLeft from '@/components/Hero/HeroLeft';
 import HeroRightImage from '@/components/Hero/HeroRightImage';
 import StatisticsSection from './StatisticsSection';
+import TopCategories from '@/components/TopCategories/TopCategories';
 
 const HeroSection = () => {
   return (
@@ -28,6 +29,7 @@ const HeroSection = () => {
           </div>
         </section>
         <StatisticsSection />
+        <TopCategories />
       </main>
     </>
   );
