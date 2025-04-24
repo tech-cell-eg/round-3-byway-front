@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import { Layout } from './pages/Layout';
-import Home from './pages/Home';
 import { queryClient } from './api/queryClient';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { SignUp } from './pages/SignUp';
@@ -12,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 import Login from './components/Login/Login';
 import CategoryPage from './components/CategoryPage/CategoryPage';
+import Home from './pages/Home';
 
 function App() {
   const { i18n } = useTranslation();
