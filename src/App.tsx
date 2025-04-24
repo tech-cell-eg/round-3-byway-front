@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 import Login from './components/Login/Login';
 import Home from './pages/Home';
+import { CartPage } from './pages/CartPage';
 
 function App() {
   const { i18n } = useTranslation();
@@ -44,6 +45,10 @@ function App() {
           {
             path: 'signup-instructor',
             element: <InstructorSignUp />,
+          },
+          {
+            path: 'cart',
+            element: <CartPage />,
           },
         ],
       },
