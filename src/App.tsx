@@ -8,6 +8,7 @@ import { SignUp } from './pages/SignUp';
 import ProtAuth from './components/Auth/ProtAuth';
 
 import Login from './components/Login/Login';
+import CategoryPage from './components/CategoryPage/CategoryPage';
 //import { SignUp } from './pages/SignUp';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
               </ProtAuth>
             ),
           },
+          { path: 'category', element: <CategoryPage /> },
         ],
       },
     ]
