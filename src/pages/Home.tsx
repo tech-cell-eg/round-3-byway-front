@@ -1,6 +1,7 @@
 import TestimonialSection from '@/components/Testimonial/TestimonialSection';
 import TopCources from '@/components/TopCourses/TopCourses';
 import TopInstructors from '@/components/TopInstructors/TopInstructors';
+import Banner from '@/components/Banner/banner';
 import { useTranslation } from 'react-i18next';
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
         </div>
         <TopCources />
         <TopInstructors />
+        <Banner />
       </div>
 
       <TestimonialSection />

@@ -16,6 +16,7 @@ i18next
       'home/topInstructors',
       'Category/mainPage',
       'Category/allCourses',
+      'home/banner',
     ],
     defaultNS: 'common',
     debug: true,
