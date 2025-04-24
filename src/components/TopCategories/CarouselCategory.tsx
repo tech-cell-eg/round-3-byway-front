@@ -42,18 +42,13 @@ const CarouselCategory = () => {
 
           {/* Icons */}
           <div className="flex gap-5">
-            <Icon
-              name="chevron-left"
-              size={27}
-              className="bg-[#94A3B8] rounded-2xl text-white cursor-pointer"
-              onClick={handlePrev}
-            />
-            <Icon
-              name="chevron-right"
-              size={27}
-              className="bg-[#94A3B8] rounded-2xl text-white cursor-pointer"
-              onClick={handleNext}
-            />
+            <button onClick={handlePrev} className="p-2 rounded-full border">
+              <Icon name="chevron-left" size={24} className="text-gray-600" />
+            </button>
+
+            <button onClick={handleNext} className="p-2 rounded-full border">
+              <Icon name="chevron-right" size={24} className="text-gray-600" />
+            </button>
           </div>
         </div>
 

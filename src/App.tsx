@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Login from './components/Login/Login';
+import CategoryPage from './components/CategoryPage/CategoryPage';
 import Home from './pages/Home';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           { index: true, element: <Home /> },
 
           { path: 'login', element: <Login /> },
+          { path: 'allCourses', element: <CategoryPage /> },
 
           {
             path: 'signup',
