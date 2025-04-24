@@ -52,7 +52,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   'arrow-left': MoveLeft,
 };
 
-interface IconProps {
+interface IconProps extends React.ComponentProps<'svg'> {
   name: IconName;
   size?: number;
   className?: string;
