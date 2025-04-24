@@ -1,13 +1,14 @@
+import TestimonialSection from '@/components/Testimonial/TestimonialSection';
+import TopCources from '@/components/TopCourses/TopCourses';
+import TopInstructors from '@/components/TopInstructors/TopInstructors';
 import Banner from '@/components/Banner/banner';
 import { useTranslation } from 'react-i18next';
-import TestimonialSection from '@/components/CommonComponents/Testimonial';
 
 export default function Home() {
-  const { t, i18n } = useTranslation(['home']);
+  const { t, i18n } = useTranslation(['home/home']);
 
   return (
     <>
-      <TestimonialSection />
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h1>{t('home:welcome')}</h1>
         <p>{t('home:description')}</p>
@@ -26,8 +27,12 @@ export default function Home() {
             عربي
           </button>
         </div>
+        <TopCources />
+        <TopInstructors />
         <Banner />
       </div>
+
+      <TestimonialSection />
     </>
   );
 }
