@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../ui/button';
 
 const Banner = () => {
-  const { t } = useTranslation(['banner']);
+  const { t } = useTranslation(['home/banner']);
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem('user') !== null;
 
@@ -14,7 +14,7 @@ const Banner = () => {
     if (isLoggedIn) {
       navigate('/'); // instructor page
     } else {
-      navigate('/Login'); // login page
+      navigate('/SignUp'); // login page
     }
   };
 
@@ -22,7 +22,7 @@ const Banner = () => {
     if (isLoggedIn) {
       navigate('/'); //course page
     } else {
-      navigate('/Login'); // login page
+      navigate('/SignUp'); // login page
     }
   };
 
@@ -36,8 +36,8 @@ const Banner = () => {
           className="w-64 h-auto rounded-[2rem] p-2"
           loading="lazy"
         />
-        <div className="text-center md:text-left max-w-md">
-          <h2 className="text-3xl font-bold text-black mb-4">
+        <div className="text-center  md:text-left max-w-md">
+          <h2 className="text-xl text-content-primary font-bold text-black mb-4">
             {t('Instructor.header')}
           </h2>
           <p className="text-[#1D2939] text-sm mb-4">
@@ -45,11 +45,10 @@ const Banner = () => {
           </p>
 
           <Button
-            type="submit"
             onClick={handleInstructorClick}
-            className="w-[60%] bg-black text-white rounded p-4 transition-all  hover:bg-gray-600 hover:text-surface-light-primary "
+            className="w-[50%] bg-black text-white  rounded p-4 transition-all  hover:bg-gray-600 hover:text-surface-light-primary "
           >
-            {t('Instructor.button')}{' '}
+            {t('Instructor.button')}
             <ArrowRight className=" h-9 w-9 text-white" />
           </Button>
         </div>
@@ -64,18 +63,18 @@ const Banner = () => {
           loading="lazy"
         />
         <div className="text-center md:text-left max-w-md">
-          <h2 className="text-3xl font-bold text-black mb-4">
+          <h2 className="text-xl text-content-primary font-bold text-black mb-4">
             {t('Student.header')}
           </h2>
           <p className="text-[#1D2939] text-sm mb-4">
             {t('Student.description')}
           </p>
           <Button
-            type="submit"
             onClick={handleStudentClick}
-            className="w-[40%] bg-black text-white rounded p-4 transition-all  hover:bg-gray-600 hover:text-surface-light-primary "
+            className="w-[40%] bg-black text-white rounded p-4  transition-all  hover:bg-gray-600 hover:text-surface-light-primary "
           >
-            {t('Student.button')} <ArrowRight className=" h-9 w-9 text-white" />
+            {t('Student.button')}
+            <ArrowRight className=" h-9 w-9 text-white" />
           </Button>
         </div>
       </div>

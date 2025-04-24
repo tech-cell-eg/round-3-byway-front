@@ -52,13 +52,13 @@ const iconMap: Record<IconName, LucideIcon> = {
   'arrow-left': MoveLeft,
 };
 
-interface IconProps {
+interface IconProps extends React.ComponentProps<'svg'> {
   name: IconName;
   size?: number;
   className?: string;
 }
 
-function Icon({ name, size = 21, className = '' }: IconProps) {
+function Icon({ name, size = 21, className = '', ...props }: IconProps) {
   const IconComponent = iconMap[name];
 
   if (!IconComponent) {
@@ -68,7 +68,7 @@ function Icon({ name, size = 21, className = '' }: IconProps) {
     return null;
   }
 
-  return <IconComponent size={size} className={className} />;
+  return <IconComponent size={size} className={className} {...props} />;
 }
 
 export default Icon;
