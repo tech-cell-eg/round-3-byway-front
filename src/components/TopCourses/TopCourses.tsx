@@ -31,7 +31,7 @@ export default function TopCourses() {
           <h3 className="font-bold text-2xl  text-border-dark">
             {t('topCourses')}
           </h3>
-          <Link to={'/'}>
+          <Link to={'/allCourses'}>
             <p className="cursor-pointer text-icon-accent">{t('seeMore')}</p>
           </Link>
         </div>

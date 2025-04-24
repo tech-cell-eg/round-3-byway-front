@@ -17,19 +17,21 @@ interface ITranslatedInstructor {
   instructorImage?: string;
 }
 
-export default function TopInstructors() {
+export default function PopularMentors() {
   const { t } = useTranslation('home/topInstructors');
+
   const instructors = t('instructors', { returnObjects: true }) as Record<
     string,
     ITranslatedInstructor
   >;
+
   const instructorEntries = Object.entries(instructors).slice(0, 5);
 
   return (
-    <div className="responsive-primary-padding-x w-full responsive-secondary-padding-y">
+    <div className="responsive-primary-padding-x w-full responsive-secondary-padding-y bg-surface-light-secondary">
       <div className="px-5 pb-5">
         <h3 className="font-bold text-2xl text-border-dark">
-          {t('topInstructors')}
+          {t('popularMentors')}
         </h3>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 p-4">
