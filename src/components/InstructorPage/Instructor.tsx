@@ -1,4 +1,3 @@
-import React from 'react';
 import HeaderInfo from './HeaderInfo';
 import HeaderLinks from './HeaderLinks';
 import Courses from './Courses';
