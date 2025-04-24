@@ -16,12 +16,6 @@ i18next
       'home/topInstructors',
       'Category/mainPage',
       'Category/allCourses',
-    ],
-    ns: [
-      'common',
-      'home/home',
-      'home/topCourses',
-      'home/topInstructors',
       'home/banner',
     ],
     defaultNS: 'common',
