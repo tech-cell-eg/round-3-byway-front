@@ -1,0 +1,72 @@
+{
+    "popularMentors":"أشهر المدربين",
+    "topInstructors":"أفضل المدربين",
+    "instructors": {
+      "instructor1": {
+      "title": "المدرب أ",
+      "description": "مقدمة في الذكاء الاصطناعي",
+      "price": "$99",
+      "lecs": "12",
+      "hours": "ساعات",
+      "level": "مبتدئ",
+      "students": "طالب",
+      "rating": "5",
+      "category": "ذكاء اصطناعي",
+      "instructorName": "سارة جونسون",
+      "instructorTitle": "مهندسة ذكاء اصطناعي"
+      },
+      "instructor2": {
+        "title": "المدرب أ",
+      "description": "مقدمة في الذكاء الاصطناعي",
+      "price": "$99",
+      "lecs": "12",
+      "hours": "ساعات",
+      "level": "مبتدئ",
+      "students": "طالب",
+      "rating": "5",
+      "category": "ذكاء اصطناعي",
+      "instructorName": "سارة جونسون",
+      "instructorTitle": "مهندسة ذكاء اصطناعي"
+      },
+      "instructor3": {
+        "title": "المدرب أ",
+        "description": "مقدمة في الذكاء الاصطناعي",
+        "price": "$99",
+        "lecs": "12",
+        "hours": "ساعات",
+        "level": "مبتدئ",
+        "students": "طالب",
+        "rating": "5",
+        "category": "ذكاء اصطناعي",
+        "instructorName": "سارة جونسون",
+        "instructorTitle": "مهندسة ذكاء اصطناعي"
+      },
+      "instructor4": {
+        "title": "المدرب أ",
+        "description": "مقدمة في الذكاء الاصطناعي",
+        "price": "$99",
+        "lecs": "12",
+        "hours": "ساعات",
+        "level": "مبتدئ",
+        "students": "طالب",
+        "rating": "5",
+        "category": "ذكاء اصطناعي",
+        "instructorName": "سارة جونسون",
+        "instructorTitle": "مهندسة ذكاء اصطناعي"
+      },
+      "instructor5": {
+        "title": "المدرب هـ",
+        "description": "مقدمة في الذكاء الاصطناعي",
+        "price": "$99",
+        "lecs": "12",
+        "hours": "ساعات",
+        "level": "مبتدئ",
+        "students": "طالب",
+        "rating": "5",
+        "category": "ذكاء اصطناعي",
+        "instructorName": "سارة جونسون",
+        "instructorTitle": "مهندسة ذكاء اصطناعي"
+      }
+    }
+  }
+  
