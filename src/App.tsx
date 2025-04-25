@@ -8,10 +8,10 @@ import { InstructorSignUp } from './pages/InstructorSignUp';
 
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import Login from './components/Login/Login';
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import Home from './pages/Home';
+//import { SignUp } from './pages/SignUp';
 import { CartPage } from './pages/CartPage';
 import InstructorPage from './components/InstructorPage/Instructor';
 import CourseDetails from './pages/CourseDetails';
@@ -51,6 +51,7 @@ function App() {
             path: 'signup-instructor',
             element: <InstructorSignUp />,
           },
+          { path: 'category', element: <CategoryPage /> },
           {
             path: 'cart',
             element: <CartPage />,
