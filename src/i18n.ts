@@ -19,6 +19,7 @@ i18next
       'home/banner',
       'cart/cart',
     ],
+
     defaultNS: 'common',
     debug: true,
     interpolation: {
