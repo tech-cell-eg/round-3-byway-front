@@ -56,9 +56,10 @@ interface IconProps extends React.ComponentProps<'svg'> {
   name: IconName;
   size?: number;
   className?: string;
+  onClick?: () => void;
 }
 
-function Icon({ name, size = 21, className = '', ...props }: IconProps) {
+function Icon({ name, size = 21, className = '', onClick }: IconProps) {
   const IconComponent = iconMap[name];
 
   if (!IconComponent) {
@@ -68,7 +69,7 @@ function Icon({ name, size = 21, className = '', ...props }: IconProps) {
     return null;
   }
 
-  return <IconComponent size={size} className={className} {...props} />;
+  return <IconComponent size={size} className={className} onClick={onClick} />;
 }
 
 export default Icon;
