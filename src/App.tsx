@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import Login from './components/Login/Login';
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import Home from './pages/Home';
+import InstructorPage from './components/InstructorPage/Instructor';
 
 function App() {
   const { i18n } = useTranslation();
@@ -46,6 +47,10 @@ function App() {
           {
             path: 'signup-instructor',
             element: <InstructorSignUp />,
+          },
+          {
+            path: 'instructor',
+            element: <InstructorPage />,
           },
         ],
       },
