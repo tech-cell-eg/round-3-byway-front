@@ -15,9 +15,20 @@ import {
   MoveRight,
   MoveLeft,
   LucideIcon,
+  Search,
+  Settings,
+  Sun,
+  Moon,
+  LogOut,
+  X,
+  UserRound,
+  BookOpenText,
+  LayoutDashboard,
 } from 'lucide-react';
 
 export type IconName =
+  | 'x'
+  | 'search'
   | 'cart'
   | 'heart'
   | 'bell'
@@ -30,11 +41,20 @@ export type IconName =
   | 'chevron-left'
   | 'chevron-right'
   | 'chevron-up'
-  | 'cheveron-down'
+  | 'chevron-down'
   | 'arrow-right'
-  | 'arrow-left';
+  | 'arrow-left'
+  | 'gear'
+  | 'sun'
+  | 'moon'
+  | 'user'
+  | 'book-open'
+  | 'dashboard'
+  | 'logout';
 
 const iconMap: Record<IconName, LucideIcon> = {
+  x: X,
+  search: Search,
   cart: ShoppingCart,
   heart: Heart,
   bell: Bell,
@@ -47,18 +67,26 @@ const iconMap: Record<IconName, LucideIcon> = {
   'chevron-left': ChevronLeft,
   'chevron-right': ChevronRight,
   'chevron-up': ChevronUp,
-  'cheveron-down': ChevronDown,
+  'chevron-down': ChevronDown,
   'arrow-right': MoveRight,
   'arrow-left': MoveLeft,
+  gear: Settings,
+  sun: Sun,
+  moon: Moon,
+  logout: LogOut,
+  user: UserRound,
+  'book-open': BookOpenText,
+  dashboard: LayoutDashboard,
 };
 
-interface IconProps extends React.ComponentProps<'svg'> {
+interface IconProps {
   name: IconName;
   size?: number;
   className?: string;
+  onClick?: () => void;
 }
 
-function Icon({ name, size = 21, className = '', ...props }: IconProps) {
+function Icon({ name, size = 21, className = '', onClick }: IconProps) {
   const IconComponent = iconMap[name];
 
   if (!IconComponent) {
@@ -68,7 +96,7 @@ function Icon({ name, size = 21, className = '', ...props }: IconProps) {
     return null;
   }
 
-  return <IconComponent size={size} className={className} {...props} />;
+  return <IconComponent size={size} className={className} onClick={onClick} />;
 }
 
 export default Icon;
