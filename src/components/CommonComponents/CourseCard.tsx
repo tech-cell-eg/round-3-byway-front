@@ -37,7 +37,7 @@ export const CourseCard = ({ course }: CourseCardProps) => {
         <p className="text-button-secondary text-body-small  min-h-[48px] lg:min-h-0">
           {course.description}
         </p>
-        <div className="flex gap-2 ">
+        <div className="flex max-lg:flex-wrap gap-x-2 ">
           <div className="flex text-icon-filled-star pt-1">
             {renderStars(course.reviews_average)}
           </div>
@@ -45,7 +45,7 @@ export const CourseCard = ({ course }: CourseCardProps) => {
             ({course.reviews_count})
           </p>
         </div>
-        <div className="flex max-md:flex-wrap text-button-secondary text-body-small font-regular min-h-[48px]  lg:min-h-0">
+        <div className="flex max-lg:flex-wrap text-button-secondary text-body-small font-regular min-h-[48px]  lg:min-h-0">
           <p className="pe-1">{course.hours}</p>
           <p className="pe-1">{course.hoursName} |</p>
           <p className="pe-1">{course.lecturesName}</p>

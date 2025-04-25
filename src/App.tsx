@@ -10,7 +10,9 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Login from './components/Login/Login';
+import CategoryPage from './components/CategoryPage/CategoryPage';
 import Home from './pages/Home';
+import InstructorPage from './components/InstructorPage/Instructor';
 import CourseDetails from './pages/CourseDetails';
 
 function App() {
@@ -34,6 +36,7 @@ function App() {
           { path: 'coursespage', element: <CourseDetails /> },
 
           { path: 'login', element: <Login /> },
+          { path: 'allCourses', element: <CategoryPage /> },
 
           {
             path: 'signup',
@@ -46,6 +49,10 @@ function App() {
           {
             path: 'signup-instructor',
             element: <InstructorSignUp />,
+          },
+          {
+            path: 'instructor',
+            element: <InstructorPage />,
           },
         ],
       },
