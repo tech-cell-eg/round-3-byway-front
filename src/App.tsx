@@ -14,6 +14,7 @@ import Home from './pages/Home';
 //import { SignUp } from './pages/SignUp';
 import { CartPage } from './pages/CartPage';
 import InstructorPage from './components/InstructorPage/Instructor';
+import CourseDetails from './pages/CourseDetails';
 
 function App() {
   const { i18n } = useTranslation();
@@ -33,6 +34,7 @@ function App() {
         element: <Layout />,
         children: [
           { index: true, element: <Home /> },
+          { path: 'coursespage', element: <CourseDetails /> },
 
           { path: 'login', element: <Login /> },
           { path: 'allCourses', element: <CategoryPage /> },

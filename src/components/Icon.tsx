@@ -15,9 +15,17 @@ import {
   MoveRight,
   MoveLeft,
   LucideIcon,
+  Award,
+  GraduationCap,
+  Play,
+  Video,
+  BookText,
 } from 'lucide-react';
 
 export type IconName =
+  | 'video'
+  | 'award'
+  | 'play'
   | 'cart'
   | 'heart'
   | 'bell'
@@ -32,6 +40,8 @@ export type IconName =
   | 'chevron-up'
   | 'cheveron-down'
   | 'arrow-right'
+  | 'graduationcap'
+  | 'book-text'
   | 'arrow-left';
 
 const iconMap: Record<IconName, LucideIcon> = {
@@ -44,6 +54,11 @@ const iconMap: Record<IconName, LucideIcon> = {
   briefcase: Briefcase,
   physics: Atom,
   star: Star,
+  award: Award,
+  play: Play,
+  video: Video,
+  graduationcap: GraduationCap,
+  'book-text': BookText,
   'chevron-left': ChevronLeft,
   'chevron-right': ChevronRight,
   'chevron-up': ChevronUp,
