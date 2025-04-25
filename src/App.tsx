@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 import Login from './components/Login/Login';
 import Home from './pages/Home';
+import CourseDetails from './pages/CourseDetails';
 
 function App() {
   const { i18n } = useTranslation();
@@ -30,6 +31,7 @@ function App() {
         element: <Layout />,
         children: [
           { index: true, element: <Home /> },
+          { path: 'coursespage', element: <CourseDetails /> },
 
           { path: 'login', element: <Login /> },
 
