@@ -17,7 +17,7 @@ import {
   LucideIcon,
 } from 'lucide-react';
 
-type IconName =
+export type IconName =
   | 'cart'
   | 'heart'
   | 'bell'
@@ -52,14 +52,13 @@ const iconMap: Record<IconName, LucideIcon> = {
   'arrow-left': MoveLeft,
 };
 
-interface IconProps {
+interface IconProps extends React.ComponentProps<'svg'> {
   name: IconName;
   size?: number;
   className?: string;
-  onClick?: () => void;
 }
 
-function Icon({ name, size = 21, className = '', onClick }: IconProps) {
+function Icon({ name, size = 21, className = '', ...props }: IconProps) {
   const IconComponent = iconMap[name];
 
   if (!IconComponent) {
@@ -69,7 +68,7 @@ function Icon({ name, size = 21, className = '', onClick }: IconProps) {
     return null;
   }
 
-  return <IconComponent size={size} className={className} onClick={onClick} />;
+  return <IconComponent size={size} className={className} {...props} />;
 }
 
 export default Icon;

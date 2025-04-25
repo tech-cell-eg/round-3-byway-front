@@ -1,0 +1,71 @@
+{
+    "popularMentors":"Popular Mentors",
+"topInstructors":"Top instructors",
+ "instructors":{
+    "instructor1": {
+        "title": "Instructor A",
+        "description": "Intro to AI",
+        "price": "$99",
+        "lecs": 12,
+        "hours": "hours",
+        "level": "Beginner",
+        "students": "students",
+        "rating": 5,
+        "category": "AI",
+        "instructorName": "Sarah Johnson",
+        "instructorTitle": "AI Engineer"
+    },
+    "instructor2": {
+        "title": "Instructor B",
+        "description": "Intro to AI",
+        "price": "$99",
+        "lecs": 12,
+        "hours": "hours",
+        "level": "Beginner",
+        "students": "students",
+        "rating": 5,
+        "category": "AI",
+        "instructorName": "Sarah Johnson",
+        "instructorTitle": "AI Engineer"
+    },
+    "instructor3": {
+        "title": "Instructor C",
+        "description": "Intro to AI",
+        "price": "$99",
+        "lecs": 12,
+        "hours": "hours",
+        "level": "Beginner",
+        "students": "students",
+        "rating": 5,
+        "category": "AI",
+        "instructorName": "Sarah Johnson",
+        "instructorTitle": "AI Engineer"
+    },
+    "instructor4": {
+        "title": "Instructor D",
+        "description": "Intro to AI",
+        "price": "$99",
+        "lecs": 12,
+        "hours": "hours",
+        "level": "Beginner",
+        "students": "students",
+        "rating": 5,
+        "category": "AI",
+        "instructorName": "Sarah Johnson",
+        "instructorTitle": "AI Engineer"
+    },
+    "instructor5": {
+        "title": "Instructor E",
+        "description": "Intro to AI",
+        "price": "$99",
+        "lecs": 12,
+        "hours": "hours",
+        "level": "Beginner",
+        "students": "students",
+        "rating": 5,
+        "category": "AI",
+        "instructorName": "Sarah Johnson",
+        "instructorTitle": "AI Engineer"
+    }
+}
+}

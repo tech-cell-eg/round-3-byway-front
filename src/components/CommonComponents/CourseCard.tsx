@@ -27,33 +27,39 @@ export const CourseCard = ({ course }: CourseCardProps) => {
       <img
         src={defulImg}
         alt="Course Image"
-        className="w-full h-[228px] object-contain rounded-2xl"
+        className="w-full h-[228px] object-contain rounded-xl"
       />
 
-      {/* معلومات الدورة */}
       <div className="p-4 flex flex-col gap-1">
         <h3 className="text-content-primary text-body-medium  font-bold">
           {course.category.name}
         </h3>
-        <p className="text-content-secondary text-body-small font-medium min-h-[48px] lg:min-h-0">
-          {course.name}
+        <p className="text-button-secondary text-body-small  min-h-[48px] lg:min-h-0">
+          {course.description}
         </p>
-        <div className="flex gap-2">
-          <div className="flex text-filled-star">
+        <div className="flex max-lg:flex-wrap gap-x-2 ">
+          <div className="flex text-icon-filled-star pt-1">
             {renderStars(course.reviews_average)}
           </div>
-          (<p>{course.reviews_count}</p>)
+          <p className="text-large text-content-primary font-medium">
+            ({course.reviews_count})
+          </p>
         </div>
-        <div className="flex text-content-base text-body-small font-regular min-h-[48px]  lg:min-h-0">
-          <p>{course.hours}</p>
-          <p>{course.hoursName}</p>
-          <p>{course.lectures}</p>
-          <p>{course.lecturesName}</p>
+        <div className="flex max-lg:flex-wrap text-button-secondary text-body-small font-regular min-h-[48px]  lg:min-h-0">
+          <p className="pe-1">{course.hours}</p>
+          <p className="pe-1">{course.hoursName} |</p>
+          <p className="pe-1">{course.lecturesName}</p>
+          <p className="pe-1">{course.lectures} |</p>
+          <p className="pe-1">({course.level})</p>
         </div>
-        <p className="text-large font-medium">
+        <div className="flex pt-1 text-button-secondary text-body-small font-regular min-h-[48px]  lg:min-h-0">
+          <p className="pe-1">{course.numOfStu}</p>
+          <p className="">{course.students}</p>
+        </div>
+        <p className="text-large text-content-primary font-medium">
           {course.price}
           {course.has_discount && (
-            <span className="text-content-dim text-sm line-through ms-2">
+            <span className="text-placeholder text-sm line-through ms-2">
               {course.price}
             </span>
           )}
