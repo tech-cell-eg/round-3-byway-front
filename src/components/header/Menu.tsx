@@ -20,10 +20,13 @@ function Menu({ setMenuVisibility }: MenuProps) {
     <nav
       role="menu"
       aria-label="User menu"
-      className="fixed top-0 end-0 w-[60%] md:w-[50%] lg:w-[25%] h-dvh flex flex-col justify-between bg-white dark:bg-gray-800 rounded-s-3xl shadow-panel z-[90] overflow-hidden"
+      className="fixed top-0 right-0 w-[60%] md:w-[50%] lg:w-[25%] h-dvh flex flex-col justify-between bg-white dark:bg-gray-800 rounded-l-3xl shadow-panel z-[90] overflow-hidden"
     >
       <div>
-        <div className="flex justify-between items-center border-b border-border-light">
+        <div
+          dir="ltr"
+          className="flex justify-between items-center border-b border-border-light"
+        >
           <Button
             onClick={handleMenuClose}
             variant="icon"
@@ -39,6 +42,7 @@ function Menu({ setMenuVisibility }: MenuProps) {
         <div className="">
           <GoToButton
             to="/account"
+            dir="ltr"
             role="menuitem"
             // value={t('account')}
             className="flex justify-center items-center gap-4 py-3 px-4 font-semibold text-center text-content-dark hover:text-content-light bg-sky-50 hover:bg-accent-secondary active:bg-accent-primary duration-short"
@@ -48,8 +52,10 @@ function Menu({ setMenuVisibility }: MenuProps) {
               <Icon name="user" size={17} />
             </span>
           </GoToButton>
+
           <GoToButton
             to="/my-learning"
+            dir="ltr"
             role="menuitem"
             // value={t('myLearning')}
             className="flex justify-center items-center gap-4 py-3 px-4 font-semibold text-center text-content-dark hover:text-content-light bg-sky-50 hover:bg-accent-secondary active:bg-accent-primary duration-short"
@@ -59,8 +65,10 @@ function Menu({ setMenuVisibility }: MenuProps) {
               <Icon name="book-open" size={17} />
             </span>
           </GoToButton>
+
           <GoToButton
             to="/instructor-dashboard"
+            dir="ltr"
             role="menuitem"
             value={t('dashboard')}
             className="flex justify-center items-center gap-4 py-3 px-4 font-semibold text-center text-content-dark hover:text-content-light bg-sky-50 hover:bg-accent-secondary active:bg-accent-primary duration-short"
@@ -81,6 +89,7 @@ function Menu({ setMenuVisibility }: MenuProps) {
 
         <button
           // onClick={handleLogout}
+          dir="ltr"
           role="menuitem"
           className="flex justify-center items-center gap-3 w-full py-2 font-semibold hover:text-content-light bg-red-50 hover:bg-red-500 cursor-pointer duration-medium"
         >
