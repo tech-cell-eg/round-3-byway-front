@@ -55,8 +55,8 @@ function App() {
           {
             path: 'cart',
             element: <CartPage />,
-           },
-           {
+          },
+          {
             path: 'instructor',
             element: <InstructorPage />,
           },
