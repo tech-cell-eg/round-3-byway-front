@@ -31,7 +31,7 @@ export const Payment = () => {
     <div>
       <div className="border border-border-light p-4 rounded-[8px]">
         {/* country and state inputs */}
-        <form className="flex gap-4 p-4 justify-between">
+        <form className="flex gap-4 p-4 justify-between flex-col lg:flex-row">
           <div className="flex-1">
             <p className=" text-content-primary mb-2 font-semibold text-body-medium">
               Country
@@ -60,7 +60,7 @@ export const Payment = () => {
         <h3 className="text-content-primary text-body-medium font-semibold mb-4">
           Payment Methods
         </h3>
-        <Accordion type="single" collapsible>
+        <Accordion type="single" collapsible defaultValue="item-1">
           <AccordionItem
             value="item-1"
             className="bg-surface-light-secondary px-4 rounded-[8px] border-0"

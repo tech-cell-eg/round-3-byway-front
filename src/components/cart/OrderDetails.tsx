@@ -1,13 +1,21 @@
 import { Cartinfo } from '@/types/types';
 import { CuponField } from './CuponField';
 
+import PayButton from './PayButton';
+
 type Props = {
   details: Cartinfo;
   setCheckout: React.Dispatch<React.SetStateAction<boolean>>;
   checkout?: boolean;
+  setSuccess: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export const OrderDetails = ({ details, setCheckout, checkout }: Props) => {
+export const OrderDetails = ({
+  details,
+  setCheckout,
+  checkout,
+  setSuccess,
+}: Props) => {
   return (
     <div className="flex flex-col gap-5 min-w-[330px]">
       <h3 className="text-content-primary text-body-large font-semibold">
@@ -54,18 +62,13 @@ export const OrderDetails = ({ details, setCheckout, checkout }: Props) => {
           </p>
         </div>
       </div>
-      {checkout ? (
-        <button
-          className="bg-button-tertiary text-button-primary rounded-[8px] py-3 text-body-small cursor-pointer"
-          onClick={() => setCheckout(true)}
-        >
-          Procced to checkout
-        </button>
-      ) : (
-        <button className="bg-button-tertiary text-button-primary rounded-[8px] py-3 text-body-small cursor-pointer">
-          Pay
-        </button>
-      )}
+      <div className="px-4">
+        <PayButton
+          checkout={checkout}
+          setCheckout={setCheckout}
+          setSuccess={setSuccess}
+        />
+      </div>
     </div>
   );
 };
