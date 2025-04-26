@@ -3,6 +3,7 @@ import TopCources from '@/components/TopCourses/TopCourses';
 import TopInstructors from '@/components/TopInstructors/TopInstructors';
 import Banner from '@/components/Banner/banner';
 import { useTranslation } from 'react-i18next';
+import HeroSection from './HeroSection';
 
 export default function Home() {
   const { t, i18n } = useTranslation(['home/home']);
@@ -27,6 +28,7 @@ export default function Home() {
             عربي
           </button>
         </div>
+        <HeroSection />
         <TopCources />
         <TopInstructors />
         <Banner />

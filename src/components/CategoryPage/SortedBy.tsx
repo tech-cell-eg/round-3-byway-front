@@ -15,7 +15,7 @@ export default function SortedBy() {
     <div>
       <DropdownMenu>
         <DropdownMenuTrigger className="appearance-none flex !border-0 !focus:border-0">
-          {t('Relevance')}
+          {t('Newest')}
           <ChevronDown />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="">
