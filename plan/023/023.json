@@ -1,0 +1,81 @@
+{
+  "Get User Information": {
+    "Request": {
+      "URL": "/api/user-info/:user-id",
+      "Method": "GET",
+      "Parameters": {
+        "user-id": "51151515"
+      },
+      "Authentication": false
+    },
+    "Response": {
+      "data": {
+        "is_owner": false,
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "image": "",
+        "headline": "",
+        "description": "",
+        "language": "",
+        "experience": "",
+        "links": {
+          "youtube": "",
+          "twitter": "",
+          "linkedin": "",
+          "facebook": "",
+          "website": ""
+        }
+      }
+    }
+  },
+  "Edit User Information": {
+    "Request": {
+      "URL": "/api/user-info/:user-id",
+      "Method": "PUT",
+      "Parameters": {
+        "user-id": "51151515"
+      },
+      "body":{
+        "is_owner": true,
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "image": "",
+        "headline": "",
+        "description": "",
+        "language": "",
+        "experience": "",
+        "links": {
+          "youtube": "",
+          "twitter": "",
+          "linkedin": "",
+          "facebook": "",
+          "website": ""
+        }
+      },
+      "Authentication": true
+    },
+    "Response": {
+      "message": "User Updated Successfully",
+      "data": {
+        "is_owner": true,
+        "id": 1,
+        "firstname": "",
+        "lastname": "",
+        "image": "",
+        "headline": "",
+        "description": "",
+        "language": "",
+        "experience": "",
+        "links": {
+          "youtube": "",
+          "twitter": "",
+          "linkedin": "",
+          "facebook": "",
+          "website": ""
+        }
+      }
+    }
+  }
+}

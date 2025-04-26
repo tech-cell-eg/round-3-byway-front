@@ -1,0 +1,62 @@
+{
+  "Lesson Completion Toggle": {
+    "Request": {
+      "URL": "/api/course-info/{course_id}/lesson/{lesson_id}/toggle-completion",
+      "Method": "POST",
+      "Parameters": {
+        "courseId": "554151",
+        "lessonId": "4151"
+      },
+      "Authentication": "true"
+    },
+    "Response": {
+      "message USER STORY 1.2.10.2": "Lesson marked as completed successfully",
+      "data": {
+        "course_progress": {
+          "completed_lessons": 5,
+          "total_lessons": 10,
+          "certificate_eligible": false,
+          "certificate_id": null,
+          "issued_date": null
+        },
+        "sections": [
+          {
+            "section_id": 1,
+            "section_duration": "02:00:00",
+            "lesson_count": 3,
+            "lessons": [
+              {
+                "lesson_id": "lesson_001",
+                "lesson_number": 1,
+                "title": "Introduction to Python",
+                "content": {
+                  "type": "video",
+                  "url": "https://course.com/video/1"
+                },
+                "duration": "00:10:00",
+                "type": "video",
+                "completed": true
+              },
+              {
+                "lesson_id": "lesson_002",
+                "lesson_number": 2,
+                "title": "Python Variables",
+                "content": {
+                  "type": "text",
+                  "text": "Variables are containers for storing data values..."
+                },
+                "duration": "00:05:00",
+                "type": "text",
+                "completed": false
+              }
+            ]
+          }
+        ],
+        "rating": {
+          "rating": 4,
+          "review": "Great course!"
+        }
+      }
+    }
+  }
+}

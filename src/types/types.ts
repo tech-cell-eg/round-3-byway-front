@@ -80,3 +80,48 @@ export interface Iinstructor {
   instructorTitle: string;
   instructorImage?: string;
 }
+
+// Cart and checkout
+export interface CartRating {
+  count: number;
+  rating: number;
+}
+
+export interface CartPrice {
+  current: number;
+  initial: number;
+  discount: string;
+}
+
+export interface Cartinfo {
+  count_courses: number;
+  price: string;
+  discount: string;
+  tax: string;
+  total: string;
+}
+
+export interface CartCourse {
+  id: number;
+  course_name: string;
+  instructor_name: string;
+  rating: CartRating;
+  duration: string;
+  image: string;
+  lecture_count: number;
+  level: string;
+  price: CartPrice;
+}
+
+export interface CartData {
+  cartinfo: Cartinfo;
+  courses: CartCourse[];
+}
+
+export interface Testimonial {
+  id: number;
+  paragraph: string;
+  name: string;
+  image: string;
+  title: string;
+}
