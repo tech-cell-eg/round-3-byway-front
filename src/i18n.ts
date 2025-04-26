@@ -18,6 +18,7 @@ i18next
       'Category/allCourses',
       'home/banner',
       'cart/cart',
+      'home/testimonial',
     ],
 
     defaultNS: 'common',

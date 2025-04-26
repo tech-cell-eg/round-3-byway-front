@@ -5,14 +5,8 @@ import {
   type CarouselApi,
 } from '../ui/carousel';
 import { Quote } from 'lucide-react';
-
-export interface Testimonial {
-  id: number;
-  name: string;
-  title: string;
-  text: string;
-  image: string;
-}
+import { Testimonial } from '@/types/types';
+import { useTranslation } from 'react-i18next';
 
 interface TestimonialsCarouselProps {
   testimonials: Testimonial[];
@@ -23,9 +17,14 @@ const TestSlides = ({
   testimonials,
   setCarouselRef,
 }: TestimonialsCarouselProps) => {
+  const { i18n } = useTranslation('home/testimonial');
+  const isRTL = i18n.language === 'ar';
+
   return (
     <Carousel setApi={setCarouselRef}>
-      <CarouselContent className="gap-4">
+      <CarouselContent
+        className={`gap-4 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}
+      >
         {testimonials.map(item => (
           <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
             <div className="rounded-2xl shadow-sm p-6 bg-white mt-10 border border-[#E2E8F0]">
@@ -33,7 +32,7 @@ const TestSlides = ({
                 <span className="text-3xl text-blue-500">
                   <Quote />
                 </span>
-                <p className="text-black">{item.text}</p>
+                <p className="text-black">{item.paragraph}</p>
                 <div className="flex items-center gap-3 pt-4">
                   <img
                     src={item.image}
