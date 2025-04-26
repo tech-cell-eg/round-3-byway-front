@@ -20,9 +20,20 @@ import {
   Play,
   Video,
   BookText,
+  Search,
+  Settings,
+  Sun,
+  Moon,
+  LogOut,
+  X,
+  UserRound,
+  BookOpenText,
+  LayoutDashboard,
 } from 'lucide-react';
 
 export type IconName =
+  | 'x'
+  | 'search'
   | 'video'
   | 'award'
   | 'play'
@@ -38,13 +49,22 @@ export type IconName =
   | 'chevron-left'
   | 'chevron-right'
   | 'chevron-up'
-  | 'cheveron-down'
+  | 'chevron-down'
   | 'arrow-right'
+  | 'arrow-left'
   | 'graduationcap'
   | 'book-text'
-  | 'arrow-left';
+  | 'gear'
+  | 'sun'
+  | 'moon'
+  | 'user'
+  | 'book-open'
+  | 'dashboard'
+  | 'logout';
 
 const iconMap: Record<IconName, LucideIcon> = {
+  x: X,
+  search: Search,
   cart: ShoppingCart,
   heart: Heart,
   bell: Bell,
@@ -62,12 +82,19 @@ const iconMap: Record<IconName, LucideIcon> = {
   'chevron-left': ChevronLeft,
   'chevron-right': ChevronRight,
   'chevron-up': ChevronUp,
-  'cheveron-down': ChevronDown,
+  'chevron-down': ChevronDown,
   'arrow-right': MoveRight,
   'arrow-left': MoveLeft,
+  gear: Settings,
+  sun: Sun,
+  moon: Moon,
+  logout: LogOut,
+  user: UserRound,
+  'book-open': BookOpenText,
+  dashboard: LayoutDashboard,
 };
 
-interface IconProps extends React.ComponentProps<'svg'> {
+interface IconProps {
   name: IconName;
   size?: number;
   className?: string;
