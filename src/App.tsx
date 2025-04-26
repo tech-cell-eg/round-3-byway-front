@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 import Login from './components/Login/Login';
 import CategoryPage from './components/CategoryPage/CategoryPage';
-import Home from './pages/Home';
+//import Home from './pages/Home';
 import InstructorPage from './components/InstructorPage/Instructor';
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
         path: '',
         element: <Layout />,
         children: [
-          { index: true, element: <Home /> },
+          { index: true, element: <InstructorPage /> },
 
           { path: 'login', element: <Login /> },
           { path: 'allCourses', element: <CategoryPage /> },

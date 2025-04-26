@@ -17,6 +17,7 @@ i18next
       'Category/mainPage',
       'Category/allCourses',
       'home/banner',
+      'InstructorPage/headerinfo',
     ],
 
     defaultNS: 'common',
@@ -24,4 +25,5 @@ i18next
     interpolation: {
       escapeValue: false,
     },
+    returnObjects: true,
   });

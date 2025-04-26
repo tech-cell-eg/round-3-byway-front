@@ -29,10 +29,10 @@ export default function Home() {
         </div>
         <TopCources />
         <TopInstructors />
-        <Banner />
       </div>
 
       <TestimonialSection />
+      <Banner />
     </>
   );
 }
