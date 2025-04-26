@@ -1,0 +1,60 @@
+{
+  "Add Review": {
+    "Request": {
+      "URL": "/api/course-info/{course_id}/rating",
+      "Method": "POST",
+      "Parameters": {
+        "courseId": "554151",
+        "rating": 4,
+        "review": "Great course!"
+      },
+      "Authentication": "true"
+    },
+    "Response": {
+      "status": "success",
+      "message": "Rating submitted",
+      "data": {
+        "rating": 4,
+        "review": "Great course!"
+      }
+    }
+  },
+  "Update Review": {
+    "Request": {
+      "URL": "/api/course-info/{course_id}/rating",
+      "Method": "PUT",
+      "Parameters": {
+        "courseId": "554151",
+        "rating": 5,
+        "review": "Updated: Excellent course!"
+      },
+      "Authentication": "true"
+    },
+    "Response": {
+      "status": "success",
+      "message": "Rating submitted",
+      "data": {
+        "rating": 5,
+        "review": "Updated: Excellent course!"
+      }
+    }
+  },
+  "Delete Review": {
+    "Request": {
+      "URL": "/api/course-info/{course_id}/rating",
+      "Method": "DELETE",
+      "Parameters": {
+        "courseId": "554151"
+      },
+      "Authentication": "true"
+    },
+    "Response": {
+      "status": "success",
+      "message": "Rating submitted",
+      "data": {
+        "rating": null,
+        "review": null
+      }
+    }
+  }
+}
