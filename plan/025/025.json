@@ -1,0 +1,31 @@
+{
+  "Request": {
+    "URL": "/api/user-instructors/:user-id",
+    "Method": "GET",
+    "Parameters": {
+      "user-id": "51151515",
+      "page!": "5"
+    },
+    "Authentication": true
+  },
+  "Response": {
+    "data": {
+      "is_owner": true,
+      "info": {
+        "current_page": 5,
+        "next": true,
+        "prev": true,
+        "total_instructors": 40,
+        "per_page": 9
+      },
+      "instructors": [
+        {
+          "instructor_id": 1,
+          "instructor_name": "",
+          "instructor_title": "",
+          "instructor_image": ""
+        }
+      ]
+    }
+  }
+}

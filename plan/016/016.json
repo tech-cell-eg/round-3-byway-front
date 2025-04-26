@@ -1,0 +1,39 @@
+{
+  "Checkout With PayPal": {
+    "Request": {
+      "URL": "/api/checkout/",
+      "Method": "POST",
+      "Parameters": {},
+      "body": {
+        "payment-method": "paypal",
+        "payment-info": {
+          "email": ""
+        }
+      },
+      "Authentication": "true"
+    },
+    "Response": {
+      "message": "Successfully OR Failded"
+    }
+  },
+  "Checkout With Card": {
+    "Request": {
+      "URL": "/api/checkout/",
+      "Method": "POST",
+      "Parameters": {},
+      "body": {
+        "payment-method": "card",
+        "payment-info": {
+          "name": "",
+          "number": "",
+          "expiry": "",
+          "cvc": ""
+        }
+      },
+      "Authentication": "true"
+    },
+    "Response": {
+      "message": "Successfully OR Failded"
+    }
+  }
+}
