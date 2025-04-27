@@ -1,0 +1,16 @@
+{
+  "sidebar": {
+    "name": "اسم المستخدم",
+    "shareProfile": "مشاركة الملف الشخصي",
+    "profile": "الملف الشخصي",
+    "myCourses": "دوراتي",
+    "teachers": "المعلمون",
+    "message": "الرسائل",
+    "myReviews": "تقييماتي"
+  },
+  "teachers": {
+    "title": "المعلمون",
+    "sendMessage": "إرسال رسالة",
+    "students": "طلاب"
+  }
+}

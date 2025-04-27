@@ -26,6 +26,7 @@ export default function Home() {
             عربي
           </button>
         </div>
+
         <TopCources />
         <TopInstructors />
       </div>

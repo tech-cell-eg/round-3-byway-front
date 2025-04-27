@@ -12,6 +12,8 @@ import { useTranslation } from 'react-i18next';
 import Login from './components/Login/Login';
 import Home from './pages/Home';
 
+import Userprofile from './pages/Userprofile';
+
 function App() {
   const { i18n } = useTranslation();
 
@@ -32,6 +34,10 @@ function App() {
           { index: true, element: <Home /> },
 
           { path: 'login', element: <Login /> },
+          {
+            path: 'profile',
+            element: <Userprofile />,
+          },
 
           {
             path: 'signup',

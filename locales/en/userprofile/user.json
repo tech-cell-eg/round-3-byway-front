@@ -1,0 +1,16 @@
+{
+  "sidebar": {
+    "name": "User Name",
+    "shareProfile": "Share Profile",
+    "profile": "Profile",
+    "myCourses": "My Courses",
+    "teachers": "Teachers",
+    "message": "Message",
+    "myReviews": "My Reviews"
+  },
+  "teachers": {
+    "title": "Teachers",
+    "sendMessage": "Send Message",
+    "students": "students"
+  }
+}
