@@ -1,9 +1,10 @@
 import { CartProductCard } from './CartProductCard';
 import { CartCourse, CartData } from '@/types/types';
 import { OrderDetails } from './OrderDetails';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CheckOutUi } from './CheckOutUi';
 import { useTranslation } from 'react-i18next';
+import { SuccessPage } from './SuccessPage';
 
 const dummyData: CartData = {
   cartinfo: {
@@ -74,43 +75,55 @@ const dummyData: CartData = {
 export const CartPageLayout = () => {
   const [courses, setCourses] = useState<CartCourse[]>(dummyData.courses);
   const [checkout, setCheckout] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const { t } = useTranslation(['cart/cart']);
+
+  useEffect(() => {
+    console.log(`Checkout: ${checkout}, Success: ${success}`);
+  }, [checkout, success]);
+
+  const cartContent = !success ? (
+    <>
+      <h1 className="text-[32px] font-semibold">{t('pageTitle')}</h1>
+      <section className="flex flex-wrap xl:flex-row w-full justify-between gap-5">
+        <div className="flex flex-col gap-5">
+          <p className="mt-7">
+            {dummyData.cartinfo.count_courses > 1
+              ? `${courses.length} ${t('coursesInCart')}`
+              : `${courses.length} ${t('singleCourse')}`}
+          </p>
+          {courses.length > 0 ? (
+            courses.map((course: CartCourse) => (
+              <CartProductCard
+                key={course.id}
+                course={course}
+                setCourses={setCourses}
+              />
+            ))
+          ) : (
+            <p className="mt-7">{t(['emptyCart'])}</p>
+          )}
+        </div>
+        <OrderDetails
+          details={dummyData.cartinfo}
+          setCheckout={setCheckout}
+          checkout
+          setSuccess={setSuccess}
+        />
+      </section>
+    </>
+  ) : (
+    <SuccessPage />
+  );
 
   return (
     <div className="responsive-primary-padding-x responsive-primary-padding-y">
       {/* SHOPPING CART */}
       {checkout ? (
-        <CheckOutUi />
+        <CheckOutUi setCheckout={setCheckout} setSuccess={setSuccess} />
       ) : (
-        <>
-          <h1 className="text-[32px] font-semibold">{t('pageTitle')}</h1>
-          <section className="flex w-full justify-between">
-            <div className="flex flex-col gap-5">
-              <p className="mt-7">
-                {dummyData.cartinfo.count_courses > 1
-                  ? `${courses.length} ${t('coursesInCart')}`
-                  : `${courses.length} ${t('singleCourse')}`}
-              </p>
-              {courses.length > 0 ? (
-                courses.map((course: CartCourse) => (
-                  <CartProductCard
-                    key={course.id}
-                    course={course}
-                    setCourses={setCourses}
-                  />
-                ))
-              ) : (
-                <p className="mt-7">{t(['emptyCart'])}</p>
-              )}
-            </div>
-            <OrderDetails
-              details={dummyData.cartinfo}
-              setCheckout={setCheckout}
-              checkout
-            />
-          </section>
-        </>
+        cartContent
       )}
     </div>
   );
