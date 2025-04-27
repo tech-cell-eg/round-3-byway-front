@@ -20,6 +20,7 @@ i18next
       'cart/cart',
       'home/testimonial',
       'InstructorPage/headerinfo',
+      'coursePage/MoreCourses',
     ],
 
     defaultNS: 'common',
