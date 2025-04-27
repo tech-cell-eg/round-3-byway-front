@@ -3,10 +3,11 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiChevronDown, FiChevronUp, FiStar } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 const filters = [
   { id: 'rating', label: 'Rating' },
-  { id: 'sections', label: 'Number of Sections' },
+  { id: 'sections', label: 'Sections' },
   { id: 'price', label: 'Price' },
   { id: 'category', label: 'Category' },
 ];
@@ -21,7 +22,7 @@ function Filter({ onReset }: FilterProps) {
   const [selectedSections, setSelectedSections] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([50, 300]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const categories = ['Web Development', 'Design', 'Marketing', 'Data Science'];
+  const categories = ['web_development', 'design', 'marketing', 'data_science'];
 
   const toggleSection = (id: string) => {
     setOpenSection(prev => (prev === id ? '' : id));
@@ -38,6 +39,7 @@ function Filter({ onReset }: FilterProps) {
       setSelectedList([...selectedList, value]);
     }
   };
+  const { t } = useTranslation(['Category/filter']);
 
   const reset = () => {
     setSelectedRating(null);
@@ -50,12 +52,12 @@ function Filter({ onReset }: FilterProps) {
   return (
     <div className="w-full max-w-xs p-6 space-y-6">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold text-gray-800">Filters</h2>
+        <h2 className="text-xl font-bold text-gray-800">{t('filter.title')}</h2>
         <button
           onClick={reset}
           className="text-sm text-gray-500 hover:text-gray-700"
         >
-          Reset
+          {t('filter.reset')}
         </button>
       </div>
 
@@ -66,7 +68,7 @@ function Filter({ onReset }: FilterProps) {
               onClick={() => toggleSection(id)}
               className="w-full text-left font-semibold text-base text-gray-800 mb-3 flex items-center"
             >
-              {label}
+              {t(`filter.${label.toLowerCase()}`) || label}
               {openSection === id ? (
                 <FiChevronUp className="ml-2 text-gray-600" />
               ) : (
@@ -125,7 +127,7 @@ function Filter({ onReset }: FilterProps) {
                         className="h-5 w-5 shadow-md"
                       />
                       <label htmlFor={range} className="text-sm text-gray-700">
-                        {range}
+                        {t('filter.range')}
                       </label>
                     </div>
                   ))}
@@ -135,7 +137,9 @@ function Filter({ onReset }: FilterProps) {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <span className="text-lg text-gray-700">Min</span>
+                        <span className="text-lg text-gray-700">
+                          {t('filter.min')}
+                        </span>
                         <input
                           type="checkbox"
                           id="price"
@@ -145,7 +149,9 @@ function Filter({ onReset }: FilterProps) {
                         />
                       </div>
                       <div className="flex items-center">
-                        <span className="text-lg text-gray-700">Max</span>
+                        <span className="text-lg text-gray-700">
+                          {t('filter.max')}
+                        </span>
                         <input
                           type="checkbox"
                           id="price"
@@ -164,7 +170,7 @@ function Filter({ onReset }: FilterProps) {
                         console.log('Apply Price Filter:', priceRange)
                       }
                     >
-                      Apply Filter
+                      {t('filter.apply')}
                     </Button>
                   </div>
                 )}
@@ -186,7 +192,7 @@ function Filter({ onReset }: FilterProps) {
                         className="h-5 w-5 shadow-md"
                       />
                       <label htmlFor={cat} className="text-sm text-gray-700">
-                        {cat}
+                        {t(`filter.${cat}`)}
                       </label>
                     </div>
                   ))}

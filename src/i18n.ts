@@ -16,9 +16,11 @@ i18next
       'home/topInstructors',
       'Category/mainPage',
       'Category/allCourses',
+      'Category/filter',
       'home/banner',
       'cart/cart',
       'home/testimonial',
+      'instructor/HeaderLinks',
     ],
 
     defaultNS: 'common',

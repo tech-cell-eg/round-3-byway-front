@@ -15,6 +15,7 @@ import {
 } from 'react-icons/fa';
 import QRCode from 'react-qr-code';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { useTranslation } from 'react-i18next';
 //import img from '../../assets/InstructorImg.png';
 
 export default function ShareProfile() {
@@ -33,6 +34,7 @@ export default function ShareProfile() {
     navigator.clipboard.writeText(url);
     alert('Link copied to clipboard!');
   };
+  const { t } = useTranslation(['Instructor/HeaderLinks']);
 
   return (
     <div className="flex justify-end p-6">
@@ -53,7 +55,8 @@ export default function ShareProfile() {
                 variant="outline"
                 className="flex items-center justify-center gap-2 w-[100%] me-24 border-1 border-gray-300 rounded-[10px] bg-white text-black hover:bg-gray-100 !px-1"
               >
-                <FaFacebookF className="text-blue-600" /> Facebook
+                <FaFacebookF className="text-blue-600" />{' '}
+                {t('profile.facebook')}
               </Button>
             </FacebookShareButton>
 
@@ -62,7 +65,7 @@ export default function ShareProfile() {
                 variant="outline"
                 className="flex items-center justify-center gap-2 w-[100%] me-24 border-1 border-gray-300 rounded-[10px] bg-white text-black hover:bg-gray-100 !px-3"
               >
-                <FaTwitter className="text-blue-400" /> Twitter
+                <FaTwitter className="text-blue-400" /> {t('profile.twitter')}
               </Button>
             </TwitterShareButton>
 
@@ -71,7 +74,8 @@ export default function ShareProfile() {
                 variant="outline"
                 className="flex items-center justify-center gap-2 w-[99%] me-19  ps-10 border-1 border-gray-300 rounded-[10px] bg-white text-black hover:bg-gray-100 "
               >
-                <FaWhatsapp className="text-green-500" /> WhatsApp
+                <FaWhatsapp className="text-green-500" />{' '}
+                {t('profile.whatsapp')}
               </Button>
             </WhatsappShareButton>
 
@@ -80,7 +84,7 @@ export default function ShareProfile() {
               className="flex items-center justify-center gap-2 w-[70%] border border-gray-300 rounded-[10px] bg-white text-black hover:bg-gray-100"
               onClick={copyToClipboard}
             >
-              <FaLink /> Copy URL
+              <FaLink /> {t('profile.copyURL')}
             </Button>
             {/**youtube & twitter links */}
 
@@ -89,7 +93,7 @@ export default function ShareProfile() {
               className="flex items-center ms-20 justify-center gap-2 w-[70%] border border-gray-300 rounded-[10px] bg-white text-black hover:bg-gray-100"
               onClick={() => window.open('https://youtube.com', '_blank')}
             >
-              Go to YouTube
+              {t('profile.goToYouTube')}
             </Button>
 
             <Button
@@ -97,7 +101,7 @@ export default function ShareProfile() {
               className="flex items-center ms-20 justify-center gap-2 w-[70%] border border-gray-300 rounded-[10px] bg-white text-black hover:bg-gray-100"
               onClick={() => window.open('https://twitter.com', '_blank')}
             >
-              Go to Twitter
+              {t('profile.goToTwitter')}
             </Button>
 
             <Button
@@ -105,7 +109,7 @@ export default function ShareProfile() {
               className="flex items-center justify-center gap-2 w-[70%] border border-gray-300 rounded-[10px] bg-white text-black hover:bg-gray-100"
               onClick={() => setShowQR(prev => !prev)}
             >
-              <FaQrcode /> {showQR ? 'Hide QR' : 'Show QR'}
+              <FaQrcode /> {showQR ? t('profile.hideQR') : t('profile.showQR')}
             </Button>
 
             {/* QR Code */}
