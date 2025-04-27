@@ -29,6 +29,7 @@ import {
   UserRound,
   BookOpenText,
   LayoutDashboard,
+  Check,
 } from 'lucide-react';
 
 export type IconName =
@@ -60,7 +61,8 @@ export type IconName =
   | 'user'
   | 'book-open'
   | 'dashboard'
-  | 'logout';
+  | 'logout'
+  | 'check';
 
 const iconMap: Record<IconName, LucideIcon> = {
   x: X,
@@ -92,6 +94,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   user: UserRound,
   'book-open': BookOpenText,
   dashboard: LayoutDashboard,
+  check: Check,
 };
 
 interface IconProps {

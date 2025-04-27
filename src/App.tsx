@@ -15,6 +15,8 @@ import Home from './pages/Home';
 import { CartPage } from './pages/CartPage';
 import InstructorPage from './components/InstructorPage/Instructor';
 import CourseDetails from './pages/CourseDetails';
+import { Provider } from 'react-redux';
+import { store } from './Redux/store';
 
 function App() {
   const { i18n } = useTranslation();
@@ -67,9 +69,11 @@ function App() {
   );
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </Provider>
   );
 }
 

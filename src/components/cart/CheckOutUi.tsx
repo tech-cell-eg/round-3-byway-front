@@ -68,7 +68,11 @@ const dummyData: CartData = {
   ],
 };
 
-export const CheckOutUi = () => {
+type Props = {
+  setCheckout: React.Dispatch<React.SetStateAction<boolean>>;
+  setSuccess: React.Dispatch<React.SetStateAction<boolean>>;
+};
+export const CheckOutUi = ({ setCheckout, setSuccess }: Props) => {
   return (
     <div>
       <h1 className="text-[32px] font-semibold mb-5">Checkout Page</h1>
@@ -77,7 +81,11 @@ export const CheckOutUi = () => {
         <div className="flex-1">
           <Payment />
         </div>
-        <OrderDetails details={dummyData.cartinfo} setCheckout={() => {}} />
+        <OrderDetails
+          details={dummyData.cartinfo}
+          setCheckout={setCheckout}
+          setSuccess={setSuccess}
+        />
       </div>
     </div>
   );
