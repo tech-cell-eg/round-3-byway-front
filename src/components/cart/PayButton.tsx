@@ -1,6 +1,7 @@
 import { useAppSelector } from '@/Redux/reduxHooks';
 // import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   setCheckout: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,6 +11,7 @@ type Props = {
 
 const PayButton = ({ checkout, setCheckout, setSuccess }: Props) => {
   const [payUnlock, setPayUnlock] = useState(false);
+  const { t } = useTranslation(['cart/cart']);
 
   const { cardName, cardNumber, expirationDate, cvv } = useAppSelector(
     state => state.creditCard
@@ -83,7 +85,7 @@ const PayButton = ({ checkout, setCheckout, setSuccess }: Props) => {
           className="bg-button-tertiary text-button-primary rounded-[8px] py-3 text-body-small cursor-pointer w-full"
           onClick={() => setCheckout(true)}
         >
-          Procced to checkout
+          {t('info.proceedToCheckout')}
         </button>
       ) : (
         <button
@@ -91,7 +93,7 @@ const PayButton = ({ checkout, setCheckout, setSuccess }: Props) => {
           disabled={!payUnlock}
           onClick={payment}
         >
-          Pay
+          {t('info.pay')}
         </button>
       )}
     </div>
