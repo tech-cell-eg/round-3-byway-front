@@ -8,7 +8,7 @@ import { Button } from '../ui/button';
 const Banner = () => {
   const { t } = useTranslation(['home/banner']);
   const navigate = useNavigate();
-  const isLoggedIn = localStorage.getItem('user') !== null;
+  const isLoggedIn = localStorage.getItem('userName') !== null;
 
   const handleInstructorClick = () => {
     if (isLoggedIn) {

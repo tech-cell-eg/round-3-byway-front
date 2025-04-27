@@ -18,6 +18,7 @@ i18next
       'Category/allCourses',
       'home/banner',
     ],
+
     defaultNS: 'common',
     debug: true,
     interpolation: {

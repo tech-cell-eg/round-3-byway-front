@@ -5,13 +5,12 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { SignUp } from './pages/SignUp';
 import ProtAuth from './components/Auth/ProtAuth';
 import { InstructorSignUp } from './pages/InstructorSignUp';
-
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Login from './components/Login/Login';
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import Home from './pages/Home';
-//import { SignUp } from './pages/SignUp';
+import InstructorPage from './components/InstructorPage/Instructor';
 
 function App() {
   const { i18n } = useTranslation();
@@ -46,6 +45,10 @@ function App() {
           {
             path: 'signup-instructor',
             element: <InstructorSignUp />,
+          },
+          {
+            path: 'instructor',
+            element: <InstructorPage />,
           },
           { path: 'category', element: <CategoryPage /> },
         ],
