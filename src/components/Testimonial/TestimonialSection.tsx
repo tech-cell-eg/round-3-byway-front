@@ -17,15 +17,20 @@ const TestimonialSection = () => {
   const handleNext = () => carouselRef.current?.scrollNext();
 
   return (
-    <div className="items-center p-8 bg-[#F8FAFC]">
-      <div className="flex justify-between items-center">
-        <p className="text-left text-2xl font-bold">{t('testTitle')}</p>
-        <TestButtons onPrev={handlePrev} onNext={handleNext} />
+    <div className="w-full p-8 bg-[#F8FAFC]">
+      <div>
+        <div className="flex justify-between items-center">
+          <p className="text-left text-3xl font-bold">
+            {t('testTitle')} <br />
+            {t('testTitle2')}
+          </p>
+          <TestButtons onPrev={handlePrev} onNext={handleNext} />
+        </div>
+        <TestSlides
+          testimonials={testimonials}
+          setCarouselRef={api => (carouselRef.current = api)}
+        />
       </div>
-      <TestSlides
-        testimonials={testimonials}
-        setCarouselRef={api => (carouselRef.current = api)}
-      />
     </div>
   );
 };
