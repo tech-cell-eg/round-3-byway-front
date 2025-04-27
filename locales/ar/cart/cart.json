@@ -8,6 +8,8 @@
     "price": "السعر",
     "tax": "الضريبة",
     "discount": "خصم",
-    "grandTotal": "المجموع الكلي"
+    "grandTotal": "المجموع الكلي",
+    "proceedToCheckout": "المتابعة للدفع",
+    "pay": "ادفع"
   }
 }
