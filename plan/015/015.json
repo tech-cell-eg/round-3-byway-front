@@ -1,0 +1,64 @@
+{
+  "Apply Coupon (Success)": {
+    "Request": {
+      "URL": "/api/apply-coupon/",
+      "Method": "GET",
+      "Parameters": {
+        "coupon!": "5fsdfd151651"
+      },
+      "Authentication": "true"
+    },
+    "Response": {
+      "message": "success",
+      "data": {
+        "cartinfo": {
+          "count_courses": 6,
+          "price": "290.00",
+          "discount": "150.00",
+          "tax": "20.00",
+          "total": "160.00",
+          "coupons": [
+            {
+              "coupons": "5fsdfd151651",
+              "discount-percentage": 50,
+              "after-discount": "10.00"
+            }
+          ]
+        },
+        "courses (like in the cart)": [
+          {
+            "id": 1,
+            "course_name": "",
+            "instructor_name": "",
+            "rating": {
+              "count": 250,
+              "rating": 3.5
+            },
+            "duration": "10:30:00",
+            "image": "",
+            "lecture_count": 113,
+            "level": "",
+            "price": {
+              "current": 200,
+              "initial": 200,
+              "discount": "0%"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "Apply Coupon (Failed)": {
+    "Request": {
+      "URL": "/api/apply-coupon/",
+      "Method": "GET",
+      "Parameters": {
+        "coupon!": "5fsdfd151651"
+      },
+      "Authentication": "true"
+    },
+    "Response": {
+      "message": "failed -  the coupon is incorrect or no longer valid"
+    }
+  }
+}

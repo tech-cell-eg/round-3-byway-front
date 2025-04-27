@@ -1,0 +1,26 @@
+{
+  "Request": {
+    "URL": "/api/certificate/:certificate_id",
+    "Method": "GET",
+    "Parameters": {
+      "certificate_id": "12345"
+    },
+    "Authentication": false
+  },
+  "Response": {
+    "data": {
+      "status": "valid",
+      "certificate_id": "12345",
+      "user": {
+        "user_name": "John Doe",
+        "user_id": "6156156656156135"
+      },
+      "course": {
+        "course_title": "Introduction to Python",
+        "course_id": "131"
+      },
+      "duration": "10 hours",
+      "issued_date": "2025-04-20"
+    }
+  }
+}

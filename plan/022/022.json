@@ -1,0 +1,49 @@
+{
+  "get reviews": {
+    "Request": {
+      "URL": "/api/instructor-reviews/:instructor-id",
+      "Method": "GET",
+      "Parameters": {
+        "page!": "5",
+        "instructor-id": "51151515"
+      },
+      "Authentication": false
+    },
+    "Response": {
+      "data": {
+        "info": {
+          "current_page": 5,
+          "next": "true"
+        },
+        "rating": {
+          "total": 4.6,
+          "reviews_count": 14230,
+          "stars": {
+            "5": 80,
+            "4": 10,
+            "3": 5,
+            "2": 3,
+            "1": 2
+          }
+        },
+        "reviews": [
+          {
+            "id": 1,
+            "user": {
+              "user_id": "",
+              "name": "",
+              "image": ""
+            },
+            "course": {
+              "id": 1561651,
+              "name": "User Experience"
+            },
+            "rating": 3,
+            "review_body": "",
+            "review_date": ""
+          }
+        ]
+      }
+    }
+  }
+}

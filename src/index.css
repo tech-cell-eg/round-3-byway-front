@@ -11,38 +11,41 @@
 
   /* Backgrounds */
   --color-surface-light-primary: #fff;
-  --color-surface-light-secondary: #f8fafc;
 
   /* statistics section */
+  --color-surface-light-secondary: #f8fafc;
   --color-surface-dark-primary: #020617;
   --color-surface-dark-secondary: #0f172a;
   --color-surface-footer: #1e293b;
-  --color-surface-highlight: #e0f2fe;
 
   /* top-categories and progress bar bg */
+  --color-surface-highlight: #e0f2fe;
+
+  /* overlays */
+  --color-overlay: rgb(0 0 0 / 75%);
 
   /* font colors */
-  --color-content-light: #fff;
 
   /* white-color text */
-  --color-content-dark: #334155;
+  --color-content-light: #fff;
 
   /* nav links */
-  --color-content-primary: #0f172a;
+  --color-content-dark: #334155;
 
   /* headings */
-  --color-content-secondary: #334155;
+  --color-content-primary: #0f172a;
 
   /* course info */
-  --color-content-tertiary: #f1f5f9;
+  --color-content-secondary: #334155;
 
   /* footer menu headings */
-  --color-footer-quaternary: #cbd5e1;
+  --color-content-tertiary: #f1f5f9;
 
   /* footer links */
-  --color-placeholder: #94a3b8;
+  --color-footer-quaternary: #cbd5e1;
 
   /* input's placeholder */
+  --color-placeholder: #94a3b8;
 
   /* buttons */
   --color-button-primary: #fff;
@@ -103,21 +106,42 @@
   --radius-circle: 100%;
 
   /* box shadow */
-  --inset-primary: 0px 0px 8px 0px rgb(59 130 246 / 35%);
 
   /* course card */
-  --inset-secondary: 0px 11px 8px 0px rgb(59 130 246 / 25%);
+  --shadow-primary: 0px 0px 8px 0px rgb(59 130 246 / 35%);
 
   /* course card on hover */
+  --shadow-secondary: 0px 11px 8px 0px rgb(59 130 246 / 25%);
+
+  /* dropdowns */
+  --shadow-panel: 0 16px 29px -8px rgb(115 115 115 / 69%);
 
   /* duration */
   --transition-duration-short: 200ms;
   --transition-duration-medium: 350ms;
   --transition-duration-large: 500ms;
+
+  /* animations */
+  --animate-horizontal-move: horizontal-move 1s ease-in-out infinite;
+
+  /* keyframes */
+  @keyframes horizontal-move {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(6px);
+    }
+  }
 }
 
-/* :root {
-  --radius: 0.625rem;
+:root {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  /* --radius: 0.625rem;
   --background: oklch(100% 0 0deg);
   --foreground: oklch(14.5% 0 0deg);
   --card: oklch(100% 0 0deg);
@@ -149,7 +173,8 @@
   --sidebar-accent-foreground: oklch(20.5% 0 0deg);
   --sidebar-border: oklch(92.2% 0 0deg);
   --sidebar-ring: oklch(70.8% 0 0deg); 
-} */
+ */
+}
 
 /* .dark {
   --background: oklch(14.5% 0 0deg);

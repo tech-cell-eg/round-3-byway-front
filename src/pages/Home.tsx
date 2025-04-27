@@ -2,18 +2,20 @@ import TestimonialSection from '@/components/Testimonial/TestimonialSection';
 import TopCources from '@/components/TopCourses/TopCourses';
 import TopInstructors from '@/components/TopInstructors/TopInstructors';
 import Banner from '@/components/Banner/banner';
-import { useTranslation } from 'react-i18next';
+import HeroSection from './HeroSection';
+// import { useTranslation } from 'react-i18next';
 
 export default function Home() {
-  const { t, i18n } = useTranslation(['home/home']);
+  // const { t, i18n } = useTranslation(['home/home']);
 
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen">
+        {/*
         <h1>{t('home:welcome')}</h1>
         <p>{t('home:description')}</p>
 
-        <div className="flex gap-2 my-4">
+         <div className="flex gap-2 my-4">
           <button
             onClick={() => i18n.changeLanguage('en')}
             className="px-4 py-2 bg-blue-500 text-white rounded"
@@ -26,7 +28,8 @@ export default function Home() {
           >
             عربي
           </button>
-        </div>
+        </div> */}
+        <HeroSection />
         <TopCources />
         <TopInstructors />
         <Banner />

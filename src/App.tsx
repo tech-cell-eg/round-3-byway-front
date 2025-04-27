@@ -10,7 +10,12 @@ import { useTranslation } from 'react-i18next';
 import Login from './components/Login/Login';
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import Home from './pages/Home';
+//import { SignUp } from './pages/SignUp';
+import { CartPage } from './pages/CartPage';
 import InstructorPage from './components/InstructorPage/Instructor';
+import CourseDetails from './pages/CourseDetails';
+import { Provider } from 'react-redux';
+import { store } from './Redux/store';
 
 function App() {
   const { i18n } = useTranslation();
@@ -30,6 +35,7 @@ function App() {
         element: <Layout />,
         children: [
           { index: true, element: <Home /> },
+          { path: 'coursespage', element: <CourseDetails /> },
 
           { path: 'login', element: <Login /> },
           { path: 'allCourses', element: <CategoryPage /> },
@@ -46,11 +52,15 @@ function App() {
             path: 'signup-instructor',
             element: <InstructorSignUp />,
           },
+          { path: 'category', element: <CategoryPage /> },
+          {
+            path: 'cart',
+            element: <CartPage />,
+          },
           {
             path: 'instructor',
             element: <InstructorPage />,
           },
-          { path: 'category', element: <CategoryPage /> },
         ],
       },
     ]
@@ -58,9 +68,11 @@ function App() {
   );
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </Provider>
   );
 }
 
