@@ -7,12 +7,12 @@ import { useNavigate } from 'react-router-dom';
 const Banner = () => {
   const { t, i18n } = useTranslation(['home/banner']);
   const navigate = useNavigate();
-  const isLoggedIn = localStorage.getItem('userName') !== null;
+  const isLoggedIn = localStorage.getItem('user') !== null;
   const isRTL = i18n.language === 'ar';
 
   const handleInstructorClick = () => {
     if (isLoggedIn) {
-      navigate('/'); // instructor page
+      navigate('/Instructor'); // instructor page
     } else {
       navigate('/SignUp'); // login page
     }
