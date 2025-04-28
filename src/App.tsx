@@ -15,9 +15,9 @@ import InstructorPage from './components/InstructorPage/Instructor';
 import CourseDetails from './pages/CourseDetails';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
-import ProfilePage from './pages/ProfilePage';
 import DashboardLayout from './components/Dashboard/DashboardLayout';
 import CourseLearingPage from './pages/CourseLearingPage';
+import PersonalInformation from './components/Profile/PersonalInformation';
 import { ReduxInitializer } from './Redux/reduxInitializer';
 
 function App() {
@@ -43,6 +43,7 @@ function App() {
 
           { path: 'login', element: <Login /> },
           { path: 'allCourses', element: <CategoryPage /> },
+          { path: 'personalInformation', element: <PersonalInformation /> },
 
           {
             path: 'signup',
@@ -56,7 +57,6 @@ function App() {
             path: 'signup-instructor',
             element: <InstructorSignUp />,
           },
-          { path: 'category', element: <CategoryPage /> },
           {
             path: 'cart',
             element: <CartPage />,
@@ -64,10 +64,6 @@ function App() {
           {
             path: 'instructor',
             element: <InstructorPage />,
-          },
-          {
-            path: 'profilepage',
-            element: <ProfilePage />,
           },
         ],
       },

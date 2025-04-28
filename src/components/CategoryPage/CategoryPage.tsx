@@ -3,9 +3,12 @@ import Filter from './Filter';
 import { useTranslation } from 'react-i18next';
 import PopularMentors from './PopularMentors';
 import FeaturedCourses from './FeaturedCourses';
+import { useScrollToTop } from '../CommonComponents/useScrollToTop';
 
 export default function CategoryPage() {
   const { t } = useTranslation('Category/mainPage');
+
+  useScrollToTop();
 
   return (
     <>

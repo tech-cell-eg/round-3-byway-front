@@ -37,17 +37,9 @@ export default function TopInstructors() {
           const instructorData: Iinstructor = {
             id2: index + 1,
             name: instructor.title,
-            description: instructor.description,
-            price: instructor.price,
-            lectures: instructor.lecs,
-            lecturesName: 10,
-            hours: 10,
-            hoursName: instructor.hours,
-            purchased: 100,
+            description: 'Intro to AI',
             students: instructor.students,
             numOfStu: 100,
-            level: instructor.level,
-            small_desc: '',
             sku: 'sku123',
             reviews_count: instructor.rating,
             reviews_average: 4.5,
@@ -56,8 +48,7 @@ export default function TopInstructors() {
             discount: '',
             category: { id: 1, name: instructor.category },
             images: [{ image: instructor.instructorImage ?? '' }],
-            instructorName: instructor.instructorName,
-            instructorTitle: instructor.instructorTitle,
+            instructorName: 'Sarah Johnson',
             instructorImage: instructor.instructorImage,
           };
 

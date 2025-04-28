@@ -11,7 +11,7 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar';
 import logoImg from '@/assets/logo.png';
-import appName from '@/constants/appName';
+import appName from '@/components/constants/appName';
 import { Link, useLocation } from 'react-router';
 import {
   DropdownMenu,

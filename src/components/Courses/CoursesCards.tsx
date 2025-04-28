@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { CourseCard } from '../CommonComponents/CourseCard';
-import SortedBy from './SortedBy';
 import { ICourse } from '@/types/types';
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react'; // icons
@@ -9,32 +8,28 @@ import {
   PaginationContent,
   PaginationItem,
 } from '@/components/ui/pagination';
-import { useScrollToTop } from '../CommonComponents/useScrollToTop';
+import SortedBy from '../CategoryPage/SortedBy';
+import { Input } from '@/components/ui/input';
+import { Search } from 'lucide-react';
 
 interface ITranslatedCourse {
   title: string;
   description: string;
-  price: string;
-  lecs: string;
-  hours: string;
   rating: string;
-  level: string;
-  students: string;
   category: string;
 }
 
-export default function AllCourses() {
+export default function CoursesCards() {
   const { t } = useTranslation('Category/allCourses');
 
   const courses = t('courses', { returnObjects: true }) as Record<
     string,
     ITranslatedCourse
   >;
-  useScrollToTop();
 
   const courseEntries = Object.entries(courses);
 
-  //  Pagination setup
+  // Pagination setup
   const itemsPerPage = 9;
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(courseEntries.length / itemsPerPage);
@@ -47,29 +42,33 @@ export default function AllCourses() {
 
   return (
     <>
-      <div className=" md:px-7">
-        <div className="flex w-full justify-end pt-14">
-          <p className="text-content-primary pe-3">{t('sortBy')}</p>
-          <span className="flex  !rounded-lg border !border-content-primary">
-            <SortedBy />
-          </span>
+      <div className="md:px-7">
+        <div className="flex w-full justify-between pt-14">
+          <div className="w-2/3 md:w-1/2 lg:w-1/3">
+            <div className="relative w-full">
+              <Input
+                type="email"
+                placeholder={t('search')}
+                className="text-content-dark border-border-light"
+              />
+              <Search className="absolute end-3 top-1/2 h-5 w-5 -translate-y-1/2 text-content-dark" />
+            </div>
+          </div>
+          <div className="flex">
+            <p className="text-content-primary pe-3">{t('sortBy')}</p>
+            <span className="flex !rounded-md border !border-content-primary">
+              <SortedBy />
+            </span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 pt-4 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-2">
           {paginatedCourses.map(([key, course], index) => {
+            // Create courseData without lectures and any other optional fields
             const courseData: ICourse = {
               id2: startIndex + index + 1,
               name: 'Beginner’s Guide to Design',
-              description: course.description + 'Ronald Richards',
-              price: course.price,
-              lectures: course.lecs,
-              lecturesName: 10,
-              hours: 10,
-              level: course.level,
-              students: course.students,
-              numOfStu: 100,
-              hoursName: course.hours,
-              purchased: 100,
+              description: course.description + ' Ronald Richards',
               small_desc: '',
               sku: 'sku123',
               reviews_count: course.rating,
@@ -77,14 +76,20 @@ export default function AllCourses() {
               reviews: [],
               has_discount: false,
               discount: '',
-              category: {
-                id: 1,
-                name: course.category || 'Beginner’s Guide to Design',
-              },
+              category: { id: 1, name: course.category || '' },
               images: [{ image: '/path/to/image.jpg' }],
             };
 
-            return <CourseCard key={key} course={courseData} />;
+            return (
+              <div key={key}>
+                {/* Render CourseCard with percentage prop */}
+                <CourseCard
+                  key={key}
+                  course={courseData}
+                  percentage={70} // Pass a fixed percentage value
+                />
+              </div>
+            );
           })}
         </div>
 

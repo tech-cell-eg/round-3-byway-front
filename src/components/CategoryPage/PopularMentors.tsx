@@ -39,17 +39,9 @@ export default function PopularMentors() {
           const instructorData: Iinstructor = {
             id2: index + 1,
             name: instructor.title,
-            description: instructor.description,
-            price: instructor.price,
-            lectures: instructor.lecs,
-            lecturesName: 10,
-            hours: 10,
-            hoursName: instructor.hours,
-            purchased: 100,
+            description: 'UI/UX Designer',
             students: instructor.students,
             numOfStu: 100,
-            level: instructor.level,
-            small_desc: '',
             sku: 'sku123',
             reviews_count: instructor.rating,
             reviews_average: 4.5,
@@ -58,8 +50,7 @@ export default function PopularMentors() {
             discount: '',
             category: { id: 1, name: instructor.category },
             images: [{ image: instructor.instructorImage ?? '' }],
-            instructorName: instructor.instructorName,
-            instructorTitle: instructor.instructorTitle,
+            instructorName: 'Ronald Richards',
             instructorImage: instructor.instructorImage,
           };
 

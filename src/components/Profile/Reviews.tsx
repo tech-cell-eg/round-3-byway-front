@@ -108,7 +108,7 @@ const Reviews = () => {
   };
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 lg:ms-7">
       <h2 className="text-xl font-bold mb-6">Reviews ({reviews.length})</h2>
 
       <div className="space-y-6">
