@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Iinstructor } from '@/types/types';
 import { InstructorCard } from '../CommonComponents/InstructorCard';
+import { useGetQuery } from '@/api/useGetQuery';
 
 interface ITranslatedInstructor {
   title: string;
@@ -24,6 +25,41 @@ export default function TopInstructors() {
     ITranslatedInstructor
   >;
   const instructorEntries = Object.entries(instructors).slice(0, 5);
+  //get data from api
+  interface ApiResponse<T> {
+    data: T;
+    status: number;
+    // other common API response fields
+  }
+
+  interface TopInstructors {
+    instructors: Array<{
+      id: string;
+      name: string;
+      rating: number;
+      coursesCount: number;
+      imageUrl: string;
+    }>;
+  }
+
+  const {
+    data: response,
+    isLoading,
+    isError,
+  } = useGetQuery<ApiResponse<TopInstructors>>(
+    `/instructors/top`,
+    `/instructors/top`
+  );
+
+  console.log(response?.data);
+  if (isLoading) return <div className="text-center py-8">جاري التحميل...</div>;
+
+  if (isError || !response?.data)
+    return (
+      <div className="text-center py-8 text-red-500">
+        حدث خطأ في تحميل البيانات
+      </div>
+    );
 
   return (
     <div className="responsive-primary-padding-x w-full responsive-secondary-padding-y">
