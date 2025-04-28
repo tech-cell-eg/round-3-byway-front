@@ -6,7 +6,7 @@ function TeachOnButton() {
   const { t } = useTranslation(['header']);
 
   return (
-    <Link to="/" className="text-body-small hover:underline">
+    <Link to="/" dir="rtl" className="text-body-small hover:underline">
       {t('becomeInstructorButton')} {appName}
     </Link>
   );
