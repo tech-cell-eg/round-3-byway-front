@@ -17,6 +17,7 @@ import CourseDetails from './pages/CourseDetails';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
 import ProfilePage from './pages/ProfilePage';
+import DashboardLayout from './components/Dashboard/DashboardLayout';
 import CourseLearingPage from './pages/CourseLearingPage';
 
 function App() {
@@ -67,6 +68,16 @@ function App() {
           {
             path: 'profilepage',
             element: <ProfilePage />,
+          },
+        ],
+      },
+      {
+        path: 'dashboard',
+        element: <DashboardLayout />,
+        children: [
+          {
+            index: true,
+            element: <h1>Dashboard</h1>,
           },
         ],
       },
