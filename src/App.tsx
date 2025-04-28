@@ -17,7 +17,7 @@ import InstructorPage from './components/InstructorPage/Instructor';
 import CourseDetails from './pages/CourseDetails';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
-import DashboardLayout from './components/Dashboard/dashboardLayout';
+import DashboardLayout from './components/Dashboard/DashboardLayout';
 
 function App() {
   const { i18n } = useTranslation();
