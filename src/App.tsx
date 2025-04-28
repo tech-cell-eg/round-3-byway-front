@@ -10,7 +10,6 @@ import { useTranslation } from 'react-i18next';
 import Login from './components/Login/Login';
 import CategoryPage from './components/CategoryPage/CategoryPage';
 import Home from './pages/Home';
-//import { SignUp } from './pages/SignUp';
 import { CartPage } from './pages/CartPage';
 import InstructorPage from './components/InstructorPage/Instructor';
 import CourseDetails from './pages/CourseDetails';
@@ -19,6 +18,7 @@ import { store } from './Redux/store';
 import DashboardLayout from './components/Dashboard/DashboardLayout';
 import CourseLearingPage from './pages/CourseLearingPage';
 import PersonalInformation from './components/Profile/PersonalInformation';
+import { ReduxInitializer } from './Redux/reduxInitializer';
 
 function App() {
   const { i18n } = useTranslation();
@@ -83,6 +83,7 @@ function App() {
 
   return (
     <Provider store={store}>
+      <ReduxInitializer />
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>
