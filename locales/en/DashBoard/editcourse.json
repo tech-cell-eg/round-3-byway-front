@@ -1,0 +1,21 @@
+{
+    "editCourse": {
+      "courseDetails": "Course Details",
+      "courseName": "Course Name",
+      "videoUrl": "Video URL",
+      "videoUrlPlaceholder": "Enter video URL",
+      "imageUrl": "Image URL",
+      "imageUrlPlaceholder": "Enter image URL ",
+      "description": "Description",
+      "descriptionPlaceholder": "Enter course description...",
+      "price": "Course Price",
+      "pricePlaceholder": "e.g., $199.00",
+      "discount": "Discount Percentage (Optional)",
+      "discountPlaceholder": "e.g., 20%"
+    },
+    "common": {
+      "save": "Save",
+      "cancel": "Cancel"
+    }
+  }
+  

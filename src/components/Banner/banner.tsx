@@ -20,7 +20,7 @@ const Banner = () => {
 
   const handleStudentClick = () => {
     if (isLoggedIn) {
-      navigate('/'); //course page
+      navigate('/coursespage'); //course page
     } else {
       navigate('/SignUp'); // login page
     }
@@ -64,7 +64,7 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* Courses */}
+        {/* Students */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-40 max-w-5xl w-full">
           <img
             src={manglasses}

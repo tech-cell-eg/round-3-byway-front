@@ -21,6 +21,7 @@ i18next
       'home/testimonial',
       'InstructorPage/headerinfo',
       'coursePage/MoreCourses',
+      'DashBoard/editCourseDetailsPage',
     ],
 
     defaultNS: 'common',

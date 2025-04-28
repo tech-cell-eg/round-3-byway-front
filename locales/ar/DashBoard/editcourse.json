@@ -1,0 +1,20 @@
+{
+  "editCourse": {
+    "courseDetails": "تفاصيل الدورة",
+    "courseName": "اسم الدورة",
+    "videoUrl": "رابط الفيديو",
+    "videoUrlPlaceholder": "ادخل رابط الفيديو",
+    "imageUrl": "رابط صورة",
+    "imageUrlPlaceholder": "ادخل رابط الصورة",
+    "description": "الوصف",
+    "descriptionPlaceholder": "ادخل وصف الدورة...",
+    "price": "سعر الدورة",
+    "pricePlaceholder": "مثلاً: 199 دولار",
+    "discount": "نسبة الخصم (اختياري)",
+    "discountPlaceholder": "مثلاً: 20٪"
+  },
+  "common": {
+    "save": "حفظ",
+    "cancel": "إلغاء"
+  }
+}
