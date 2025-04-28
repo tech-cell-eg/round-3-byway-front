@@ -1,38 +1,24 @@
 import { InstructorAccCreate } from '@/components/Auth/InstructorAccCreate';
 import { InstructorCreateFull } from '@/components/Auth/InstructorCreateFull';
-import { useEffect, useState } from 'react';
+import { useAppSelector } from '@/Redux/reduxHooks';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 // placeholder
-interface UserData {
-  confirmPassword: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-  role: string;
-  userName: string;
-}
 
 // test
 export const InstructorSignUp = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState<UserData | null>(null);
   //   check user role
-  useEffect(() => {
-    const storedData = localStorage.getItem('user');
-    if (storedData) {
-      const pasredData = JSON.parse(storedData);
-      setUser(pasredData);
-    }
-  }, []);
 
-  if (user?.role === 'instructor') {
+  const role = useAppSelector(state => state.user.role);
+  const userToken = useAppSelector(state => state.user.token);
+
+  if (role === 'instructor') {
     navigate('/profile');
     toast.warn('You are already logged in as an instructor');
-  } else if (user?.role === 'student') {
+  } else if (role === 'student') {
     return <InstructorAccCreate />;
-  } else if (!user) {
+  } else if (!userToken) {
     return <InstructorCreateFull />;
   }
 };

@@ -125,3 +125,19 @@ export interface Testimonial {
   image: string;
   title: string;
 }
+
+// User info to save in local storage & redux
+export interface IUserSave {
+  first_name: string;
+  last_name: string;
+  username: string;
+  email: string;
+  role: string;
+  updated_at: string;
+  created_at: string;
+  id: number;
+  token: string;
+  bio?: string;
+  title?: string;
+  profile_picture?: string;
+}
