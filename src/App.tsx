@@ -17,6 +17,7 @@ import InstructorPage from './components/InstructorPage/Instructor';
 import CourseDetails from './pages/CourseDetails';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
+import DashboardLayout from './components/Dashboard/dashboardLayout';
 
 function App() {
   const { i18n } = useTranslation();
@@ -61,6 +62,16 @@ function App() {
           {
             path: 'instructor',
             element: <InstructorPage />,
+          },
+        ],
+      },
+      {
+        path: 'dashboard',
+        element: <DashboardLayout />,
+        children: [
+          {
+            index: true,
+            element: <h1>Dashboard</h1>,
           },
         ],
       },
