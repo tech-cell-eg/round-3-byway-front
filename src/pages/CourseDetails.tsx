@@ -5,6 +5,7 @@ import image from '../assets/images/instructorImage/Ellipse 4.png';
 import NavLinkCoursesDetail from '@/components/CourseDetails/NavLinkCoursesDetail';
 import ReviewsSection from '@/components/CourseDetails/CourseReviewsSection';
 import TestimonialSection from '@/components/Testimonial/TestimonialSection';
+import MoreCourses from '@/components/CourseDetails/MoreCourses';
 
 const CourseDetails = () => {
   const instructorData = {
@@ -75,6 +76,7 @@ const CourseDetails = () => {
         <ReviewsSection />
       </div>
       <TestimonialSection />
+      <MoreCourses />
     </>
   );
 };

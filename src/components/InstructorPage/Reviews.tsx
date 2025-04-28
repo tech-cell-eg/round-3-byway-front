@@ -1,5 +1,11 @@
+import ReviewsSection from '../CourseDetails/CourseReviewsSection';
+
 const Reviews = () => {
-  return <div></div>;
+  return (
+    <div>
+      <ReviewsSection />
+    </div>
+  );
 };
 
 export default Reviews;
