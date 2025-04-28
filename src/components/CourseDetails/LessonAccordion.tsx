@@ -30,7 +30,7 @@ const LessonAccordion: React.FC<LessonAccordionProps> = ({ sections }) => {
     <div>
       <Accordion
         type="multiple"
-        className="w-[90%] mt-4 border-2 border-gray-200 rounded-medium p-3"
+        className="w-full md:w-[90%] mt-4 border-2 border-gray-200 rounded-medium p-3"
       >
         {sections.map((section, sectionIndex) => (
           <AccordionItem
