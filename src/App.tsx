@@ -5,7 +5,6 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { SignUp } from './pages/SignUp';
 import ProtAuth from './components/Auth/ProtAuth';
 import { InstructorSignUp } from './pages/InstructorSignUp';
-
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Login from './components/Login/Login';
