@@ -3,7 +3,6 @@ import img from '../../assets/loginImage.jpg';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import {
   Form,
   FormControl,
@@ -43,20 +42,7 @@ export default function Login() {
       password: '',
     },
   });
-  const { t, i18n } = useTranslation(['login']);
-
-  // if user login then go to the ....
-
-  useEffect(() => {
-    const userData = localStorage.getItem('userData');
-    if (userData) {
-      navigate('/');
-    }
-  }, [navigate]);
-
-  useEffect(() => {
-    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
-  }, [i18n.language]);
+  const { t } = useTranslation(['login']);
 
   //submit fn
 
@@ -145,25 +131,8 @@ export default function Login() {
           <img
             src={img}
             alt="Login visual"
-            className="w-[90%] h-[100vh] object-cover rounded-xl shadow-md"
+            className="w-[90%] h-[80vh] object-cover rounded-xl shadow-md"
           />
-        </div>
-        {/*translate*/}
-        <div className="mt-4 text-center">
-          <div className="flex gap-2 my-4">
-            <button
-              onClick={() => i18n.changeLanguage('en')}
-              className="px-4 py-2 bg-blue-500 text-white rounded"
-            >
-              English
-            </button>
-            <button
-              onClick={() => i18n.changeLanguage('ar')}
-              className="px-4 py-2 bg-green-500 text-white rounded"
-            >
-              عربي
-            </button>
-          </div>
         </div>
       </div>
     </div>
