@@ -117,3 +117,11 @@ export interface CartData {
   cartinfo: Cartinfo;
   courses: CartCourse[];
 }
+
+export interface Testimonial {
+  id: number;
+  paragraph: string;
+  name: string;
+  image: string;
+  title: string;
+}

@@ -12,6 +12,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookForm/resolvers/zod';
 import PaypalImg from '@/assets/images/checkout/paypal.png';
 import VisaImg from '@/assets/images/checkout/visa.png';
+import { useTranslation } from 'react-i18next';
 
 const countryPaySchema = () =>
   z.object({
@@ -21,6 +22,7 @@ const countryPaySchema = () =>
 
 export const Payment = () => {
   const schema = countryPaySchema();
+  const { t } = useTranslation(['cart/payment']);
 
   const { register } = useForm({
     resolver: zodResolver(schema),
@@ -31,36 +33,36 @@ export const Payment = () => {
     <div>
       <div className="border border-border-light p-4 rounded-[8px]">
         {/* country and state inputs */}
-        <form className="flex gap-4 p-4 justify-between">
+        <form className="flex gap-4 p-4 justify-between flex-col lg:flex-row">
           <div className="flex-1">
             <p className=" text-content-primary mb-2 font-semibold text-body-medium">
-              Country
+              {t('country.title')}
             </p>
             <Input
               {...register('country')}
               type="text"
               className="border border-border-light rounded-[8px] p-4 bg-surface-light-primary' w-full h-14"
-              placeholder="Enter Country"
+              placeholder={t('country.placeholder')}
             />
           </div>
 
           <div className="flex-1">
             <p className=" text-content-primary mb-2 font-semibold text-body-medium">
-              State/Union Territory
+              {t('state.title')}
             </p>
             <Input
               {...register('state')}
               type="text"
               className="border border-border-light rounded-[8px] p-4 bg-surface-light-primary' w-full h-14"
-              placeholder="Enter State"
+              placeholder={t('state.placeholder')}
             />
           </div>
         </form>
 
         <h3 className="text-content-primary text-body-medium font-semibold mb-4">
-          Payment Methods
+          {t('paymentMethods')}
         </h3>
-        <Accordion type="single" collapsible>
+        <Accordion type="single" collapsible defaultValue="item-1">
           <AccordionItem
             value="item-1"
             className="bg-surface-light-secondary px-4 rounded-[8px] border-0"
@@ -69,7 +71,7 @@ export const Payment = () => {
               className="text-body-medium cursor-pointer"
               payment={true}
             >
-              <p>Credit/Debit Card</p>
+              <p>{t('creditCardTitle')}</p>
               <img src={VisaImg} className="w-20" alt="" />
             </AccordionTrigger>
             <AccordionContent>
@@ -84,7 +86,7 @@ export const Payment = () => {
               className="text-body-medium cursor-pointer"
               payment={true}
             >
-              <p>Paypal</p>
+              <p>{t('paypalTitle')}</p>
               <img src={PaypalImg} alt="" />
             </AccordionTrigger>
             <AccordionContent>

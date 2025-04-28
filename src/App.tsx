@@ -15,6 +15,9 @@ import Home from './pages/Home';
 import { CartPage } from './pages/CartPage';
 import InstructorPage from './components/InstructorPage/Instructor';
 import CourseDetails from './pages/CourseDetails';
+import { Provider } from 'react-redux';
+import { store } from './Redux/store';
+import ProfilePage from './pages/ProfilePage';
 import CourseLearingPage from './pages/CourseLearingPage';
 
 function App() {
@@ -62,6 +65,10 @@ function App() {
             path: 'instructor',
             element: <InstructorPage />,
           },
+          {
+            path: 'profilepage',
+            element: <ProfilePage />,
+          },
         ],
       },
     ]
@@ -69,9 +76,11 @@ function App() {
   );
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </Provider>
   );
 }
 

@@ -8,6 +8,8 @@
     "price": "Price",
     "tax": "Tax",
     "discount": "Discount",
-    "grandTotal": "Total"
+    "grandTotal": "Total",
+    "proceedToCheckout": "Proceed to Checkout",
+    "pay": "Pay"
   }
 }
