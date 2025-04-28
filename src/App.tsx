@@ -16,6 +16,7 @@ import InstructorPage from './components/InstructorPage/Instructor';
 import CourseDetails from './pages/CourseDetails';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   const { i18n } = useTranslation();
@@ -60,6 +61,10 @@ function App() {
           {
             path: 'instructor',
             element: <InstructorPage />,
+          },
+          {
+            path: 'profilepage',
+            element: <ProfilePage />,
           },
         ],
       },
