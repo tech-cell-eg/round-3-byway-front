@@ -16,7 +16,8 @@ import InstructorPage from './components/InstructorPage/Instructor';
 import CourseDetails from './pages/CourseDetails';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
-import ProfilePage from './pages/ProfilePage';
+import DashboardLayout from './components/Dashboard/DashboardLayout';
+import CourseLearingPage from './pages/CourseLearingPage';
 import PersonalInformation from './components/Profile/PersonalInformation';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         children: [
           { index: true, element: <Home /> },
           { path: 'coursespage', element: <CourseDetails /> },
+          { path: 'courselearingpage', element: <CourseLearingPage /> },
 
           { path: 'login', element: <Login /> },
           { path: 'allCourses', element: <CategoryPage /> },
@@ -63,9 +65,15 @@ function App() {
             path: 'instructor',
             element: <InstructorPage />,
           },
+        ],
+      },
+      {
+        path: 'dashboard',
+        element: <DashboardLayout />,
+        children: [
           {
-            path: 'profilepage',
-            element: <ProfilePage />,
+            index: true,
+            element: <h1>Dashboard</h1>,
           },
         ],
       },

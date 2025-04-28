@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Courses from '../Courses/Courses';
 import { createRoot } from 'react-dom/client';
 import ProfilePage from '@/components/ProfilePage/ProfilePage';
+import Reviews from './Reviews';
 
 export default function ProfileCards() {
   const [activeSection, setActiveSection] = useState<string>('profile');
@@ -40,12 +41,7 @@ export default function ProfileCards() {
         );
         break;
       case 'reviews':
-        root.render(
-          <div>
-            <h2>أرائي</h2>
-            <p>محتوى الأراء</p>
-          </div>
-        );
+        root.render(<Reviews />);
         break;
       default:
         root.render(

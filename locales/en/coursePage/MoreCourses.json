@@ -1,0 +1,66 @@
+{
+    "moreCourses":"More courses Like This",
+    "courses":{
+        "course1": {
+            "multiVariants": "Multiple Variants",
+            "discount": "Discount",
+            "category": "Beginner’s Guide to Design",
+            "description": "By Ronald Richards",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"for peginners"
+        },
+        "course3": {
+            "multiVariants": "Multiple Variants",
+            "discount": "Discount",
+            "category": "Beginner’s Guide to Design",
+            "description": "By Ronald Richards",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"for peginners"
+
+
+        },
+        "course2": {
+            "multiVariants": "Multiple Variants",
+            "discount": "Discount",
+            "category": "Beginner’s Guide to Design",
+            "description": "By Ronald Richards",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"for peginners"
+
+        },
+        "course4": {
+            "multiVariants": "Multiple Variants",
+            "discount": "Discount",
+            "category": "Beginner’s Guide to Design",
+            "description": "By Ronald Richards",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"for peginners"
+
+
+        }
+    }
+  }

@@ -20,6 +20,8 @@ i18next
       'home/banner',
       'cart/cart',
       'home/testimonial',
+      'InstructorPage/headerinfo',
+      'coursePage/MoreCourses',
       'instructor/HeaderLinks',
     ],
 
@@ -28,4 +30,5 @@ i18next
     interpolation: {
       escapeValue: false,
     },
+    returnObjects: true,
   });

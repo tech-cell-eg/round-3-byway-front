@@ -1,0 +1,12 @@
+{
+  "dashboard": "Dashboard",
+  "courses": "Courses",
+  "commuincation": "Communication",
+  "revenue": "Revenue",
+  "settings": "Settings",
+  "footer": {
+    "hi": "Hi",
+    "logOut": "Log Out",
+    "goToWebsite": "Go to website"
+  }
+}

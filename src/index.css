@@ -78,27 +78,27 @@
   --color-icon-empty-star: #cbd5e1;
 
   /* font sizes */
-  --text-body-micro: 0.75rem;
 
   /* [12px] */
-  --text-body-small: 0.875rem;
+  --text-body-micro: 0.75rem;
 
   /* [14px] */
-  --text-body-base: 1rem;
+  --text-body-small: 0.875rem;
 
   /* [16px] */
-  --text-body-medium: 1.125rem;
+  --text-body-base: 1rem;
 
   /* [18px] */
-  --text-body-large: 1.25rem;
+  --text-body-medium: 1.125rem;
 
   /* [20px] */
-  --text-body-semilarge: 1.375rem;
+  --text-body-large: 1.25rem;
 
   /* [22px] */
-  --text-body-big: 1.5rem;
+  --text-body-semilarge: 1.375rem;
 
   /* [24px] */
+  --text-body-big: 1.5rem;
 
   /* border radius */
   --radius-small: 0.5rem;
@@ -167,15 +167,32 @@
   --chart-3: oklch(39.8% 0.07 227.392deg);
   --chart-4: oklch(82.8% 0.189 84.429deg);
   --chart-5: oklch(76.9% 0.188 70.08deg);
-  --sidebar: oklch(98.5% 0 0deg);
   --sidebar-foreground: oklch(14.5% 0 0deg);
   --sidebar-primary: oklch(20.5% 0 0deg);
   --sidebar-primary-foreground: oklch(98.5% 0 0deg);
   --sidebar-accent: oklch(97% 0 0deg);
   --sidebar-accent-foreground: oklch(20.5% 0 0deg);
   --sidebar-border: oklch(92.2% 0 0deg);
-  --sidebar-ring: oklch(70.8% 0 0deg); 
- */
+  --sidebar-ring: oklch(70.8% 0 0deg);
+  */
+
+  /* --sidebar: hsl(0 0% 98%);
+
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+
+  --sidebar-primary: hsl(240 5.9% 10%);
+
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+
+  --sidebar-border: hsl(220 13% 91%);
+
+  --sidebar-ring: hsl(217.2 91.2% 59.8%); */
+
+  --sidebar: var(--color-surface-dark-secondary);
 }
 
 /* .dark {
@@ -261,6 +278,11 @@
   }
 }
 
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 /* Section vertical padding */
 .responsive-primary-padding-y {
   @apply py-8 md:py-10 lg:py-14;
@@ -272,7 +294,7 @@
 
 /* Section horizontal padding */
 .responsive-primary-padding-x {
-  @apply px-8 md:px-12 lg:px-20;
+  @apply px-2 md:px-12 lg:px-20;
 }
 
 .responsive-secondary-padding-x {
@@ -280,3 +302,14 @@
 }
 
 /* stylelint-enable at-rule-no-deprecated */
+
+/* .dark {
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+} */
