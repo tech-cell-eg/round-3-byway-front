@@ -1,4 +1,4 @@
-import appName from '@/constants/appName';
+import appName from '@/components/constants/appName';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 

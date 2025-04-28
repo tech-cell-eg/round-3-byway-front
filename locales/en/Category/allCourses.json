@@ -1,11 +1,12 @@
 {
+    "sortBy":"sort by",
     "featuredCourses":"Featured Courses",
+    "search":"search",
     "courses":{
         "course1": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -13,13 +14,12 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course3": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -27,15 +27,14 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
 
 
         },
         "course2": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -43,14 +42,13 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
 
         },
         "course4": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -58,13 +56,12 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course5": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -72,13 +69,12 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course6": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -86,13 +82,12 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course7": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -100,13 +95,12 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course8": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -114,13 +108,12 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course9": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -128,13 +121,12 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course10": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -142,13 +134,12 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course11": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -156,13 +147,12 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course12": {
-            "multiVariants": "Multiple Variants",
-            "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "discount": "Discount",
+            "description": "By",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -170,7 +160,7 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         }
     }
 }

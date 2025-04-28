@@ -7,5 +7,22 @@
     "labelPlaceholder": "أدخل هنا...",
     "english": "English",
     "arabic": "Arabic",
-    "french": "French"
+    "french": "French",          "website": "Website",
+    "websitePlaceholder": "https://example.com",
+    "twitter": "X (Twitter)",
+    "twitterPlaceholder": "https://twitter.com/username",
+    "linkedin": "LinkedIn",
+    "linkedinPlaceholder": "https://linkedin.com/in/username",
+    "youtube": "YouTube",
+    "youtubePlaceholder": "https://youtube.com/username",
+    "facebook": "Facebook",
+    "facebookPlaceholder": "https://facebook.com/username",
+    "submit": "Save",
+    "validation": {
+      "website": "Please enter a valid website URL",
+      "twitter": "Please enter a valid Twitter URL",
+      "linkedin": "Please enter a valid LinkedIn URL",
+      "youtube": "Please enter a valid YouTube URL",
+      "facebook": "Please enter a valid Facebook URL"
+    }
 }

@@ -17,6 +17,7 @@ import CourseDetails from './pages/CourseDetails';
 import { Provider } from 'react-redux';
 import { store } from './Redux/store';
 import ProfilePage from './pages/ProfilePage';
+import PersonalInformation from './components/Profile/PersonalInformation';
 
 function App() {
   const { i18n } = useTranslation();
@@ -40,6 +41,7 @@ function App() {
 
           { path: 'login', element: <Login /> },
           { path: 'allCourses', element: <CategoryPage /> },
+          { path: 'personalInformation', element: <PersonalInformation /> },
 
           {
             path: 'signup',
@@ -53,7 +55,6 @@ function App() {
             path: 'signup-instructor',
             element: <InstructorSignUp />,
           },
-          { path: 'category', element: <CategoryPage /> },
           {
             path: 'cart',
             element: <CartPage />,

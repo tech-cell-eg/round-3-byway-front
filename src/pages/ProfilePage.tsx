@@ -1,5 +1,5 @@
-import InputDataForm from '@/components/Profile/inputDataForm';
-import InputPhotoForm from '@/components/Profile/inputPhotoForm';
+import InputDataForm from '@/components/ProfilePage/inputDataForm';
+import InputPhotoForm from '@/components/ProfilePage/inputPhotoForm';
 
 const ProfilePage = () => {
   return (

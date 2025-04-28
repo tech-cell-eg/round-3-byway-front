@@ -17,24 +17,24 @@ export interface ICourse {
   id2: number;
   name: string;
   description: string;
-  price: string;
-  lectures: string;
-  lecturesName: number;
-  hours: number;
-  hoursName: string;
-  purchased: number;
-  students: string;
-  numOfStu: number;
-  level: string;
+  price?: string; // Optional
+  lectures?: string; // Optional
+  lecturesName?: number; // Optional
+  hours?: number; // Optional
+  level?: string; // Optional
+  students?: string; // Optional
+  numOfStu?: number;
+  hoursName?: string; // Optional
+  purchased?: number;
   small_desc: string;
   sku: string;
   reviews_count: string;
   reviews_average: number;
-  reviews: Review[];
-  has_discount?: boolean;
+  reviews: unknown[];
+  has_discount: boolean;
   discount: string;
-  category: Category;
-  images: Image[];
+  category: { id: number; name: string };
+  images: { image: string }[];
 }
 
 export interface Review {
@@ -56,16 +56,8 @@ export interface Iinstructor {
   id2: number;
   name: string;
   description: string;
-  price: string;
-  lectures: string;
-  lecturesName: number;
-  hours: number;
-  hoursName: string;
-  purchased: number;
   students: string;
   numOfStu: number;
-  level: string;
-  small_desc: string;
   sku: string;
   reviews_count: number;
   reviews_average: number;
@@ -77,7 +69,6 @@ export interface Iinstructor {
 
   //  Instructor info
   instructorName: string;
-  instructorTitle: string;
   instructorImage?: string;
 }
 
