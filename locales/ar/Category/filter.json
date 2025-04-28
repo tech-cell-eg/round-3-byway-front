@@ -1,0 +1,25 @@
+{
+    "filter": {
+      "title": "تصفية",
+      "search": "بحث",
+      "clear": "مسح",
+      "apply": "تطبيق",
+      "cancel": "إلغاء",
+      "reset": "إعادة تعيين",
+      "selectAll": "تحديد الكل",
+      "deselectAll": "إلغاء تحديد الكل",
+      "noResults": "لا توجد نتائج",
+      "min": "الحد الأدنى",
+      "max": "الحد الأقصى",
+      "rating": "التقييم",
+      "sections": "عدد الأقسام",
+      "price": "السعر",
+      "category": "الفئة",
+      "range": "النطاق",
+      "web_development": "تطوير الويب",
+      "design": "تصميم",
+      "marketing": "تسويق",
+      "data_science": "علم البيانات"
+    }
+  }
+  
