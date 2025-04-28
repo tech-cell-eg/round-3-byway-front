@@ -9,6 +9,7 @@ import {
   PaginationContent,
   PaginationItem,
 } from '@/components/ui/pagination';
+import { useScrollToTop } from '../CommonComponents/useScrollToTop';
 
 interface ITranslatedCourse {
   title: string;
@@ -29,10 +30,11 @@ export default function AllCourses() {
     string,
     ITranslatedCourse
   >;
+  useScrollToTop();
 
   const courseEntries = Object.entries(courses);
 
-  // ⬇️ Pagination setup
+  //  Pagination setup
   const itemsPerPage = 9;
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(courseEntries.length / itemsPerPage);
@@ -45,19 +47,20 @@ export default function AllCourses() {
 
   return (
     <>
-      <div className="responsive-secondary-padding-y responsive-primary-padding-x">
+      <div className=" md:px-7">
         <div className="flex w-full justify-end pt-14">
-          <span className="flex !rounded-xl">
+          <p className="text-content-primary pe-3">{t('sortBy')}</p>
+          <span className="flex  !rounded-lg border !border-content-primary">
             <SortedBy />
           </span>
         </div>
 
-        <div className="grid grid-cols-1 pt-10 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-2">
+        <div className="grid grid-cols-1 pt-4 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-2">
           {paginatedCourses.map(([key, course], index) => {
             const courseData: ICourse = {
               id2: startIndex + index + 1,
-              name: course.title,
-              description: course.description,
+              name: 'Beginner’s Guide to Design',
+              description: course.description + 'Ronald Richards',
               price: course.price,
               lectures: course.lecs,
               lecturesName: 10,
@@ -74,7 +77,10 @@ export default function AllCourses() {
               reviews: [],
               has_discount: false,
               discount: '',
-              category: { id: 1, name: course.category || '' },
+              category: {
+                id: 1,
+                name: course.category || 'Beginner’s Guide to Design',
+              },
               images: [{ image: '/path/to/image.jpg' }],
             };
 
@@ -83,7 +89,7 @@ export default function AllCourses() {
         </div>
 
         {/* Pagination UI */}
-        <Pagination className="mt-8 flex justify-center">
+        <Pagination className="mt-8 flex justify-center pb-10">
           <PaginationContent className="gap-2">
             {/* Previous Arrow */}
             <PaginationItem>

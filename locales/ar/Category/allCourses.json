@@ -1,10 +1,12 @@
 {
+    "sortBy":"فرز حسب",
     "featuredCourses":"دورات مميزة",
+    "search":"بحث",
     "courses":{
         "course1": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
+            "category": "Beginner’s Guide to Design",
             "description": "بواسطة رونالد ريتشاردز",
             "rating": "1200 تقييم",
             "hours":" ساعات",
@@ -19,8 +21,7 @@
         "course2": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
-            "description": "بواسطة رونالد ريتشاردز",
+            "category": "Beginner’s Guide to Design",
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
@@ -35,8 +36,7 @@
         "course3": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
-            "description": "بواسطة رونالد ريتشاردز",
+            "category": "Beginner’s Guide to Design",
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
@@ -50,8 +50,7 @@
         "course4": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
-            "description": "بواسطة رونالد ريتشاردز",
+            "category": "Beginner’s Guide to Design",
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
@@ -64,8 +63,7 @@
         "course5": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
-            "description": "بواسطة رونالد ريتشاردز",
+            "category": "Beginner’s Guide to Design",
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
@@ -78,8 +76,7 @@
         "course6": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
-            "description": "بواسطة رونالد ريتشاردز",
+            "category": "Beginner’s Guide to Design",
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
@@ -92,8 +89,7 @@
         "course7": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
-            "description": "بواسطة رونالد ريتشاردز",
+            "category": "Beginner’s Guide to Design",
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
@@ -106,8 +102,7 @@
         "course8": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
-            "description": "بواسطة رونالد ريتشاردز",
+            "category": "Beginner’s Guide to Design",
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
@@ -120,8 +115,7 @@
         "course9": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
-            "description": "بواسطة رونالد ريتشاردز",
+            "category": "Beginner’s Guide to Design",
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
@@ -134,7 +128,7 @@
         "course10": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
+            "category": "Beginner’s Guide to Design",
             "description": "بواسطة رونالد ريتشاردز",
             "rating": "1200 تقييم",
             "hours":" ساعات",
@@ -148,7 +142,7 @@
         "course11": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
+            "category": "Beginner’s Guide to Design",
             "description": "بواسطة رونالد ريتشاردز",
             "rating": "1200 تقييم",
             "hours":" ساعات",
@@ -162,7 +156,7 @@
         "course12": {
             "multiVariants": "متعدد",
             "discount": "خصم",
-            "category": "دليل المبتدئين للتصميم",
+            "category": "Beginner’s Guide to Design",
             "description": "بواسطة رونالد ريتشاردز",
             "rating": "1200 تقييم",
             "hours":" ساعات",

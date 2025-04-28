@@ -1,0 +1,19 @@
+{
+    "personMain":{
+        "name":"جون دوو",
+        "shareProfile": "مشاركة ",
+        "copyLink": "نسخ الرابط",
+        "copied": "تم النسخ",
+        "facebook": "فيسبوك",
+        "twitter": "تويتر",
+        "linkedin": "لينكدإن",
+        "whatsapp": "واتساب",
+        "telegram": "تليجرام",
+        "downloadQR": "تحميل QR" ,
+        "profile":"الملف الشخصي",
+        "myCourses":"دوراتي",
+        "teachers":"المعلمون",
+        "message":"رسالة",
+        "reviews":"أرائي"
+    }
+}
