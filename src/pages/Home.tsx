@@ -3,6 +3,7 @@ import TopCources from '@/components/TopCourses/TopCourses';
 import TopInstructors from '@/components/TopInstructors/TopInstructors';
 import Banner from '@/components/Banner/banner';
 import HeroSection from './HeroSection';
+
 // import { useTranslation } from 'react-i18next';
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
         <h1>{t('home:welcome')}</h1>
         <p>{t('home:description')}</p>
 
-         <div className="flex gap-2 my-4">
+        <div className="flex gap-2 my-4">
           <button
             onClick={() => i18n.changeLanguage('en')}
             className="px-4 py-2 bg-blue-500 text-white rounded"
@@ -32,10 +33,10 @@ export default function Home() {
         <HeroSection />
         <TopCources />
         <TopInstructors />
-        <Banner />
       </div>
 
       <TestimonialSection />
+      <Banner />
     </>
   );
 }

@@ -47,8 +47,7 @@ export default function AllCourses() {
     <>
       <div className="responsive-secondary-padding-y responsive-primary-padding-x">
         <div className="flex w-full justify-end pt-14">
-          <p className="text-content-primary pe-3">Sort By</p>
-          <span className="flex !rounded-xl border !border-content-primary">
+          <span className="flex !rounded-xl">
             <SortedBy />
           </span>
         </div>

@@ -1,5 +1,10 @@
+import InsTopCourses from '@/components/InstructorPage/InsTopCourses';
 const Courses = () => {
-  return <div></div>;
+  return (
+    <div>
+      <InsTopCourses />
+    </div>
+  );
 };
 
 export default Courses;

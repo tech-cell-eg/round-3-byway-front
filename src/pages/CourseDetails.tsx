@@ -7,6 +7,7 @@ import ReviewsSection from '@/components/CourseDetails/CourseReviewsSection';
 import TestimonialSection from '@/components/Testimonial/TestimonialSection';
 import CourseStickyCard from '@/components/CourseDetails/CourseStickyCard';
 import CourseInfoPanel from '@/components/CourseDetails/CourseInfoPanel';
+import MoreCourses from '@/components/CourseDetails/MoreCourses';
 
 const instructorData = {
   id: 'instructor',
@@ -223,6 +224,8 @@ function CourseDetails() {
 
       <TestimonialSection />
     </main>
+      <MoreCourses />
+    </>
   );
 }
 

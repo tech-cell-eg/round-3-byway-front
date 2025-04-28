@@ -16,9 +16,13 @@ i18next
       'home/topInstructors',
       'Category/mainPage',
       'Category/allCourses',
+      'Category/filter',
       'home/banner',
       'cart/cart',
       'home/testimonial',
+      'InstructorPage/headerinfo',
+      'coursePage/MoreCourses',
+      'instructor/HeaderLinks',
     ],
 
     defaultNS: 'common',
@@ -26,4 +30,5 @@ i18next
     interpolation: {
       escapeValue: false,
     },
+    returnObjects: true,
   });
