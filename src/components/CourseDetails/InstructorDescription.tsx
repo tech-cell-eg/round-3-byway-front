@@ -1,41 +1,33 @@
+import { memo } from 'react';
+
+interface Description {
+  title: string;
+  description: string;
+}
+
 interface InstructorDescriptionProps {
   id: string;
-  titleone: string;
-  titletwo?: string;
-  descriptionone: string;
-  descriptiontwo?: string;
+  descriptions: Description[];
 }
+
 const InstructorDescription: React.FC<InstructorDescriptionProps> = ({
   id,
-  titleone,
-  titletwo,
-  descriptionone,
-  descriptiontwo,
+  descriptions,
 }) => {
   return (
     <>
-      <div id={id} className="flex flex-col gap-4">
-        <div className="flex flex-col gap-2">
-          <h2 className="font-medium text-content-primary text-body-large">
-            {titleone}
+      {descriptions.map((item, index) => (
+        <div id={id} key={index} className="flex flex-col gap-2">
+          <h2 className="font-medium text-content-primary text-body-large mt-2 ">
+            {item.title}
           </h2>
-          <p className="text-body-base/relaxed text-content-dark md:max-w-[90%]">
-            {descriptionone}
+          <p className="text-body-base/relaxed text-content-dark md:max-w-[90%] mb-4 ">
+            {item.description}
           </p>
         </div>
-
-        <div className="flex flex-col gap-2">
-          <h2 className="font-medium text-content-primary text-body-large ">
-            {titletwo}
-          </h2>
-          <p className="text-body-base/relaxed text-content-dark md:max-w-[90%]">
-            {descriptiontwo}
-          </p>
-        </div>
-        <div className="border-b-2 border-border-light w-[90%]"></div>
-      </div>
+      ))}
     </>
   );
 };
 
-export default InstructorDescription;
+export default memo(InstructorDescription);
