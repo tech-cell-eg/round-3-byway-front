@@ -1,0 +1,15 @@
+{
+    "profile": {
+      "shareProfile": "Share Profile",
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "whatsapp": "WhatsApp",
+      "copyURL": "Copy URL",
+      "goToYouTube": "Go to YouTube",
+      "goToTwitter": "Go to Twitter",
+      "showQR": "Show QR",
+      "hideQR": "Hide QR",
+      "linkCopied": "Link copied to clipboard!"
+    }
+  }
+  

@@ -1,5 +1,6 @@
 {
-    "testTitle": "What Our Customer Say About Us",
+    "testTitle": "What Our Customer Say",
+    "testTitle2": "About Us",
     "testimonials": [
         {
             "id": 1,
