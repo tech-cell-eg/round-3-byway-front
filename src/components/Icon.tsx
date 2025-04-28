@@ -30,6 +30,7 @@ import {
   BookOpenText,
   LayoutDashboard,
   Check,
+  Quote,
   ArrowRightFromLine,
   Gauge,
   CircleDollarSign,
@@ -68,6 +69,7 @@ export type IconName =
   | 'dashboard'
   | 'logout'
   | 'check'
+  | 'qoute'
   | 'arrow-right-from-line'
   | 'gauge'
   | 'circle-dollar-sign'
@@ -105,6 +107,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   'book-open': BookOpenText,
   dashboard: LayoutDashboard,
   check: Check,
+  qoute: Quote,
   'arrow-right-from-line': ArrowRightFromLine,
   gauge: Gauge,
   'circle-dollar-sign': CircleDollarSign,

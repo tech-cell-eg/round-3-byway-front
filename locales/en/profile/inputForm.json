@@ -1,0 +1,11 @@
+{
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "headline": "Headline",
+    "description": "Description",
+    "language": "Language",
+    "labelPlaceholder": "أدخل هنا...",
+    "english": "English",
+    "arabic": "Arabic",
+    "french": "French"
+}
