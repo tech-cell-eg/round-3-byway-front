@@ -78,27 +78,27 @@
   --color-icon-empty-star: #cbd5e1;
 
   /* font sizes */
-  --text-body-micro: 0.75rem;
 
   /* [12px] */
-  --text-body-small: 0.875rem;
+  --text-body-micro: 0.75rem;
 
   /* [14px] */
-  --text-body-base: 1rem;
+  --text-body-small: 0.875rem;
 
   /* [16px] */
-  --text-body-medium: 1.125rem;
+  --text-body-base: 1rem;
 
   /* [18px] */
-  --text-body-large: 1.25rem;
+  --text-body-medium: 1.125rem;
 
   /* [20px] */
-  --text-body-semilarge: 1.375rem;
+  --text-body-large: 1.25rem;
 
   /* [22px] */
-  --text-body-big: 1.5rem;
+  --text-body-semilarge: 1.375rem;
 
   /* [24px] */
+  --text-body-big: 1.5rem;
 
   /* border radius */
   --radius-small: 0.5rem;
@@ -138,9 +138,6 @@
 }
 
 :root {
-  max-width: 1440px;
-  margin: 0 auto;
-
   /* --radius: 0.625rem;
   --background: oklch(100% 0 0deg);
   --foreground: oklch(14.5% 0 0deg);
@@ -276,6 +273,11 @@
   }
 }
 
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 /* Section vertical padding */
 .responsive-primary-padding-y {
   @apply py-8 md:py-10 lg:py-14;
@@ -287,7 +289,7 @@
 
 /* Section horizontal padding */
 .responsive-primary-padding-x {
-  @apply px-8 md:px-12 lg:px-20;
+  @apply px-2 md:px-12 lg:px-20;
 }
 
 .responsive-secondary-padding-x {

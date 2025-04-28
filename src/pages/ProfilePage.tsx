@@ -1,3 +1,4 @@
+import Reviews from '@/components/Profile/Reviews';
 import InputDataForm from '@/components/Profile/inputDataForm';
 import InputPhotoForm from '@/components/Profile/inputPhotoForm';
 
@@ -6,6 +7,8 @@ const ProfilePage = () => {
     <>
       <InputDataForm />
       <InputPhotoForm />
+      {/* For My Reviews Section  in Sidebar */}
+      <Reviews />
     </>
   );
 };

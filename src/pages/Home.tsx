@@ -33,10 +33,10 @@ export default function Home() {
         <HeroSection />
         <TopCources />
         <TopInstructors />
-        <Banner />
       </div>
 
       <TestimonialSection />
+      <Banner />
     </>
   );
 }
