@@ -8,6 +8,7 @@ export default function DashboardLayout() {
       <SidebarProvider>
         <AppSidebar />
         <main className="w-full p-5 bg-surface-light-secondary">
+
           <div className="md:hidden absolute bottom-4 right-4 size-8 flex items-center justify-center bg-button-secondary rounded-full text-white cursor-pointer hover:bg-button-secondary-hover">
             <SidebarTrigger />
           </div>
@@ -15,5 +16,6 @@ export default function DashboardLayout() {
         </main>
       </SidebarProvider>
     </div>
+
   );
 }

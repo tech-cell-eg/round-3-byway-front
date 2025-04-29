@@ -44,7 +44,7 @@ const items = (t: (key: string) => string) => [
   },
   {
     title: t('courses'),
-    url: '#',
+    url: '/dashboard/reviews',
     icon: <Icon name="book-text" size={24} />,
   },
   {

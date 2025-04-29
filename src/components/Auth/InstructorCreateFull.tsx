@@ -1,24 +1,35 @@
 // if no user is logged in, show this page
 
 import { zodResolver } from '@hookForm/resolvers/zod';
-// import axios from 'axios';
 import { Input } from '@/components/ui/input';
 import { FieldValues, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-// import { useNavigate } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
 import { z } from 'zod';
 import { ArrowRight } from 'lucide-react';
-// save user data in local storage
-// function saveUserData(data: FieldValues) {
-//   localStorage.setItem('user', JSON.stringify({ ...data, role: 'instructor' }));
-// }
+import { usePostMutation } from '@/api/usePostMutation';
+import { IUserSave } from '@/types/types';
+import { useAppDispatch } from '@/Redux/reduxHooks';
+import { saveUserRedux } from '@/Redux/slices/auth/userSlice';
+
+function saveUserData(data: IUserSave) {
+  localStorage.setItem('user', JSON.stringify(data));
+}
+
+interface ApiResponse {
+  data: IUserSave;
+  status: number;
+}
 
 // form validation
 const createRegisterSchema = (t: (key: string) => string) =>
   z
     .object({
-      profilePicture: z.string().url(t('signUpForm:errors.profilePicture')),
+      profilePicture: z
+        .string()
+        .url(t('signUpForm:errors.profilePicture'))
+        .optional()
+        .or(z.literal('')),
       firstName: z.string().min(2, t('signUpForm:errors.firstName')),
       lastName: z.string().min(2, t('signUpForm:errors.lastName')),
       bio: z.string().min(10, t('signUpForm:errors.bio')),
@@ -40,10 +51,21 @@ const createRegisterSchema = (t: (key: string) => string) =>
 export const InstructorCreateFull = () => {
   const [t, i18n] = useTranslation(['signUpForm']);
   const isRTL = i18n.language === 'ar';
-
-  // const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const registerSchema = createRegisterSchema(t);
+
+  const { mutate, isPending, isError } = usePostMutation<ApiResponse>(
+    '/auth/register',
+    {
+      onSuccess: data => {
+        console.log(data);
+        saveUserData(data.data);
+        dispatch(saveUserRedux(data.data));
+        toast.success('Instructor registered successfully!');
+      },
+    }
+  );
 
   const {
     register,
@@ -65,29 +87,18 @@ export const InstructorCreateFull = () => {
       email,
       password,
     } = data;
-    try {
-      const requestBody = {
-        'first-name': firstName,
-        'last-name': lastName,
-        username: userName,
-        email: email,
-        profile_picture_url: profilePicture,
-        bio: bio,
-        title: title,
-        password: password,
-      };
-      // const response = await axios.post('#011', requestBody);
-      // console.log(response);
-      //   saveUserData(response.data);
-      toast.success('Registration successful');
-      console.log(requestBody);
-
-      // redirect to the page the yser came from
-      // navigate('/');
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
+    const requestBody = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      username: userName,
+      password: password,
+      profile_picture: profilePicture,
+      role: 'instructor',
+      bio: bio,
+      title: title,
+    };
+    mutate(requestBody);
   };
 
   const formInputStyles =
@@ -268,6 +279,7 @@ export const InstructorCreateFull = () => {
               <button
                 type="submit"
                 className="px-6 py-2.5 bg-button-tertiary text-content-light w-fit rounded-small mt-3 hover:cursor-pointer flex flex-row items-center gap-1.5"
+                disabled={isPending}
               >
                 {t('signUpForm:instructor.button')}
                 <div
@@ -276,6 +288,11 @@ export const InstructorCreateFull = () => {
                   <ArrowRight size={16} />
                 </div>
               </button>
+              {isError && (
+                <p className="text-red-500 text-body-small font-medium">
+                  {t('signUpForm:instructor.error')}
+                </p>
+              )}
             </form>
           </div>
         </div>
