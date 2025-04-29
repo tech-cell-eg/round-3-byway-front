@@ -1,0 +1,12 @@
+{
+  "newAnnouncement": "اضف تنويهاً جديداً",
+  "createAnnouncement": "اضف تنويهاً جديداً",
+  "form": {
+    "title": "العنوان",
+    "description": "الوصف",
+    "link": "الرابط",
+    "thumbnail": "الصورة",
+    "publish": "نشر",
+    "cancel": "إلغاء"
+  }
+}

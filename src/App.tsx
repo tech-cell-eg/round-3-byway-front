@@ -19,6 +19,7 @@ import DashboardLayout from './components/Dashboard/DashboardLayout';
 import CourseLearingPage from './pages/CourseLearingPage';
 import PersonalInformation from './components/Profile/PersonalInformation';
 import { ReduxInitializer } from './Redux/reduxInitializer';
+import { NotificationLayout } from './components/Dashboard/commuincation/notification/NotificationLayout';
 import ReviewsCoursePage from './components/Dashboard/reviews/ReviewsCoursePage';
 import CourseSections from './components/Dashboard/sections/CourseSections';
 
@@ -78,6 +79,9 @@ function App() {
             element: <h1>Dashboard</h1>,
           },
           {
+            path: 'commuincation',
+            element: <NotificationLayout />,
+          },
             path: 'reviews',
             element: <ReviewsCoursePage />,
           },
