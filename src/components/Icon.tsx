@@ -15,9 +15,29 @@ import {
   MoveRight,
   MoveLeft,
   LucideIcon,
+  Award,
+  GraduationCap,
+  Play,
+  Video,
+  BookText,
+  Search,
+  Settings,
+  Sun,
+  Moon,
+  LogOut,
+  X,
+  UserRound,
+  BookOpenText,
+  LayoutDashboard,
+  Check,
 } from 'lucide-react';
 
 export type IconName =
+  | 'x'
+  | 'search'
+  | 'video'
+  | 'award'
+  | 'play'
   | 'cart'
   | 'heart'
   | 'bell'
@@ -30,11 +50,23 @@ export type IconName =
   | 'chevron-left'
   | 'chevron-right'
   | 'chevron-up'
-  | 'cheveron-down'
+  | 'chevron-down'
   | 'arrow-right'
-  | 'arrow-left';
+  | 'arrow-left'
+  | 'graduationcap'
+  | 'book-text'
+  | 'gear'
+  | 'sun'
+  | 'moon'
+  | 'user'
+  | 'book-open'
+  | 'dashboard'
+  | 'logout'
+  | 'check';
 
 const iconMap: Record<IconName, LucideIcon> = {
+  x: X,
+  search: Search,
   cart: ShoppingCart,
   heart: Heart,
   bell: Bell,
@@ -44,12 +76,25 @@ const iconMap: Record<IconName, LucideIcon> = {
   briefcase: Briefcase,
   physics: Atom,
   star: Star,
+  award: Award,
+  play: Play,
+  video: Video,
+  graduationcap: GraduationCap,
+  'book-text': BookText,
   'chevron-left': ChevronLeft,
   'chevron-right': ChevronRight,
   'chevron-up': ChevronUp,
-  'cheveron-down': ChevronDown,
+  'chevron-down': ChevronDown,
   'arrow-right': MoveRight,
   'arrow-left': MoveLeft,
+  gear: Settings,
+  sun: Sun,
+  moon: Moon,
+  logout: LogOut,
+  user: UserRound,
+  'book-open': BookOpenText,
+  dashboard: LayoutDashboard,
+  check: Check,
 };
 
 interface IconProps {

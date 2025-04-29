@@ -1,0 +1,35 @@
+{
+  "Request": {
+    "URL": "/api/user-reviews/:user-id",
+    "Method": "GET",
+    "Parameters": {
+      "user-id": "51151515",
+      "page!": "5"
+    },
+    "Authentication": false
+  },
+  "Response": {
+    "data": {
+      "is_owner": false,
+      "info": {
+        "current_page": 5,
+        "next": true,
+        "prev": true,
+        "total_instructors": 40,
+        "per_page": 9
+      },
+      "reviews": [
+        {
+          "id": 1,
+          "course": {
+            "id": 1561651,
+            "name": "User Experience"
+          },
+          "rating": 3,
+          "review_body": "",
+          "review_date": ""
+        }
+      ]
+    }
+  }
+}

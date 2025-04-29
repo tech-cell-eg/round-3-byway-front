@@ -1,0 +1,50 @@
+{
+    "header": "Learner Reviews" ,
+
+    "reviewsData": [
+    {
+        "id": 1,
+        "name": "Mark Doe",
+        "date": "22nd March, 2024",
+        "rating": 5,
+        "comment": "I was initially apprehensive, having no prior design experience. But the instructor, John Doe, did an amazing job of breaking down complex concepts into easily digestible modules. The video lectures were engaging, and the real-world examples really helped solidify my understanding."
+    },
+    {
+        "id": 2,
+        "name": "Mark Doe",
+        "date": "22nd March, 2024",
+        "rating": 5,
+        "comment": "I was initially apprehensive, having no prior design experience. But the instructor, John Doe, did an amazing job of breaking down complex concepts into easily digestible modules. The video lectures were engaging, and the real-world examples really helped solidify my understanding."
+    },
+    {
+        "id": 3,
+        "name": "Mark Doe",
+        "date": "22nd March, 2024",
+        "rating": 5,
+        "comment": "I was initially apprehensive, having no prior design experience. But the instructor, John Doe, did an amazing job of breaking down complex concepts into easily digestible modules. The video lectures were engaging, and the real-world examples really helped solidify my understanding."
+    },
+    {
+        "id": 4,
+        "name": "Mark Doe",
+        "date": "22nd March, 2024",
+        "rating": 5,
+        "comment": "I was initially apprehensive, having no prior design experience. But the instructor, John Doe, did an amazing job of breaking down complex concepts into easily digestible modules. The video lectures were engaging, and the real-world examples really helped solidify my understanding."
+    },
+    {
+        "id": 5,
+        "name": "Mark Doe",
+        "date": "22nd March, 2024",
+        "rating": 5,
+        "comment": "I was initially apprehensive, having no prior design experience. But the instructor, John Doe, did an amazing job of breaking down complex concepts into easily digestible modules. The video lectures were engaging, and the real-world examples really helped solidify my understanding."
+    },
+    {
+        "id": 6,
+        "name": "Mark Doe",
+        "date": "22nd March, 2024",
+        "rating": 5,
+        "comment": "I was initially apprehensive, having no prior design experience. But the instructor, John Doe, did an amazing job of breaking down complex concepts into easily digestible modules. The video lectures were engaging, and the real-world examples really helped solidify my understanding."
+    }
+    ],
+    "reviewedOn": "Reviewed on {{date}} ",
+    "viewMore": "View more Reviews"
+}

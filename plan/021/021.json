@@ -1,0 +1,32 @@
+{
+  "Request": {
+    "URL": "/api/instructor/:instructor-id",
+    "Method": "GET",
+    "Parameters": {
+      "instructor-id": "51151515"
+    },
+    "Authentication": false
+  },
+  "Response": {
+    "data": {
+      "is_owner": false,
+      "id": 1,
+      "name": "",
+      "image": "",
+      "title": "",
+      "students": 1021,
+      "reviews": 4.2,
+      "about": "",
+      "areas": [
+        "UX",
+        "UI"
+      ],
+      "experience": "",
+      "links": {
+        "youtube": "",
+        "twitter": "",
+        "website": ""
+      }
+    }
+  }
+}

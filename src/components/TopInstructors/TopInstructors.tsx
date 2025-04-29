@@ -26,7 +26,7 @@ export default function TopInstructors() {
   const instructorEntries = Object.entries(instructors).slice(0, 5);
 
   return (
-    <div className="responsive-primary-padding-x responsive-secondary-padding-y">
+    <div className="responsive-primary-padding-x w-full responsive-secondary-padding-y">
       <div className="px-5 pb-5">
         <h3 className="font-bold text-2xl text-border-dark">
           {t('topInstructors')}

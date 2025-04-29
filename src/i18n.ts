@@ -14,8 +14,14 @@ i18next
       'home/home',
       'home/topCourses',
       'home/topInstructors',
+      'Category/mainPage',
+      'Category/allCourses',
+      'home/banner',
+      'cart/cart',
+      'home/testimonial',
       'footer',
     ],
+
     defaultNS: 'common',
     debug: true,
     interpolation: {
