@@ -138,8 +138,8 @@
 }
 
 :root {
-  max-width: 1440px;
-  margin: 0 auto;
+  /* max-width: 1440px;
+  margin: 0 auto; */
 
   --radius: 0.5rem;
 
@@ -278,10 +278,10 @@
   }
 }
 
-body {
+/* body {
   max-width: 1440px;
   margin: 0 auto;
-}
+} */
 
 /* Section vertical padding */
 .responsive-primary-padding-y {
