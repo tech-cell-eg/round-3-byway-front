@@ -14,7 +14,7 @@ export const InstructorSignUp = () => {
   const userToken = useAppSelector(state => state.user.token);
 
   if (role === 'instructor') {
-    navigate('/profile');
+    navigate('/');
     toast.warn('You are already logged in as an instructor');
   } else if (role === 'student') {
     return <InstructorAccCreate />;

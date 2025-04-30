@@ -5,6 +5,15 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  /* dashbourd */
+  --color-green-main: #16a34a;
+  --color-bg-main: #f8fafc;
+  --color-red-home: #ef4444;
+  --color-brawen-home: #ca8a04;
+  --color-yellow-home: #facc15;
+  --color-ment-home: #4ade80;
+  --color-green-home: #16a34a;
+
   /* Accent */
   --color-accent-primary: #2563eb;
   --color-accent-secondary: #3b82f6;
@@ -138,8 +147,12 @@
 }
 
 :root {
-  max-width: 1440px;
-  margin: 0 auto;
+  /* max-width: 1440px;
+  margin: 0 auto; */
+
+  /* max-width: 1440px; */
+
+  /* margin: 0 auto; */
 
   --radius: 0.5rem;
 
@@ -278,9 +291,13 @@
   }
 }
 
-body {
+/* body {
   max-width: 1440px;
   margin: 0 auto;
+} */
+body {
+  /* max-width: 1440px;
+  margin: 0 auto; */
 }
 
 /* Section vertical padding */
