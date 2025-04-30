@@ -22,6 +22,7 @@ import { ReduxInitializer } from './Redux/reduxInitializer';
 import { NotificationLayout } from './components/Dashboard/commuincation/notification/NotificationLayout';
 import ReviewsCoursePage from './components/Dashboard/reviews/ReviewsCoursePage';
 import CourseSections from './components/Dashboard/sections/CourseSections';
+import SectionLessons from './components/Dashboard/lesssons/SectionLessons';
 
 function App() {
   const { i18n } = useTranslation();
@@ -89,6 +90,10 @@ function App() {
           {
             path: 'sections',
             element: <CourseSections />,
+          },
+          {
+            path: 'lessons/:sectionId',
+            element: <SectionLessons />,
           },
         ],
       },
