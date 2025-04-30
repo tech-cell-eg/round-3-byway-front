@@ -3,33 +3,40 @@ import manglasses from '../../assets/images/Banner/manglasses.png';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from '@/Redux/reduxHooks';
 
 const Banner = () => {
   const { t, i18n } = useTranslation(['home/banner']);
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem('user') !== null;
   const isRTL = i18n.language === 'ar';
+  const role = localStorage.getItem('role') || 'student';
+  const userToken = useAppSelector(state => state.user.token);
 
   const handleInstructorClick = () => {
     if (isLoggedIn) {
-      navigate('/Instructor'); // instructor page
-    } else {
-      navigate('/SignUp'); // login page
+      if (role === 'instructor') {
+        navigate('/InstructorPage');
+      } else if (!userToken) {
+        navigate('/signup-instructor');
+      }
     }
   };
 
   const handleStudentClick = () => {
     if (isLoggedIn) {
-      navigate('/coursespage'); //course page
-    } else {
-      navigate('/SignUp'); // login page
+      if (role === 'students') {
+        navigate('/coursespage');
+      } else if (!userToken) {
+        navigate('/SignUp');
+      }
     }
   };
 
   return (
     <div dir={isRTL ? 'rtl' : 'ltr'}>
-      <section className="flex flex-col items-center justify-center gap-60px py-16 px-4 ">
-        {/* Instructor  */}
+      <section className="flex flex-col items-center justify-center gap-60px py-16 px-4">
+        {/* Instructor */}
         <div className="flex flex-col md:flex-row items-center gap-40 max-w-5xl w-full">
           <img
             src={womanglasses}
@@ -48,10 +55,8 @@ const Banner = () => {
             <p className="text-[#1D2939] text-sm mb-4">
               {t('Instructor.description')}
             </p>
-
             <button
               onClick={handleInstructorClick}
-              type="submit"
               className="px-6 py-2.5 bg-button-tertiary text-content-light w-fit rounded-small mt-3 hover:cursor-pointer flex flex-row items-center gap-1.5"
             >
               {t('Instructor.button')}
@@ -64,7 +69,7 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* Students */}
+        {/* Student */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-40 max-w-5xl w-full">
           <img
             src={manglasses}
@@ -85,7 +90,6 @@ const Banner = () => {
             </p>
             <button
               onClick={handleStudentClick}
-              type="submit"
               className="px-6 py-2.5 bg-button-tertiary text-content-light w-fit rounded-small mt-3 hover:cursor-pointer flex flex-row items-center gap-1.5"
             >
               {t('Student.button')}

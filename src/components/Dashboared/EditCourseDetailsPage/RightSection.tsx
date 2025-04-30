@@ -32,6 +32,27 @@ const RightSection: React.FC = () => {
             placeholder={t('editCourse.discountPlaceholder')}
           />
         </div>
+        {/*Language */}
+        <div className="border rounded-[10px] border-gray-300 p-3 bg-white">
+          <label className="block mb-1 ">{t('editCourse.language')}</label>
+          <input />
+        </div>
+        {/* Course Level */}
+        <div className="border rounded-[10px] border-gray-300 p-3 bg-white">
+          <label className="block mb-1 ">{t('editCourse.courseLevel')}</label>
+          <select
+            {...register('courseLevel')}
+            className="w-full border border-gray-300 rounded-[10px] p-2"
+            defaultValue=""
+          >
+            <option value="" disabled>
+              {t('editCourse.selectLevel')}
+            </option>
+            <option value="beginner">{t('editCourse.beginner')}</option>
+            <option value="intermediate">{t('editCourse.intermediate')}</option>
+            <option value="advanced">{t('editCourse.advanced')}</option>
+          </select>
+        </div>
       </div>
     </div>
   );

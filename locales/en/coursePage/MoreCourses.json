@@ -13,7 +13,7 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course3": {
             "multiVariants": "Multiple Variants",
@@ -27,7 +27,7 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
 
 
         },
@@ -43,7 +43,7 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
 
         },
         "course4": {
@@ -58,7 +58,7 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
 
 
         }

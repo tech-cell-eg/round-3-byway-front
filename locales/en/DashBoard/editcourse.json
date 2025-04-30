@@ -11,7 +11,8 @@
       "price": "Course Price",
       "pricePlaceholder": "e.g., $199.00",
       "discount": "Discount Percentage (Optional)",
-      "discountPlaceholder": "e.g., 20%"
+      "discountPlaceholder": "e.g., 20%",
+      "language": "Language"
     },
     "common": {
       "save": "Save",
