@@ -8,6 +8,8 @@ import TestimonialSection from '@/components/Testimonial/TestimonialSection';
 import CourseStickyCard from '@/components/CourseDetails/CourseStickyCard';
 import CourseInfoPanel from '@/components/CourseDetails/CourseInfoPanel';
 import MoreCourses from '@/components/CourseDetails/MoreCourses';
+import CourseStickyCardPrice from '@/components/CourseDetails/CourseStickyCardPrice';
+import CourseStickyCardButtons from '@/components/CourseDetails/CourseStickyCardButtons';
 
 const CourseDetails = () => {
   const instructorData = {
@@ -58,6 +60,11 @@ const CourseDetails = () => {
         <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 responsive-primary-padding-y responsive-primary-padding-x">
           <div className="lg:col-span-8 flex flex-col gap-10">
             <CourseInfoPanel />
+
+            <div className="flex lg:hidden flex-col gap-5 mt-5">
+              <CourseStickyCardPrice />
+              <CourseStickyCardButtons />
+            </div>
 
             <NavLinkCoursesDetail links={navLinks} />
 
