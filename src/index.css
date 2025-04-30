@@ -100,7 +100,10 @@
   /* [24px] */
   --text-body-big: 1.5rem;
 
-  /* border radius */
+  /* Spacings */
+  --spacing-dropdown: 0.75rem;
+
+  /* Border radius */
   --radius-small: 0.5rem;
   --radius-medium: 1rem;
   --radius-circle: 100%;
@@ -114,7 +117,7 @@
   --shadow-secondary: 0px 11px 8px 0px rgb(59 130 246 / 25%);
 
   /* dropdowns */
-  --shadow-panel: 0 16px 29px -8px rgb(115 115 115 / 69%);
+  --shadow-panel: 0 10px 25px -10px rgb(115 115 115 / 50%);
 
   /* duration */
   --transition-duration-short: 200ms;
@@ -254,11 +257,6 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-body {
-  max-width: 1440px;
-  margin: 0 auto;
 }
 
 /* Section vertical padding */
