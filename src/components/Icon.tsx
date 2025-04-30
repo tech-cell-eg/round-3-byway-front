@@ -18,7 +18,6 @@ import {
   Award,
   GraduationCap,
   Play,
-  Video,
   BookText,
   Search,
   Settings,
@@ -30,6 +29,9 @@ import {
   BookOpenText,
   LayoutDashboard,
   Check,
+  Menu,
+  Library,
+  Clapperboard,
 } from 'lucide-react';
 
 export type IconName =
@@ -62,7 +64,9 @@ export type IconName =
   | 'book-open'
   | 'dashboard'
   | 'logout'
-  | 'check';
+  | 'check'
+  | 'menu'
+  | 'library';
 
 const iconMap: Record<IconName, LucideIcon> = {
   x: X,
@@ -76,11 +80,6 @@ const iconMap: Record<IconName, LucideIcon> = {
   briefcase: Briefcase,
   physics: Atom,
   star: Star,
-  award: Award,
-  play: Play,
-  video: Video,
-  graduationcap: GraduationCap,
-  'book-text': BookText,
   'chevron-left': ChevronLeft,
   'chevron-right': ChevronRight,
   'chevron-up': ChevronUp,
@@ -94,12 +93,19 @@ const iconMap: Record<IconName, LucideIcon> = {
   user: UserRound,
   'book-open': BookOpenText,
   dashboard: LayoutDashboard,
+  menu: Menu,
+  library: Library,
+  video: Clapperboard,
+  'book-text': BookText,
   check: Check,
+  graduationcap: GraduationCap,
+  award: Award,
+  play: Play,
 };
 
 interface IconProps {
   name: IconName;
-  size?: number;
+  size?: number | string;
   className?: string;
   onClick?: () => void;
 }
