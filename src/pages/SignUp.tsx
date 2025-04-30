@@ -1,6 +1,6 @@
 import signUpImg from '@/assets/images/signup/SignBannerImage.png';
 import { zodResolver } from '@hookForm/resolvers/zod';
-// import axios from 'axios';
+import axios from 'axios';
 import { Input } from '@/components/ui/input';
 import { FieldValues, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -8,18 +8,22 @@ import { useNavigate } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
 import { z } from 'zod';
 import { ArrowRight } from 'lucide-react';
+import { useMutation } from '@tanstack/react-query';
+import { IUserSave } from '@/types/types';
+import { useAppDispatch } from '@/Redux/reduxHooks';
+import { saveUserRedux } from '@/Redux/slices/auth/userSlice';
 // save user data in local storage
-function saveUserData(data: FieldValues) {
-  localStorage.setItem('user', JSON.stringify({ ...data, role: 'student' }));
+function saveUserData(data: IUserSave) {
+  localStorage.setItem('user', JSON.stringify(data));
 }
 
 // form validation
 const createRegisterSchema = (t: (key: string) => string) =>
   z
     .object({
-      firstName: z.string().min(2, t('signUpForm:errors.firstName')),
-      lastName: z.string().min(2, t('signUpForm:errors.lastName')),
-      userName: z.string().min(2, t('signUpForm:errors.userName')),
+      first_name: z.string().min(2, t('signUpForm:errors.firstName')),
+      last_name: z.string().min(2, t('signUpForm:errors.lastName')),
+      username: z.string().min(2, t('signUpForm:errors.userName')),
       email: z.string().email(t('signUpForm:errors.email')),
       password: z.string().min(8, t('signUpForm:errors.password')),
       confirmPassword: z.string().min(6, t('signUpForm:errors.password')),
@@ -33,9 +37,11 @@ const createRegisterSchema = (t: (key: string) => string) =>
       path: ['confirmPassword'],
     });
 
+// sign up component
 export const SignUp = () => {
   const [t, i18n] = useTranslation(['signUpForm']);
   const isRTL = i18n.language === 'ar';
+  const dispatch = useAppDispatch();
 
   const navigate = useNavigate();
 
@@ -50,26 +56,43 @@ export const SignUp = () => {
     mode: 'onChange',
   });
 
-  const handleRegister = async (data: FieldValues) => {
-    // const { firstName, lastName, userName, email, password } = data;
-    try {
-      // const requestBody = {
-      //   'first-name': firstName,
-      //   'last-name': lastName,
-      //   username: userName,
-      //   email: email,
-      //   password: password,
-      // };
-      // const response = await axios.post('#009', requestBody);
-      // console.log(response);
-      saveUserData(data); // Assuming this function handles local data saving
+  const registerUser = async (data: FieldValues) => {
+    const requestBody = {
+      first_name: data.first_name,
+      last_name: data.last_name,
+      username: data.username,
+      email: data.email,
+      password: data.password,
+      role: 'student',
+    };
+    const response = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/auth/register`,
+      requestBody
+    );
+    console.log(response);
+    const userData = response.data.data;
+    console.log(userData);
+    return userData; // return the response if you need
+  };
+
+  const {
+    mutate: handleRegister,
+    isPending,
+    error,
+  } = useMutation({
+    mutationFn: registerUser,
+    onSuccess: data => {
+      console.log(data);
+      saveUserData(data);
+      dispatch(saveUserRedux(data));
       toast.success('Registration successful');
       navigate('/');
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    },
+    onError: () => {
+      console.error(error);
+      toast.error('Registration failed');
+    },
+  });
 
   const formInputStyles =
     'border-border-light border p-4 placeholder:text-placeholder placeholder:text-body-base select:bg-transparent';
@@ -93,7 +116,7 @@ export const SignUp = () => {
           <div>
             <form
               className="flex flex-col gap-6"
-              onSubmit={handleSubmit(handleRegister)}
+              onSubmit={handleSubmit(data => handleRegister(data))}
             >
               {/* first and last name */}
               <div>
@@ -103,24 +126,26 @@ export const SignUp = () => {
                 <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
                   <div className="flex flex-col w-full lg:w-1/2">
                     <Input
-                      {...register('firstName')}
+                      {...register('first_name')}
                       type="text"
                       placeholder={t('signUpForm:firstName')}
                       className="border-border-light border p-4 placeholder:text-placeholder placeholder:text-body-base"
                     />
-                    {errors.firstName && (
-                      <p className="text-red-500">{errors.firstName.message}</p>
+                    {errors.first_name && (
+                      <p className="text-red-500">
+                        {errors.first_name.message}
+                      </p>
                     )}
                   </div>
                   <div className="flex flex-col w-full lg:w-1/2">
                     <Input
-                      {...register('lastName')}
+                      {...register('last_name')}
                       type="text"
                       placeholder={t('signUpForm:lastName')}
                       className="border-border-light border p-4 placeholder:text-placeholder placeholder:text-body-base w-full"
                     />
-                    {errors.lastName && (
-                      <p className="text-red-500">{errors.lastName.message}</p>
+                    {errors.last_name && (
+                      <p className="text-red-500">{errors.last_name.message}</p>
                     )}
                   </div>
                 </div>
@@ -132,13 +157,13 @@ export const SignUp = () => {
                   {t('signUpForm:userName')}
                 </h3>
                 <Input
-                  {...register('userName')}
+                  {...register('username')}
                   type="text"
                   placeholder={t('signUpForm:userName')}
                   className={formInputStyles}
                 />
-                {errors.userName && (
-                  <p className="text-red-500">{errors.userName.message}</p>
+                {errors.username && (
+                  <p className="text-red-500">{errors.username.message}</p>
                 )}
               </div>
 
@@ -196,8 +221,9 @@ export const SignUp = () => {
               <button
                 type="submit"
                 className="px-6 py-2.5 bg-button-tertiary text-content-light w-fit rounded-small mt-3 hover:cursor-pointer flex flex-row items-center gap-1.5"
+                disabled={isPending}
               >
-                {t('signUpForm:button')}
+                {isPending ? 'Loading...' : t('signUpForm:button')}
                 <div
                   className={`${isRTL && 'rotate-180 flex items-center justify-center'}`}
                 >

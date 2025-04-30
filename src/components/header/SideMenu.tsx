@@ -4,7 +4,6 @@ import GoToButton from './GoToButton';
 import LanguageToggle from './LanguageToggle';
 import ThemeToggle from './ThemeToggle';
 import { Button } from '../ui/button';
-import appName from '@/constants/appName';
 import {
   Sheet,
   SheetContent,
@@ -15,6 +14,7 @@ import {
 } from '../ui/sheet';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { IconName } from '../Icon';
+import appName from '../constants/appName';
 
 type MenuProps = {
   isLoggedIn?: boolean;

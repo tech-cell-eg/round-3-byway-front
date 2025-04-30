@@ -6,7 +6,7 @@
             "multiVariants": "Multiple Variants",
             "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "description": "By ",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -14,13 +14,13 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
         },
         "course3": {
             "multiVariants": "Multiple Variants",
             "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "description": "By ",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -28,7 +28,7 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
 
 
         },
@@ -36,7 +36,7 @@
             "multiVariants": "Multiple Variants",
             "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "description": "By ",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -44,14 +44,14 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
 
         },
         "course4": {
             "multiVariants": "Multiple Variants",
             "discount": "Discount",
             "category": "Beginner’s Guide to Design",
-            "description": "By Ronald Richards",
+            "description": "By ",
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
@@ -59,7 +59,7 @@
             "currency": "USD",
             "originalPrice": "$199.9",
             "students":"students",
-            "level":"for peginners"
+            "level":"peginners"
 
 
         }

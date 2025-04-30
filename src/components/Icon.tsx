@@ -29,7 +29,13 @@ import {
   BookOpenText,
   LayoutDashboard,
   Check,
+  Quote,
+  ArrowRightFromLine,
+  Gauge,
+  CircleDollarSign,
+  MessagesSquare,
   Menu,
+  Podcast,
   Library,
   Clapperboard,
 } from 'lucide-react';
@@ -65,7 +71,13 @@ export type IconName =
   | 'dashboard'
   | 'logout'
   | 'check'
+  | 'qoute'
+  | 'arrow-right-from-line'
+  | 'gauge'
+  | 'circle-dollar-sign'
+  | 'messages-square'
   | 'menu'
+  | 'podcast'
   | 'library';
 
 const iconMap: Record<IconName, LucideIcon> = {
@@ -98,6 +110,12 @@ const iconMap: Record<IconName, LucideIcon> = {
   video: Clapperboard,
   'book-text': BookText,
   check: Check,
+  qoute: Quote,
+  'arrow-right-from-line': ArrowRightFromLine,
+  gauge: Gauge,
+  'circle-dollar-sign': CircleDollarSign,
+  'messages-square': MessagesSquare,
+  podcast: Podcast,
   graduationcap: GraduationCap,
   award: Award,
   play: Play,

@@ -1,26 +1,22 @@
+import { usePostMutation } from '@/api/usePostMutation';
 import { Input } from '@/components/ui/input';
+import { useAppDispatch, useAppSelector } from '@/Redux/reduxHooks';
+import { setUserRole } from '@/Redux/slices/auth/userSlice';
 import { zodResolver } from '@hookForm/resolvers/zod';
-import { useEffect, useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { z } from 'zod';
 
-interface UserData {
-  confirmPassword: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-  role: string;
-  userName: string;
-}
-
 // form validation
 const createRegisterSchema = (t: (key: string) => string) =>
   z.object({
-    profilePicture: z.string().url(t('signUpForm:errors.profilePicture')),
+    profilePicture: z
+      .string()
+      .url(t('signUpForm:errors.profilePicture'))
+      .optional()
+      .or(z.literal('')),
     bio: z.string().min(10, t('signUpForm:errors.bio')),
     title: z.string().min(2, t('signUpForm:errors.title')),
   });
@@ -31,18 +27,12 @@ const formInputStyles =
 export const InstructorAccCreate = () => {
   const [t, i18n] = useTranslation(['signUpForm']);
   const isRTL = i18n.language === 'ar';
+  const dispatch = useAppDispatch();
 
   const navigate = useNavigate();
-  const [user, setUser] = useState<UserData | null>(null);
 
+  const user = useAppSelector(state => state.user);
   // check user role
-  useEffect(() => {
-    const storedData = localStorage.getItem('user');
-    if (storedData) {
-      const pasredData = JSON.parse(storedData);
-      setUser(pasredData);
-    }
-  }, [navigate]);
 
   const {
     register,
@@ -55,38 +45,44 @@ export const InstructorAccCreate = () => {
 
   const updateUserRole = () => {
     if (user) {
-      user.role = 'instructor';
+      dispatch(setUserRole('instructor'));
       localStorage.setItem('user', JSON.stringify(user));
     }
   };
+
+  const { mutate, isPending, isError } = usePostMutation('/auth/register', {
+    onSuccess: data => {
+      console.log(data);
+      updateUserRole();
+      toast.success('Account upgraded successfully!');
+      navigate('/profile');
+    },
+  });
 
   const handleRegister = async (data: FieldValues) => {
     const { profilePicture, bio, title } = data;
     console.log('Button clicked');
     const dataToSend = {
-      'first-name': user?.firstName,
-      'last-name': user?.lastName,
-      username: user?.userName,
+      first_name: user?.first_name,
+      last_name: user?.last_name,
+      username: user?.username,
       email: user?.email,
-      profile_picture_url: profilePicture, // placeholder for image url
+      profile_picture_url: profilePicture,
       bio: bio,
       title: title,
+      role: 'instructor',
     };
-
-    try {
-      // const response = await axios.post('#010', dataToSend);
-      // console.log(response);
-      updateUserRole();
-      toast.success('Registration successful');
-      console.log(`Data sent: ${JSON.stringify(dataToSend)}`);
-      //  navigate('/profile');
-    } catch (error) {
-      console.log(error);
-      console.log('something went wrong');
-      toast.error('Registration failed');
-    }
+    mutate(dataToSend);
   };
 
+  if (isPending) {
+    return <div>Loading...</div>;
+  }
+  if (isError) {
+    return <div>Error</div>;
+  }
+
+  console.log(`${user?.first_name} ${user?.last_name}`);
   return (
     <div
       className="responsive-secondary-padding-y responsive-primary-padding-x w-full"
@@ -133,7 +129,8 @@ export const InstructorAccCreate = () => {
               type="text"
               className="border-border-light border p-4 placeholder:text-placeholder placeholder:text-body-base"
               readOnly
-              defaultValue={`${user?.firstName} ${user?.lastName}`}
+              disabled
+              value={`${user?.first_name} ${user?.last_name}`}
             />
           </div>
 
@@ -146,7 +143,8 @@ export const InstructorAccCreate = () => {
               type="text"
               className={formInputStyles}
               readOnly
-              defaultValue={user?.userName}
+              disabled
+              defaultValue={user?.username}
             />
           </div>
 
@@ -159,6 +157,7 @@ export const InstructorAccCreate = () => {
               type="email"
               className={formInputStyles}
               readOnly
+              disabled
               defaultValue={user?.email}
             />
           </div>
@@ -200,6 +199,7 @@ export const InstructorAccCreate = () => {
           <button
             type="submit"
             className="px-6 py-2.5 bg-button-tertiary text-content-light w-fit rounded-small mt-3 hover:cursor-pointer"
+            disabled={isPending}
           >
             {t('signUpForm:instructor.button')}
           </button>

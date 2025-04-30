@@ -1,71 +1,52 @@
 {
-    "popularMentors":"Popular Mentors",
+    "popularMentors":"Popular Instructors",
 "topInstructors":"Top instructors",
  "instructors":{
     "instructor1": {
-        "title": "Instructor A",
-        "description": "Intro to AI",
         "price": "$99",
         "lecs": 12,
         "hours": "hours",
         "level": "Beginner",
         "students": "students",
         "rating": 5,
-        "category": "AI",
-        "instructorName": "Sarah Johnson",
-        "instructorTitle": "AI Engineer"
+        "category": "AI"
     },
     "instructor2": {
-        "title": "Instructor B",
-        "description": "Intro to AI",
         "price": "$99",
         "lecs": 12,
         "hours": "hours",
         "level": "Beginner",
         "students": "students",
         "rating": 5,
-        "category": "AI",
-        "instructorName": "Sarah Johnson",
-        "instructorTitle": "AI Engineer"
+        "category": "AI"
     },
     "instructor3": {
         "title": "Instructor C",
-        "description": "Intro to AI",
         "price": "$99",
         "lecs": 12,
         "hours": "hours",
         "level": "Beginner",
         "students": "students",
         "rating": 5,
-        "category": "AI",
-        "instructorName": "Sarah Johnson",
-        "instructorTitle": "AI Engineer"
+        "category": "AI"
     },
     "instructor4": {
-        "title": "Instructor D",
-        "description": "Intro to AI",
         "price": "$99",
         "lecs": 12,
         "hours": "hours",
         "level": "Beginner",
         "students": "students",
         "rating": 5,
-        "category": "AI",
-        "instructorName": "Sarah Johnson",
-        "instructorTitle": "AI Engineer"
+        "category": "AI"
     },
     "instructor5": {
-        "title": "Instructor E",
-        "description": "Intro to AI",
         "price": "$99",
         "lecs": 12,
         "hours": "hours",
         "level": "Beginner",
         "students": "students",
         "rating": 5,
-        "category": "AI",
-        "instructorName": "Sarah Johnson",
-        "instructorTitle": "AI Engineer"
+        "category": "AI"
     }
 }
 }

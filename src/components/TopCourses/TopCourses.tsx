@@ -39,8 +39,8 @@ export default function TopCourses() {
           {courseEntries.map(([key, course], index) => {
             const courseData: ICourse = {
               id2: index + 1,
-              name: course.title,
-              description: course.description,
+              name: 'Beginner’s Guide to Design',
+              description: course.description + 'Ronald Richards',
               price: course.price,
               lectures: course.lecs,
               lecturesName: 10,
