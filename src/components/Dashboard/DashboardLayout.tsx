@@ -7,7 +7,7 @@ export default function DashboardLayout() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <div className=" w-full h-full bg-surface-light-secondary  p-6 ">
+      <div className=" w-full h-full  p-6 ">
         <EditCourseDetails />
       </div>
       <main>

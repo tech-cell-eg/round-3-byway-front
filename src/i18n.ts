@@ -25,7 +25,7 @@ i18next
       'instructor/HeaderLinks',
       'dashboard/HomeDash/home',
       'dashboard/Revenue/revenue',
-      'DashBoard/editCourseDetailsPage',
+      'DashBoard/editCourseDetails',
     ],
 
     defaultNS: 'common',

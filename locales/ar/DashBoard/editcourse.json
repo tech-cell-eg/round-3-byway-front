@@ -1,18 +1,29 @@
 {
   "editCourse": {
+    "Details": "التفاصيل",
     "courseDetails": "تفاصيل الدورة",
     "courseName": "اسم الدورة",
     "videoUrl": "رابط الفيديو",
     "videoUrlPlaceholder": "ادخل رابط الفيديو",
     "imageUrl": "رابط صورة",
-    "imageUrlPlaceholder": "ادخل رابط الصورة",
+    "imageUrlPlaceholder": "ادخل رابط ",
     "description": "الوصف",
     "descriptionPlaceholder": "ادخل وصف الدورة...",
     "price": "سعر الدورة",
     "pricePlaceholder": "مثلاً: 199 دولار",
     "discount": "نسبة الخصم (اختياري)",
     "discountPlaceholder": "مثلاً: 20٪",
-    "language": "اللغة"
+    "language": "اللغة",
+    "languagePlaceholder": "اختر اللغة",
+    "English": "الإنجليزية",
+    "Arabic": "العربية",
+    "Spanish": "الأسبانية",
+    "CC": "CC",
+    "Level": "المستوى",
+    "LevelPlaceholder": "اختر المستوى",
+    "Beginner": "مبتدئ",
+    "Intermediate": "متوسط",
+    "Advanced": "متقدم"
   },
   "common": {
     "save": "حفظ",
