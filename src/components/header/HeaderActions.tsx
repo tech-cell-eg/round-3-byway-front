@@ -1,32 +1,22 @@
 import GuestActions from './GuestActions';
+import SearchButton from './SearchButton';
 import UserActions from './UserActions';
 import UtilityActions from './UtilityActions';
 
 type HeaderActionsProps = {
-  handleListToggle: (list: string) => void;
   isLoggedIn: boolean;
-  handleMenuVisibility: () => void;
 };
 
-function HeaderActions({
-  handleListToggle,
-  isLoggedIn,
-  handleMenuVisibility,
-}: HeaderActionsProps) {
+function HeaderActions({ isLoggedIn }: HeaderActionsProps) {
   return (
-    <div className="flex items-center gap-2 text-body-small text-content-dark">
-      <UtilityActions
-        handleListToggle={handleListToggle}
-        isLoggedIn={isLoggedIn}
-      />
-      {isLoggedIn ? (
-        <UserActions
-          handleListToggle={handleListToggle}
-          handleMenuVisibility={handleMenuVisibility}
-        />
-      ) : (
-        <GuestActions />
-      )}
+    <div className="flex items-center gap-1 lg:gap-2 text-body-small text-content-dark">
+      <SearchButton />
+
+      <UtilityActions isLoggedIn={isLoggedIn} />
+
+      {isLoggedIn && <UserActions isLoggedIn={isLoggedIn} />}
+
+      {!isLoggedIn && <GuestActions />}
     </div>
   );
 }
