@@ -36,6 +36,7 @@ import {
   CircleDollarSign,
   MessagesSquare,
   Menu,
+  Podcast,
 } from 'lucide-react';
 
 export type IconName =
@@ -74,7 +75,8 @@ export type IconName =
   | 'gauge'
   | 'circle-dollar-sign'
   | 'messages-square'
-  | 'menu';
+  | 'menu'
+  | 'podcast';
 
 const iconMap: Record<IconName, LucideIcon> = {
   x: X,
@@ -113,6 +115,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   'circle-dollar-sign': CircleDollarSign,
   'messages-square': MessagesSquare,
   menu: Menu,
+  podcast: Podcast,
 };
 
 interface IconProps {
