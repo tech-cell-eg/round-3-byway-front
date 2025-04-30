@@ -82,6 +82,7 @@ function App() {
             path: 'commuincation',
             element: <NotificationLayout />,
           },
+          {
             path: 'reviews',
             element: <ReviewsCoursePage />,
           },
