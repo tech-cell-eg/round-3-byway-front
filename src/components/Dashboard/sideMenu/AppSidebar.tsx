@@ -44,7 +44,7 @@ const items = (t: (key: string) => string) => [
   },
   {
     title: t('courses'),
-    url: '/dashboard/reviews',
+    url: '/dashboard/dashboardCourses',
     icon: <Icon name="book-text" size={24} />,
   },
   {
@@ -54,7 +54,7 @@ const items = (t: (key: string) => string) => [
   },
   {
     title: t('revenue'),
-    url: '#',
+    url: '/dashboard/revenue',
     icon: <Icon name="circle-dollar-sign" size={24} />,
   },
   {
