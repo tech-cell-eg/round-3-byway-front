@@ -1,0 +1,33 @@
+{
+    "editCourse": {
+      "Details": "Details",
+      "courseDetails": "Course Details",
+      "courseName": "Course Name",
+      "videoUrl": "Video URL",
+      "videoUrlPlaceholder": "Enter video URL",
+      "imageUrl": "Image URL",
+      "imageUrlPlaceholder": "Please enter a valid URL ",
+      "description": "Description",
+      "descriptionPlaceholder": "Enter course description...",
+      "price": "Course Price",
+      "pricePlaceholder": "e.g., $199.00",
+      "discount": "Discount Percentage (Optional)",
+      "discountPlaceholder": "e.g., 20%",
+      "language": "Language",
+      "languagePlaceholder": "Select Language",
+      "English": "English",
+      "Arabic": "Arabic",
+      "Spanish": "Spanish",
+      "CC":"CC",
+      "Level":"Level",
+      "LevelPlaceholder":"Select Level",
+      "Beginner":"Beginner",
+      "Intermediate":"Intermediate",
+      "Advanced":"Advanced"
+    },
+    "common": {
+      "save": "Save",
+      "cancel": "Cancel"
+    }
+  }
+  

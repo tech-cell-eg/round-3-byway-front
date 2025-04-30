@@ -36,10 +36,13 @@ export const userSlice = createSlice({
       state.title = action.payload.title;
       state.profile_picture = action.payload.profile_picture;
     },
+    setUserRole: (state, action: PayloadAction<string>) => {
+      state.role = action.payload;
+    },
   },
 });
 
-export const { saveUserRedux } = userSlice.actions;
+export const { saveUserRedux, setUserRole } = userSlice.actions;
 export const selectUser = (state: RootState) => state.user;
 
 export default userSlice.reducer;

@@ -23,6 +23,9 @@ i18next
       'InstructorPage/headerinfo',
       'coursePage/MoreCourses',
       'instructor/HeaderLinks',
+      'dashboard/HomeDash/home',
+      'dashboard/Revenue/revenue',
+      'DashBoard/editCourseDetails',
       'footer',
     ],
 
