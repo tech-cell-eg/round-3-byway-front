@@ -3,28 +3,16 @@ import { Link } from 'react-router';
 import Icon from '../Icon';
 import CourseStickyCardImage from './CourseStickyCardImage';
 import courseThumbnail from '../../assets/course-thumbnail.png';
+import BreadCrumb from './BreadCrumb';
 
 function CourseInfoPanel() {
   return (
-    // <section className="col-span-1 lg:col-span-8 gap-10 text-sm md:text-base">
     <section className="col-span-8 h-fit text-sm md:text-base">
       <div className="block lg:hidden">
         <CourseStickyCardImage courseThumbnail={courseThumbnail} />
       </div>
 
-      <div className="flex items-center gap-3 mb-5 text-xs md:text-base">
-        <Link to="" className="">
-          Home
-        </Link>
-        <Icon name="chevron-right" />
-        <Link to="" className="">
-          Categories
-        </Link>
-        <Icon name="chevron-right" />
-        <Link to="" className="text-accent-secondary hover:text-accent-primary">
-          Introduction to User Experience Design
-        </Link>
-      </div>
+      <BreadCrumb />
 
       <div className="flex flex-col gap-4 md:gap-6">
         <div className="flex flex-col gap-4">
