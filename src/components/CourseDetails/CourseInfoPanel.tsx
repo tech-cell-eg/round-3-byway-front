@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import Icon from '../Icon';
 import CourseStickyCardImage from './CourseStickyCardImage';
 import courseThumbnail from '../../assets/course-thumbnail.png';
-import BreadCrumb from './BreadCrumb';
+import Breadcrumbs from './Breadcrumbs';
 
 function CourseInfoPanel() {
   return (
@@ -11,12 +11,13 @@ function CourseInfoPanel() {
       <div className="block lg:hidden">
         <CourseStickyCardImage courseThumbnail={courseThumbnail} />
       </div>
-
-      <BreadCrumb />
+      <div className="hidden lg:flex lg:mb-5">
+        <Breadcrumbs />
+      </div>
 
       <div className="flex flex-col gap-4 md:gap-6">
         <div className="flex flex-col gap-4">
-          <h2 className="font-bold text-2xl md:text-3xl lg:text-[2.5rem] text-content-primary">
+          <h2 className="mt-5 lg:mt-0 font-bold text-2xl md:text-3xl lg:text-[2.5rem] text-content-primary">
             Introduction to User Experience Design
           </h2>
           <p className="text-content-dark">
