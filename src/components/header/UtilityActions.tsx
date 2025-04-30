@@ -2,16 +2,19 @@ import CartButton from './CartButton';
 import SettingsButton from './SettingsButton';
 
 type HeaderActionsProps = {
-  handleListToggle: (list: string) => void;
   isLoggedIn: boolean;
 };
 
-function UtilityActions({ handleListToggle, isLoggedIn }: HeaderActionsProps) {
+function UtilityActions({ isLoggedIn }: HeaderActionsProps) {
   return (
-    <>
-      <CartButton handleListToggle={handleListToggle} />
-      {!isLoggedIn && <SettingsButton handleListToggle={handleListToggle} />}
-    </>
+    <div className="flex items-center gap-1">
+      <CartButton />
+      {!isLoggedIn && (
+        <div className="hidden lg:block">
+          <SettingsButton />
+        </div>
+      )}
+    </div>
   );
 }
 

@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
+} from '@/components/ui/dialoggg ';
 import logoImg from '@/assets/logo.png';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
