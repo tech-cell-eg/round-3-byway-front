@@ -25,6 +25,7 @@ import CourseSections from './components/Dashboard/sections/CourseSections';
 import HomeDash from './components/Dashboard/HomeDash/HomeDash';
 import CoursesDash from './components/Dashboard/CoursesDash/CoursesDash';
 import Revenue from './components/Dashboard/Revenue/Revenue';
+import SectionLessons from './components/Dashboard/lesssons/SectionLessons';
 
 function App() {
   const { i18n } = useTranslation();
@@ -100,6 +101,10 @@ function App() {
           {
             path: 'sections',
             element: <CourseSections />,
+          },
+          {
+            path: 'lessons/:sectionId',
+            element: <SectionLessons />,
           },
         ],
       },
