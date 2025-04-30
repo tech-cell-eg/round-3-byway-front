@@ -19,6 +19,7 @@ import DashboardLayout from './components/Dashboard/DashboardLayout';
 import CourseLearingPage from './pages/CourseLearingPage';
 import PersonalInformation from './components/Profile/PersonalInformation';
 import { ReduxInitializer } from './Redux/reduxInitializer';
+import { CertificateVerifyPage } from './pages/CertificateVerifyPage';
 
 function App() {
   const { i18n } = useTranslation();
@@ -64,6 +65,10 @@ function App() {
           {
             path: 'instructor',
             element: <InstructorPage />,
+          },
+          {
+            path: 'certificateverifypage',
+            element: <CertificateVerifyPage />,
           },
         ],
       },
