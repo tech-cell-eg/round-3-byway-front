@@ -22,6 +22,9 @@ import { ReduxInitializer } from './Redux/reduxInitializer';
 import { NotificationLayout } from './components/Dashboard/commuincation/notification/NotificationLayout';
 import ReviewsCoursePage from './components/Dashboard/reviews/ReviewsCoursePage';
 import CourseSections from './components/Dashboard/sections/CourseSections';
+import HomeDash from './components/Dashboard/HomeDash/HomeDash';
+import CoursesDash from './components/Dashboard/CoursesDash/CoursesDash';
+import Revenue from './components/Dashboard/Revenue/Revenue';
 
 function App() {
   const { i18n } = useTranslation();
@@ -76,7 +79,15 @@ function App() {
         children: [
           {
             index: true,
-            element: <h1>Dashboard</h1>,
+            element: <HomeDash />,
+          },
+          {
+            path: 'dashboardCourses',
+            element: <CoursesDash />,
+          },
+          {
+            path: 'revenue',
+            element: <Revenue />,
           },
           {
             path: 'commuincation',
