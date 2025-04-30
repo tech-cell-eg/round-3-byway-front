@@ -39,6 +39,7 @@ export const userSlice = createSlice({
     setUserRole: (state, action: PayloadAction<string>) => {
       state.role = action.payload;
     },
+    reduxLogout: () => initialState,
   },
 });
 

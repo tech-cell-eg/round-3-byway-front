@@ -34,6 +34,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import React from 'react';
+import { signOut } from '@/functions/authFunctions';
 
 // Menu items.
 const items = (t: (key: string) => string) => [
@@ -59,7 +60,7 @@ const items = (t: (key: string) => string) => [
   },
   {
     title: t('settings'),
-    url: '#',
+    url: '/dashboard/settings',
     icon: <Icon name="gear" size={24} />,
   },
 ];
@@ -71,10 +72,6 @@ export function AppSidebar() {
   console.log(pathname);
 
   const isArabic = i18n.language === 'ar';
-
-  const handleLogout = () => {
-    console.log('logout');
-  };
 
   const links = items(t);
   return (
@@ -156,7 +153,6 @@ export function AppSidebar() {
           ) : (
             <DropDown
               t={t}
-              handleLogout={handleLogout}
               toggler={
                 <Avatar>
                   <AvatarImage src="https://github.com/shadcn.png" />
@@ -170,11 +166,7 @@ export function AppSidebar() {
 
         {open && (
           <div className="text-content-light !bg-surface-dark-secondary border-0">
-            <DropDown
-              t={t}
-              handleLogout={handleLogout}
-              toggler={<Icon name="menu" />}
-            />
+            <DropDown t={t} toggler={<Icon name="menu" />} />
           </div>
         )}
       </SidebarFooter>
@@ -198,10 +190,9 @@ export function CustomTrigger() {
 
 type Props = {
   t: (key: string) => string;
-  handleLogout: () => void;
   toggler: React.ReactNode;
 };
-export function DropDown({ t, handleLogout, toggler }: Props) {
+export function DropDown({ t, toggler }: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -219,7 +210,7 @@ export function DropDown({ t, handleLogout, toggler }: Props) {
           <LanguageToggle />
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <button className="text-content-light" onClick={handleLogout}>
+          <button className="text-content-light" onClick={signOut}>
             {t('footer.logOut')}
           </button>
         </DropdownMenuItem>

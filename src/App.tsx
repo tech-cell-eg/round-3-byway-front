@@ -22,6 +22,7 @@ import { ReduxInitializer } from './Redux/reduxInitializer';
 import { NotificationLayout } from './components/Dashboard/commuincation/notification/NotificationLayout';
 import ReviewsCoursePage from './components/Dashboard/reviews/ReviewsCoursePage';
 import CourseSections from './components/Dashboard/sections/CourseSections';
+import { UserSettings } from './components/Dashboard/userSettings/UserSettings';
 
 function App() {
   const { i18n } = useTranslation();
@@ -82,12 +83,17 @@ function App() {
             path: 'commuincation',
             element: <NotificationLayout />,
           },
+          {
             path: 'reviews',
             element: <ReviewsCoursePage />,
           },
           {
             path: 'sections',
             element: <CourseSections />,
+          },
+          {
+            path: 'settings',
+            element: <UserSettings />,
           },
         ],
       },
