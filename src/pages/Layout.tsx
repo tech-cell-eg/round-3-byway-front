@@ -1,6 +1,4 @@
-// import Overlay from '@/components/CommonComponents/Overlay';
 import Header from '@/components/header/Header';
-// import Menu from '@/components/header/SideMenu';
 import { useState } from 'react';
 import { Outlet } from 'react-router';
 
