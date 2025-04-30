@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Star } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 
 interface TeacherCardProps {
@@ -11,6 +9,7 @@ interface TeacherCardProps {
   imageUrl?: string;
   studentsCount: number;
   rating: number;
+  onCardClick?: (id: number) => void;
 }
 
 const TeacherCard = ({
@@ -20,9 +19,9 @@ const TeacherCard = ({
   imageUrl,
   studentsCount,
   rating,
+  onCardClick,
 }: TeacherCardProps) => {
   const { t } = useTranslation('userProfile/user');
-  const navigate = useNavigate();
   const [imageError, setImageError] = useState(false);
 
   const generateAvatar = () => {
@@ -39,7 +38,12 @@ const TeacherCard = ({
   };
 
   const handleCardClick = () => {
-    navigate(`/instructors/${id}`);
+    if (onCardClick) {
+      onCardClick(id);
+    } else {
+      // Fallback behavior if no callback is provided
+      window.location.href = `/instructors/${id}`;
+    }
   };
 
   return (
@@ -75,17 +79,6 @@ const TeacherCard = ({
             {rating.toFixed(1)}
           </span>
         </div>
-
-        <Button
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2"
-          variant="default"
-          onClick={e => {
-            e.stopPropagation();
-            // هنا  اللوجيك بتاع إرسال الرسالة
-          }}
-        >
-          {t('teachers.sendMessage')}
-        </Button>
       </div>
     </div>
   );

@@ -10,7 +10,6 @@
   },
   "teachers": {
     "title": "Teachers",
-    "sendMessage": "Send Message",
     "students": "students"
   }
 }

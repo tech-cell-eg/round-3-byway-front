@@ -1,4 +1,4 @@
-import appName from '@/constants/appName';
+import appName from '@/components/constants/appName';
 import logoImage from '../../assets/logo.png';
 import { Link } from 'react-router';
 

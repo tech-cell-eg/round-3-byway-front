@@ -1,7 +1,7 @@
-import { Iinstructor } from '@/types/types';
-import defulImg from '@/assets/ab3038f8d90aa12ffe88c04090262b02.png';
-import { Star } from 'lucide-react';
 import { useState } from 'react';
+import { Iinstructor } from '@/types/types';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Star } from 'lucide-react';
 
 interface Props {
   course: Iinstructor;
@@ -10,6 +10,7 @@ interface Props {
 export const InstructorCard = ({ course }: Props) => {
   const [imgError, setImgError] = useState(false);
 
+  // Render a star icon based on rating
   const renderStars = (rating: number) => (
     <Star
       fill={rating > 0 ? '#FFC62A' : '#D6D6D6'}
@@ -18,6 +19,7 @@ export const InstructorCard = ({ course }: Props) => {
     />
   );
 
+  // Get initials from instructor name
   const getInitials = (name: string) => {
     return name
       .split(' ')
@@ -28,26 +30,30 @@ export const InstructorCard = ({ course }: Props) => {
 
   return (
     <div className="p-4 border border-border-light rounded-2xl shadow-lg flex flex-col items-center text-center">
-      {imgError || !course.instructorImage ? (
-        <div className="w-20 h-20 rounded-full bg-gray-300 flex items-center justify-center text-xl font-bold text-white mb-2">
-          {getInitials(course.instructorName)}
-        </div>
-      ) : (
-        <img
-          src={course.instructorImage || defulImg}
-          alt="Instructor"
-          className="w-20 h-20 rounded-full object-cover mb-2"
-          onError={() => setImgError(true)}
-        />
-      )}
+      {/* Avatar with fallback initials */}
+      <Avatar className="bg-gray-300 w-20 h-20 mb-2">
+        {course.instructorImage && !imgError ? (
+          <AvatarImage
+            src={course.instructorImage}
+            alt={course.instructorName}
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <AvatarFallback>{getInitials(course.instructorName)}</AvatarFallback>
+        )}
+      </Avatar>
 
+      {/* Instructor name */}
       <h3 className="text-lg font-semibold text-content-primary">
         {course.instructorName}
       </h3>
-      <p className="text-sm text-content-secondary">{course.instructorTitle}</p>
+
+      {/* Course description */}
+      <p className="text-sm text-content-secondary">{course.description}</p>
 
       <hr className="w-full border-t border-border-light my-4" />
 
+      {/* Rating and students count */}
       <div className="flex items-center justify-between gap-2 w-full text-sm text-button-secondary">
         <div className="flex items-center gap-1">
           {renderStars(course.reviews_average)}

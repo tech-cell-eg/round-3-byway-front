@@ -30,6 +30,12 @@ import {
   BookOpenText,
   LayoutDashboard,
   Check,
+  Quote,
+  ArrowRightFromLine,
+  Gauge,
+  CircleDollarSign,
+  MessagesSquare,
+  Menu,
 } from 'lucide-react';
 
 export type IconName =
@@ -62,7 +68,13 @@ export type IconName =
   | 'book-open'
   | 'dashboard'
   | 'logout'
-  | 'check';
+  | 'check'
+  | 'qoute'
+  | 'arrow-right-from-line'
+  | 'gauge'
+  | 'circle-dollar-sign'
+  | 'messages-square'
+  | 'menu';
 
 const iconMap: Record<IconName, LucideIcon> = {
   x: X,
@@ -95,6 +107,12 @@ const iconMap: Record<IconName, LucideIcon> = {
   'book-open': BookOpenText,
   dashboard: LayoutDashboard,
   check: Check,
+  qoute: Quote,
+  'arrow-right-from-line': ArrowRightFromLine,
+  gauge: Gauge,
+  'circle-dollar-sign': CircleDollarSign,
+  'messages-square': MessagesSquare,
+  menu: Menu,
 };
 
 interface IconProps {

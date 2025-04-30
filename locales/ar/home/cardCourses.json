@@ -1,17 +1,15 @@
 {
-    "course": {
-      "multiVariants": "متعدد",
-      "discount": "خصم",
-      "title": "دليل المبتدئين للتصميم",
-      "description": "بواسطة رونالد ريتشاردز",
-      "rating": "1200 تقييم",
-      "hours":"عدد الساعات",
-      "lecs":"عدد المحاضرات",
-      "lecsTitle": "22 ساعة إجمالية. 155 محاضرة. للمبتدئين",
-      "price": "149.9 دولار",
-      "currency": "دولار",
-      "originalPrice": "199.9 دولار",
-      "addToCart": "أضف إلى السلة"
-    }
+  "course": {
+    "multiVariants": "متعدد",
+    "discount": "خصم",
+    "description": "بواسطة ",
+    "rating": "1200 تقييم",
+    "hours":"عدد الساعات",
+    "lecs":"عدد المحاضرات",
+    "lecsTitle": "22 ساعة إجمالية. 155 محاضرة. للمبتدئين",
+    "price": "149.9 دولار",
+    "currency": "دولار",
+    "originalPrice": "199.9 دولار",
+    "addToCart": "أضف إلى السلة"
   }
-  
+}

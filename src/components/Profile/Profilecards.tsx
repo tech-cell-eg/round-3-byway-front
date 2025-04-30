@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
-// import Courses from '../Courses/Courses';
+import Courses from '../Courses/Courses';
 import { createRoot } from 'react-dom/client';
-// import ProfilePage from '@/components/ProfilePage/ProfilePage';
+import ProfilePage from '@/components/ProfilePage/ProfilePage';
 import Reviews from './Reviews';
+import UserprofileTeacher from '@/pages/UserprofileTeacher';
 
 export default function ProfileCards() {
   const [activeSection, setActiveSection] = useState<string>('profile');
@@ -27,18 +28,13 @@ export default function ProfileCards() {
 
     switch (activeSection) {
       case 'profile':
-        // root.render(<ProfilePage />);
+        root.render(<ProfilePage />);
         break;
       case 'myCourses':
-        // root.render(<Courses />);
+        root.render(<Courses />);
         break;
       case 'teachers':
-        root.render(
-          <div>
-            <h2>المعلمون</h2>
-            <p>محتوى المعلمون</p>
-          </div>
-        );
+        root.render(<UserprofileTeacher />);
         break;
       case 'reviews':
         root.render(<Reviews />);

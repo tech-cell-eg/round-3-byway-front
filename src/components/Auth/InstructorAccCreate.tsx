@@ -20,7 +20,10 @@ interface UserData {
 // form validation
 const createRegisterSchema = (t: (key: string) => string) =>
   z.object({
-    profilePicture: z.string().url(t('signUpForm:errors.profilePicture')),
+    profilePicture: z
+      .string()
+      .url(t('signUpForm:errors.profilePicture'))
+      .optional(),
     bio: z.string().min(10, t('signUpForm:errors.bio')),
     title: z.string().min(2, t('signUpForm:errors.title')),
   });
@@ -87,6 +90,7 @@ export const InstructorAccCreate = () => {
     }
   };
 
+  console.log(`${user?.firstName} ${user?.lastName}`);
   return (
     <div
       className="responsive-secondary-padding-y responsive-primary-padding-x w-full"
@@ -133,7 +137,8 @@ export const InstructorAccCreate = () => {
               type="text"
               className="border-border-light border p-4 placeholder:text-placeholder placeholder:text-body-base"
               readOnly
-              defaultValue={`${user?.firstName} ${user?.lastName}`}
+              disabled
+              value={`${user?.firstName} ${user?.lastName}`}
             />
           </div>
 
@@ -146,6 +151,7 @@ export const InstructorAccCreate = () => {
               type="text"
               className={formInputStyles}
               readOnly
+              disabled
               defaultValue={user?.userName}
             />
           </div>
@@ -159,6 +165,7 @@ export const InstructorAccCreate = () => {
               type="email"
               className={formInputStyles}
               readOnly
+              disabled
               defaultValue={user?.email}
             />
           </div>

@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { paypalSlice } from './slices/payment/paypalSlice';
 import { creditCardSlice } from './slices/payment/creditCardSlice';
+import { userSlice } from './slices/auth/userSlice';
 export const store = configureStore({
   reducer: {
     paypal: paypalSlice.reducer,
     creditCard: creditCardSlice.reducer,
+    user: userSlice.reducer,
   },
 });
 
