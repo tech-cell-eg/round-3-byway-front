@@ -35,6 +35,7 @@ import {
 } from '@/components/ui/tooltip';
 import React from 'react';
 import { signOut } from '@/functions/authFunctions';
+import { useAppSelector } from '@/Redux/reduxHooks';
 
 // Menu items.
 const items = (t: (key: string) => string) => [
@@ -45,7 +46,7 @@ const items = (t: (key: string) => string) => [
   },
   {
     title: t('courses'),
-    url: '/dashboard/reviews',
+    url: '/dashboard/dashboardCourses',
     icon: <Icon name="book-text" size={24} />,
   },
   {
@@ -55,7 +56,7 @@ const items = (t: (key: string) => string) => [
   },
   {
     title: t('revenue'),
-    url: '#',
+    url: '/dashboard/revenue',
     icon: <Icon name="circle-dollar-sign" size={24} />,
   },
   {
@@ -72,6 +73,11 @@ export function AppSidebar() {
   console.log(pathname);
 
   const isArabic = i18n.language === 'ar';
+  const userInfo = useAppSelector(state => state.user);
+
+  const fallbackImg = `${userInfo?.first_name?.charAt(0)}${userInfo?.last_name?.charAt(
+    0
+  )}`;
 
   const links = items(t);
   return (
@@ -147,21 +153,25 @@ export function AppSidebar() {
           {/* avatar */}
           {open ? (
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>SC</AvatarFallback>
+              <AvatarImage src={userInfo.avatar} />
+              <AvatarFallback>{fallbackImg}</AvatarFallback>
             </Avatar>
           ) : (
             <DropDown
               t={t}
               toggler={
                 <Avatar>
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>SC</AvatarFallback>
+                  <AvatarImage src={userInfo.avatar} />
+                  <AvatarFallback>{fallbackImg}</AvatarFallback>
                 </Avatar>
               }
             />
           )}
-          {open && <p>{t('footer.hi')} John</p>}
+          {open && (
+            <p>
+              {t('footer.hi')} {userInfo.first_name}
+            </p>
+          )}
         </div>
 
         {open && (

@@ -23,6 +23,11 @@ import { NotificationLayout } from './components/Dashboard/commuincation/notific
 import ReviewsCoursePage from './components/Dashboard/reviews/ReviewsCoursePage';
 import CourseSections from './components/Dashboard/sections/CourseSections';
 import { UserSettings } from './components/Dashboard/userSettings/UserSettings';
+import HomeDash from './components/Dashboard/HomeDash/HomeDash';
+import CoursesDash from './components/Dashboard/CoursesDash/CoursesDash';
+import Revenue from './components/Dashboard/Revenue/Revenue';
+import SectionLessons from './components/Dashboard/lesssons/SectionLessons';
+import LoginTest from './components/Test/LoginTest';
 
 function App() {
   const { i18n } = useTranslation();
@@ -69,6 +74,10 @@ function App() {
             path: 'instructor',
             element: <InstructorPage />,
           },
+          {
+            path: 'loginTest',
+            element: <LoginTest />,
+          },
         ],
       },
       {
@@ -77,7 +86,15 @@ function App() {
         children: [
           {
             index: true,
-            element: <h1>Dashboard</h1>,
+            element: <HomeDash />,
+          },
+          {
+            path: 'dashboardCourses',
+            element: <CoursesDash />,
+          },
+          {
+            path: 'revenue',
+            element: <Revenue />,
           },
           {
             path: 'commuincation',
@@ -94,6 +111,10 @@ function App() {
           {
             path: 'settings',
             element: <UserSettings />,
+          },
+          {
+            path: 'lessons/:sectionId',
+            element: <SectionLessons />,
           },
         ],
       },

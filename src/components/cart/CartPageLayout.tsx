@@ -1,9 +1,12 @@
-import { CartProductCard } from './CartProductCard';
+import { useAppSelector } from '@/Redux/reduxHooks';
 import { CartCourse, CartData } from '@/types/types';
-import { OrderDetails } from './OrderDetails';
-import { useEffect, useState } from 'react';
-import { CheckOutUi } from './CheckOutUi';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { CartProductCard } from './CartProductCard';
+import { CheckOutUi } from './CheckOutUi';
+import { OrderDetails } from './OrderDetails';
 import { SuccessPage } from './SuccessPage';
 
 const dummyData: CartData = {
@@ -73,15 +76,50 @@ const dummyData: CartData = {
 };
 
 export const CartPageLayout = () => {
-  const [courses, setCourses] = useState<CartCourse[]>(dummyData.courses);
+  const [courses, setCourses] = useState<CartCourse[]>([]);
   const [checkout, setCheckout] = useState(false);
-  const [success, setSuccess] = useState(false);
-
   const { t } = useTranslation(['cart/cart']);
+  const [success, setSuccess] = useState(false);
+  const userToken = useAppSelector(state => state.user.token);
 
-  useEffect(() => {
-    console.log(`Checkout: ${checkout}, Success: ${success}`);
-  }, [checkout, success]);
+  const fetchCart = async () => {
+    // fetch cart from backend
+    const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/cart`, {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
+    });
+
+    console.log(response.data);
+
+    return response.data;
+  };
+
+  const {
+    data,
+    isPending,
+    error: cartError,
+  } = useQuery({
+    queryKey: ['cart'],
+    queryFn: fetchCart,
+    enabled: !!userToken,
+    staleTime: 1000 * 60 * 60,
+    gcTime: 1000 * 60 * 65,
+    retry: 0,
+  });
+
+  if (isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (data) {
+    console.log(data);
+    setCourses(data.data);
+  }
+
+  if (cartError) {
+    console.log(cartError);
+  }
 
   const cartContent = !success ? (
     <>
@@ -89,7 +127,7 @@ export const CartPageLayout = () => {
       <section className="flex flex-wrap xl:flex-row w-full justify-between gap-5">
         <div className="flex flex-col gap-5">
           <p className="mt-7">
-            {dummyData.cartinfo.count_courses > 1
+            {courses.length > 1
               ? `${courses.length} ${t('coursesInCart')}`
               : `${courses.length} ${t('singleCourse')}`}
           </p>

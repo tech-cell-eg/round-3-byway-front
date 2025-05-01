@@ -130,5 +130,5 @@ export interface IUserSave {
   token: string;
   bio?: string;
   title?: string;
-  profile_picture?: string;
+  avatar?: string;
 }

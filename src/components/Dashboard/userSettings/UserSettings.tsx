@@ -6,6 +6,10 @@ import { Button } from '@/components/ui/button';
 import { useAppSelector } from '@/Redux/reduxHooks';
 import { useEffect } from 'react';
 
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
+import { IUserSave } from '@/types/types';
+
 const userSettingsSchema = z.object({
   firstName: z
     .string()
@@ -22,7 +26,7 @@ const userSettingsSchema = z.object({
   facebookAccount: z.string().url({ message: 'Invalid URL.' }).optional(),
   twitterAccount: z.string().url({ message: 'Invalid URL.' }).optional(),
   instagramAccount: z.string().url({ message: 'Invalid URL.' }).optional(),
-  profileImage: z.string().url({ message: 'Invalid URL.' }).optional(),
+  avatar: z.string().url({ message: 'Invalid URL.' }).optional(),
   experince: z
     .string()
     .min(10, { message: 'Experince must be at least 10 characters.' }),
@@ -39,46 +43,97 @@ const inputLabel = 'text-body-sm text-content-secondary font-normal opacity-80';
 const inputStyle =
   'w-full border-0 focus-visible:ring-0 p-0 shadow-none selection:bg-gray-200';
 
+interface IUserData extends IUserSave {
+  experience: '';
+  information: '';
+  facebook: '';
+  twitter: '';
+  instagram: '';
+  avatar: '';
+}
+
+interface ApiResponse {
+  data: IUserData;
+  status: number;
+}
+
 export const UserSettings = () => {
-  const userDefault = useAppSelector(state => state.user);
+  const userToken = useAppSelector(state => state.user.token);
+
+  const fetchUserProfile = async () => {
+    const response = await axios.get(
+      `${import.meta.env.VITE_BASE_URL}/auth/profile`,
+      {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
+      }
+    );
+    return response.data as ApiResponse;
+  };
+
+  const {
+    data: ProfileData,
+    isLoading,
+    isError,
+    error,
+  } = useQuery<ApiResponse>({
+    queryKey: ['userProfile'],
+    queryFn: fetchUserProfile,
+    enabled: !!userToken,
+    staleTime: 1000 * 60 * 60,
+    gcTime: 1000 * 60 * 65,
+  });
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
     reset,
+    formState: { errors, isSubmitting },
   } = useForm<z.infer<typeof userSettingsSchema>>({
     resolver: zodResolver(userSettingsSchema),
     defaultValues: {
-      firstName: '',
-      lastName: '',
-      username: '',
-      email: '',
-      title: '',
-      bio: '',
+      firstName: undefined,
+      lastName: undefined,
+      username: undefined,
+      email: undefined,
+      title: undefined,
+      bio: undefined,
       facebookAccount: '',
       twitterAccount: '',
       instagramAccount: '',
-      profileImage: '',
+      avatar: '',
+      experince: undefined,
+      information: undefined,
     },
   });
 
   useEffect(() => {
-    if (userDefault?.first_name) {
+    if (ProfileData?.data) {
       reset({
-        firstName: userDefault.first_name,
-        lastName: userDefault.last_name,
-        username: userDefault.username,
-        email: userDefault.email,
-        title: userDefault.title,
-        bio: userDefault.bio,
-        // facebookAccount: userDefault.facebookAccount,
-        // twitterAccount: userDefault.twitterAccount,
-        // instagramAccount: userDefault.instagramAccount,
-        // profileImage: userDefault.profileImage,
+        firstName: ProfileData.data.first_name,
+        lastName: ProfileData.data.last_name,
+        username: ProfileData.data.username,
+        email: ProfileData.data.email,
+        title: ProfileData.data.title,
+        bio: ProfileData.data.bio,
+        facebookAccount: '', // Handle potential null/undefined
+        twitterAccount: ProfileData.data.twitter,
+        instagramAccount: ProfileData.data.instagram,
+        avatar: ProfileData.data.avatar,
+        experince: ProfileData.data.experience,
+        information: ProfileData.data.information,
       });
     }
-  }, [userDefault, reset]);
+  }, [ProfileData, reset]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    console.log(error);
+  }
 
   const onSubmit = (data: FieldValues) => {
     console.log(data);
@@ -276,14 +331,14 @@ export const UserSettings = () => {
           <div className={inputContainer}>
             <p className={inputLabel}>Profile Image</p>
             <Input
-              {...register('profileImage')}
+              {...register('avatar')}
               type="url"
               className={inputStyle}
-              aria-invalid={errors.profileImage ? true : undefined}
+              aria-invalid={errors.avatar ? true : undefined}
             />
-            {errors.profileImage && (
+            {errors.avatar && (
               <p className="text-error-primary text-body-xs mt-1">
-                {errors.profileImage.message}
+                {errors.avatar.message}
               </p>
             )}
           </div>

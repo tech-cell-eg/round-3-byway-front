@@ -15,7 +15,7 @@ const initialState: IUserSave = {
   token: '',
   bio: '',
   title: '',
-  profile_picture: '',
+  avatar: '',
 };
 
 export const userSlice = createSlice({
@@ -34,7 +34,7 @@ export const userSlice = createSlice({
       state.token = action.payload.token;
       state.bio = action.payload.bio;
       state.title = action.payload.title;
-      state.profile_picture = action.payload.profile_picture;
+      state.avatar = action.payload.avatar;
     },
     setUserRole: (state, action: PayloadAction<string>) => {
       state.role = action.payload;
