@@ -26,6 +26,7 @@ i18next
       'dashboard/HomeDash/home',
       'dashboard/Revenue/revenue',
       'DashBoard/editCourseDetails',
+      'footer',
     ],
 
     defaultNS: 'common',
