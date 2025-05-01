@@ -1,6 +1,5 @@
-// EditCourseDetails.tsx
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { useSelector } from 'react-redux';
 import { selectUser } from '@/Redux/slices/auth/userSlice';
@@ -251,6 +250,14 @@ const EditCourseDetails = () => {
                   {t('editCourse.Advanced')}
                 </option>
               </select>
+            </div>
+            <div className="flex mt-6 justify-center">
+              <p>Go to Captures</p>
+            </div>
+            <div className="mt-10">
+              <div className="flex flex-col items-center justify-center text-blue-600 cursor-pointer">
+                <Link to="/captures"> Add Section + </Link>
+              </div>
             </div>
           </div>
         </div>
