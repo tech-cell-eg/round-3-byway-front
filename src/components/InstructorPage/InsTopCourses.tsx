@@ -27,8 +27,9 @@ export default function InsTopCourses() {
 
   const courseEntries = Object.entries(courses)
     .slice(0, 4)
-    .map(([key, course]) => {
+    .map(([key, course], index) => {
       const courseEntry: CourseEntry = {
+        id: index,
         title: course.title,
         description: course.description,
         price: parseFloat(course.price),
@@ -37,7 +38,7 @@ export default function InsTopCourses() {
         rating: parseFloat(course.rating),
         level: course.level,
         students: parseInt(course.students, 10),
-        category: course.category,
+        // category: course.category,
       };
       return [key, courseEntry] as [string, CourseEntry];
     });

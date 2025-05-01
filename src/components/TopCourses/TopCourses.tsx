@@ -2,28 +2,35 @@ import { useTranslation } from 'react-i18next';
 import { CourseCard } from '@/components/CommonComponents/CourseCard';
 import { ICourse } from '@/types/types';
 import { Link } from 'react-router';
-interface ITranslatedCourse {
-  title: string;
-  description: string;
-  price: string;
-  lecs: string;
-  hours: string;
-  rating: string;
-  level: string;
-  students: string;
-  category: string;
+import { useGetQuery } from '@/api/useGetQuery';
+
+interface ApiResponse<T> {
+  data: {
+    courses: T;
+  };
+  status: number;
 }
 
 export default function TopCourses() {
   const { t } = useTranslation('home/topCourses');
 
-  const courses = t('courses', { returnObjects: true }) as Record<
-    string,
-    ITranslatedCourse
-  >;
+  const {
+    data: response,
+    isLoading,
+    isError,
+  } = useGetQuery<ApiResponse<ICourse[]>>('/courses', '/courses?rating=3');
+  console.log(response?.data.courses[1].title);
+  if (isLoading) {
+    return <div className="text-center py-8">جاري التحميل...</div>;
+  }
 
-  const courseEntries = Object.entries(courses).slice(0, 4);
-
+  if (isError || !response?.data?.courses?.length) {
+    return (
+      <div className="text-center py-8 text-red-500">
+        حدث خطأ في تحميل البيانات أو لا توجد دورات بتقييم مناسب.
+      </div>
+    );
+  }
   return (
     <>
       <div className="responsive-primary-padding-x responsive-secondary-padding-y">
@@ -35,33 +42,27 @@ export default function TopCourses() {
             <p className="cursor-pointer text-icon-accent">{t('seeMore')}</p>
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
-          {courseEntries.map(([key, course], index) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 p-4">
+          {response?.data?.courses?.map(course => {
             const courseData: ICourse = {
-              id2: index + 1,
-              name: 'Beginner’s Guide to Design',
-              description: course.description + 'Ronald Richards',
-              price: course.price,
-              lectures: course.lecs,
-              lecturesName: 10,
-              hours: 10,
+              id: course.id,
+              title: course.title,
+              name: t('description') + course.name,
+              price: String(course.price),
+              lectures: t('lecs'),
+              num_lessons: String(course.num_lessons),
+              duration: course.duration,
               level: course.level,
-              students: course.students,
-              numOfStu: 100,
-              hoursName: course.hours,
-              purchased: 100,
-              small_desc: '',
-              sku: 'sku123',
-              reviews_count: course.rating,
-              reviews_average: 4.5,
-              reviews: [],
-              has_discount: false,
-              discount: '',
-              category: { id: 1, name: course.category || '' },
-              images: [{ image: '/path/to/image.jpg' }],
+              students: t('students'),
+              num_syllabi: course.num_syllabi,
+              hoursName: t('hours'),
+              reviews_count: t('rating'),
+              rating: course.rating,
+              currency: t('currency'),
+              discount_price: course.discount_price,
+              image: course.image,
             };
-
-            return <CourseCard key={key} course={courseData} />;
+            return <CourseCard key={course.id} course={courseData} />;
           })}
         </div>
       </div>

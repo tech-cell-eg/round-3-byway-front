@@ -1,52 +1,6 @@
 {
     "popularMentors":"Popular Instructors",
-"topInstructors":"Top instructors",
- "instructors":{
-    "instructor1": {
-        "price": "$99",
-        "lecs": 12,
-        "hours": "hours",
-        "level": "Beginner",
-        "students": "students",
-        "rating": 5,
-        "category": "AI"
-    },
-    "instructor2": {
-        "price": "$99",
-        "lecs": 12,
-        "hours": "hours",
-        "level": "Beginner",
-        "students": "students",
-        "rating": 5,
-        "category": "AI"
-    },
-    "instructor3": {
-        "title": "Instructor C",
-        "price": "$99",
-        "lecs": 12,
-        "hours": "hours",
-        "level": "Beginner",
-        "students": "students",
-        "rating": 5,
-        "category": "AI"
-    },
-    "instructor4": {
-        "price": "$99",
-        "lecs": 12,
-        "hours": "hours",
-        "level": "Beginner",
-        "students": "students",
-        "rating": 5,
-        "category": "AI"
-    },
-    "instructor5": {
-        "price": "$99",
-        "lecs": 12,
-        "hours": "hours",
-        "level": "Beginner",
-        "students": "students",
-        "rating": 5,
-        "category": "AI"
-    }
-}
+    "topInstructors":"Top instructors",
+    "students": "students"
+
 }

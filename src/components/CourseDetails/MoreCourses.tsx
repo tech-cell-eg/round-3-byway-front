@@ -35,7 +35,7 @@ export default function MoreCourses() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
           {courseEntries.map(([key, course], index) => {
             const courseData: ICourse = {
-              id2: index + 1,
+              id: index,
               name: course.title,
               description: course.description,
               price: course.price,
@@ -47,15 +47,9 @@ export default function MoreCourses() {
               numOfStu: 100,
               hoursName: course.hours,
               purchased: 100,
-              small_desc: '',
-              sku: 'sku123',
               reviews_count: course.rating,
-              reviews_average: 4.5,
-              reviews: [],
-              has_discount: false,
-              discount: '',
-              category: { id: 1, name: course.category || '' },
-              images: [{ image: '/path/to/image.jpg' }],
+              rating: 4.5,
+              image: '',
             };
 
             return <CourseCard key={key} course={courseData} />;

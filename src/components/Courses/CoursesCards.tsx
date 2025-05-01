@@ -15,8 +15,21 @@ import { Search } from 'lucide-react';
 interface ITranslatedCourse {
   title: string;
   description: string;
-  rating: string;
-  category: string;
+  rating?: number;
+  category?: string;
+  price?: string;
+  lectures?: string;
+  num_lessons?: string;
+  level?: string;
+  students?: string;
+  num_syllabi?: number;
+  hoursName?: string;
+  reviews_count?: string;
+  discount_price?: number;
+  currency?: string;
+  image?: string;
+  instructor?: string;
+  duration?: string;
 }
 
 export default function CoursesCards() {
@@ -64,20 +77,17 @@ export default function CoursesCards() {
 
         <div className="grid grid-cols-1 pt-4 sm:grid-cols-2 lg:grid-cols-3 gap-y-5 gap-x-2">
           {paginatedCourses.map(([key, course], index) => {
-            // Create courseData without lectures and any other optional fields
+            // Create courseData with default values and optional fields
             const courseData: ICourse = {
-              id2: startIndex + index + 1,
-              name: 'Beginner’s Guide to Design',
-              description: course.description + ' Ronald Richards',
-              small_desc: '',
-              sku: 'sku123',
-              reviews_count: course.rating,
-              reviews_average: 4.5,
-              reviews: [],
-              has_discount: false,
-              discount: '',
-              category: { id: 1, name: course.category || '' },
-              images: [{ image: '/path/to/image.jpg' }],
+              id: index,
+              title: course.title || 'عنوان الدورة',
+              name: course.description || '',
+              reviews_count:
+                typeof course.reviews_count === 'string'
+                  ? course.reviews_count
+                  : String(course.reviews_count ?? '0'),
+              rating: typeof course.rating === 'number' ? course.rating : 0,
+              image: '',
             };
 
             return (

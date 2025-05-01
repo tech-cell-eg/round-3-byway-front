@@ -13,7 +13,7 @@ export const CourseCard = ({ course, percentage }: CourseCardProps) => {
   if (!course || Object.keys(course).length === 0) {
     return null; // Or return a placeholder/message if preferred
   }
-
+  console.log(course);
   const renderStars = (rating: number) => {
     if (!rating) return null;
 
@@ -31,34 +31,31 @@ export const CourseCard = ({ course, percentage }: CourseCardProps) => {
     );
   };
 
-  const rating = course.reviews_average ?? 0;
+  const rating = course.rating ?? 0;
 
   return (
     <div
       className={`relative p-3 flex flex-col border border-border-light rounded-2xl shadow-xl ${
-        !course.category?.name ? 'w-0 h-0 invisible' : 'w-full'
+        !course.title ? 'w-0 h-0 invisible' : 'w-full'
       }`}
     >
       <img
-        src={defulImg}
-        alt="Course Image"
-        className={`rounded-xl ${
-          !course.category?.name
-            ? 'w-0 h-0 invisible'
-            : 'w-full h-[228px] object-contain'
-        }`}
+        src={course.image || defulImg}
+        alt={course.title || 'Course Image'}
+        className={`rounded-xl ${!course?.title ? 'w-0 h-0 invisible' : 'w-full h-[228px] object-contain'}`}
+        onError={e => ((e.target as HTMLImageElement).src = defulImg)}
       />
 
       <div className="p-4 flex flex-col gap-1">
-        {course.category?.name && (
+        {course.title && (
           <h3 className="text-content-primary text-body-medium font-bold">
-            {course.category.name}
+            {course.title}
           </h3>
         )}
 
-        {course.description && (
+        {course.name && (
           <p className="text-button-secondary text-body-small min-h-[48px] lg:min-h-0">
-            {course.description}
+            {course.name}
           </p>
         )}
 
@@ -70,50 +67,57 @@ export const CourseCard = ({ course, percentage }: CourseCardProps) => {
 
         {(rating > 0 || course.reviews_count) && (
           <div className="flex max-lg:flex-wrap gap-x-2">
-            {rating > 0 && (
+            {course.rating > 0 && (
               <div className="flex text-icon-filled-star pt-1">
-                {renderStars(rating)}
+                {renderStars(course.rating)}
               </div>
             )}
             {course.reviews_count && (
               <p className="text-large text-content-primary font-medium">
-                ({course.reviews_count})
+                ({course.rating}
+                {course.reviews_count})
               </p>
             )}
           </div>
         )}
 
-        {(course.hours ||
+        {(course.duration ||
           course.hoursName ||
-          course.lecturesName ||
+          course.num_lessons ||
           course.lectures ||
           course.level) && (
           <div className="flex max-lg:flex-wrap text-button-secondary text-body-small font-regular md:min-h-[48px] lg:min-h-0">
-            {course.hours && <p className="pe-1">{course.hours}</p>}
+            {course.duration && <p className="pe-1">{course.duration}</p>}
             {course.hoursName && <p className="pe-1">{course.hoursName} |</p>}
-            {course.lecturesName && (
-              <p className="pe-1">{course.lecturesName}</p>
-            )}
+            {course.num_lessons && <p className="pe-1">{course.num_lessons}</p>}
             {course.lectures && <p className="pe-1">{course.lectures} |</p>}
             {course.level && <p className="pe-1">{course.level}</p>}
           </div>
         )}
 
-        {(course.numOfStu || course.students) && (
+        {(course.num_syllabi || course.students) && (
           <div className="flex pt-1 text-button-secondary text-body-small font-regular md:min-h-[48px] lg:min-h-0">
-            {course.numOfStu && <p className="pe-1">{course.numOfStu}</p>}
+            {course.num_syllabi && <p className="pe-1">{course.num_syllabi}</p>}
             {course.students && <p>{course.students}</p>}
           </div>
         )}
 
-        {course.price && (
-          <p className="text-xl text-content-primary font-bold">
-            {course.price}
-            {course.has_discount && (
-              <span className="text-placeholder line-through ms-2">
-                {course.price}
+        {course?.price && (
+          <p className="text-xl font-bold">
+            {course?.discount_price && course.discount_price > 0 && (
+              <span className="text-content-primary">
+                {course.discount_price} {course.currency || ''}
               </span>
             )}
+            <span
+              className={`${
+                course?.discount_price && course.discount_price > 0
+                  ? 'text-placeholder line-through ps-5'
+                  : 'text-content-primary'
+              }`}
+            >
+              {course.price} {course.currency || ''}
+            </span>
           </p>
         )}
       </div>

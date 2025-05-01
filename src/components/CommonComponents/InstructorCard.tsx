@@ -32,37 +32,37 @@ export const InstructorCard = ({ course }: Props) => {
     <div className="p-4 border border-border-light rounded-2xl shadow-lg flex flex-col items-center text-center">
       {/* Avatar with fallback initials */}
       <Avatar className="bg-gray-300 w-20 h-20 mb-2">
-        {course.instructorImage && !imgError ? (
+        {course.image && !imgError ? (
           <AvatarImage
-            src={course.instructorImage}
-            alt={course.instructorName}
+            src={course.name}
+            alt={course.name}
             onError={() => setImgError(true)}
           />
         ) : (
-          <AvatarFallback>{getInitials(course.instructorName)}</AvatarFallback>
+          <AvatarFallback>{getInitials(course.name)}</AvatarFallback>
         )}
       </Avatar>
 
       {/* Instructor name */}
       <h3 className="text-lg font-semibold text-content-primary">
-        {course.instructorName}
+        {course.name}
       </h3>
 
       {/* Course description */}
-      <p className="text-sm text-content-secondary">{course.description}</p>
+      <p className="text-sm text-content-secondary">{course.title}</p>
 
       <hr className="w-full border-t border-border-light my-4" />
 
       {/* Rating and students count */}
       <div className="flex items-center justify-between gap-2 w-full text-sm text-button-secondary">
         <div className="flex items-center gap-1">
-          {renderStars(course.reviews_average)}
+          {renderStars(course.total_reviews)}
           <span className="text-surface-dark-secondary font-medium">
-            {course.reviews_average}
+            {course.total_reviews}
           </span>
         </div>
         <span className="text-content-secondary font-semibold">
-          {course.numOfStu} {course.students}
+          {course.total_students} {course.students}
         </span>
       </div>
     </div>
