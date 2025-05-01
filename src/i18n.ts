@@ -35,4 +35,7 @@ i18next
       escapeValue: false,
     },
     returnObjects: true,
+    backend: {
+      loadPath: '/round-3-byway-front/locales/{{lng}}/{{ns}}.json',
+    },
   });

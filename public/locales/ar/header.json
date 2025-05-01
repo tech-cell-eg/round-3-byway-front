@@ -1,0 +1,10 @@
+{
+  "categoriesButton": "الفئات",
+  "search": {
+    "placeholder": "ابحث عن الدورات",
+    "button": "بحث"
+  },
+  "becomeInstructorButton": "درّس على",
+  "loginButton": "تسجيل الدخول",
+  "signupButton": "إنشاء حساب"
+}

@@ -1,0 +1,15 @@
+{
+  "pageTitle": "سلة التسوق",
+  "emptyCart": "لا يوجد منتجات في سلة التسوق",
+  "coursesInCart": "منتجات في سلة التسوق",
+  "singleCourse": "منتج في سلة التسوق",
+  "info": {
+    "otherDetails": "تفاصيل أخرى",
+    "price": "السعر",
+    "tax": "الضريبة",
+    "discount": "خصم",
+    "grandTotal": "المجموع الكلي",
+    "proceedToCheckout": "المتابعة للدفع",
+    "pay": "ادفع"
+  }
+}

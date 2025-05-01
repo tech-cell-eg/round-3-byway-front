@@ -1,0 +1,12 @@
+{
+  "filter": {
+    "sortBy": " تصفية ",
+    "relevance": " الصلة ",
+    "name": " الاسم ",
+    "title": " العنوان ",
+    "search": " البحث عن مستخدم ",
+    "btn": " تصفية ",
+    "btnPagination": " السابق ",
+    "btnPagination2": " التالي "
+  }
+}
