@@ -115,8 +115,8 @@ function App() {
           },
         ],
       },
-    ]
-    // { basename: "/round-3-byway-front" }
+    ],
+    { basename: "/round-3-byway-front" }
   );
 
   return (
