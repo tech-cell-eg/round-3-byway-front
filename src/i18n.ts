@@ -11,7 +11,7 @@ i18next
     fallbackLng: 'en',
     ns: [
       'common',
-      'home/home',
+      '/home/home',
       'home/topCourses',
       'home/topInstructors',
       'Category/mainPage',
@@ -25,6 +25,8 @@ i18next
       'instructor/HeaderLinks',
       'dashboard/HomeDash/home',
       'dashboard/Revenue/revenue',
+      'DashBoard/editCourseDetails',
+      'footer',
     ],
 
     defaultNS: 'common',
@@ -33,4 +35,7 @@ i18next
       escapeValue: false,
     },
     returnObjects: true,
+    backend: {
+      loadPath: '/round-3-byway-front/locales/{{lng}}/{{ns}}.json',
+    },
   });

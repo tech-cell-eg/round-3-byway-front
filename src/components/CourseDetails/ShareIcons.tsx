@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router';
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -44,13 +45,15 @@ const shareOptions = [
   },
 ];
 
-const shareUrl = 'https://google.com';
-
 function ShareIcons() {
+  const location = useLocation();
+
+  const fullUrl = `${window.location.origin}${location.pathname}`;
+
   return (
     <div className="flex items-center gap-3 px-2">
       {shareOptions.map(option => (
-        <option.shareButton key={option.id} url={shareUrl}>
+        <option.shareButton key={option.id} url={fullUrl}>
           <option.icon size={32} round />
         </option.shareButton>
       ))}

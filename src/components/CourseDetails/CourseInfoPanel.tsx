@@ -3,32 +3,21 @@ import { Link } from 'react-router';
 import Icon from '../Icon';
 import CourseStickyCardImage from './CourseStickyCardImage';
 import courseThumbnail from '../../assets/course-thumbnail.png';
+import Breadcrumbs from './Breadcrumbs';
 
 function CourseInfoPanel() {
   return (
-    // <section className="col-span-1 lg:col-span-8 gap-10 text-sm md:text-base">
     <section className="col-span-8 h-fit text-sm md:text-base">
       <div className="block lg:hidden">
         <CourseStickyCardImage courseThumbnail={courseThumbnail} />
       </div>
-
-      <div className="flex items-center gap-3 mb-5 text-xs md:text-base">
-        <Link to="" className="">
-          Home
-        </Link>
-        <Icon name="chevron-right" />
-        <Link to="" className="">
-          Categories
-        </Link>
-        <Icon name="chevron-right" />
-        <Link to="" className="text-accent-secondary hover:text-accent-primary">
-          Introduction to User Experience Design
-        </Link>
+      <div className="hidden lg:flex lg:mb-5">
+        <Breadcrumbs />
       </div>
 
       <div className="flex flex-col gap-4 md:gap-6">
         <div className="flex flex-col gap-4">
-          <h2 className="font-bold text-2xl md:text-3xl lg:text-[2.5rem] text-content-primary">
+          <h2 className="mt-5 lg:mt-0 font-bold text-2xl md:text-3xl lg:text-[2.5rem] text-content-primary">
             Introduction to User Experience Design
           </h2>
           <p className="text-content-dark">

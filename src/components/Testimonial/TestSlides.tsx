@@ -26,7 +26,7 @@ const TestSlides = ({
       <CarouselContent
         className={`gap-4 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}
       >
-        {testimonials.map(item => {
+        {testimonials?.map(item => {
           const getInitials = (name: string) => {
             const nameParts = name.split(' ');
             return nameParts

@@ -24,8 +24,6 @@ import {
 import Icon from '@/components/Icon';
 import ThemeToggle from '@/components/header/ThemeToggle';
 import LanguageToggle from '@/components/header/LanguageToggle';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { AvatarImage } from '@radix-ui/react-avatar';
 import { useTranslation } from 'react-i18next';
 import {
   Tooltip,
@@ -36,6 +34,7 @@ import {
 import React from 'react';
 import { signOut } from '@/functions/authFunctions';
 import { useAppSelector } from '@/Redux/reduxHooks';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 // Menu items.
 const items = (t: (key: string) => string) => [

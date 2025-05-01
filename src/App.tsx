@@ -1,33 +1,33 @@
-import { createBrowserRouter, RouterProvider } from 'react-router';
-import { Layout } from './pages/Layout';
-import { queryClient } from './api/queryClient';
 import { QueryClientProvider } from '@tanstack/react-query';
-import { SignUp } from './pages/SignUp';
-import ProtAuth from './components/Auth/ProtAuth';
-import { InstructorSignUp } from './pages/InstructorSignUp';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import Login from './components/Login/Login';
-import CategoryPage from './components/CategoryPage/CategoryPage';
-import Home from './pages/Home';
-import { CartPage } from './pages/CartPage';
-import InstructorPage from './components/InstructorPage/Instructor';
-import CourseDetails from './pages/CourseDetails';
 import { Provider } from 'react-redux';
-import { store } from './Redux/store';
-import DashboardLayout from './components/Dashboard/DashboardLayout';
-import CourseLearingPage from './pages/CourseLearingPage';
-import PersonalInformation from './components/Profile/PersonalInformation';
+import { createBrowserRouter, RouterProvider } from 'react-router';
 import { ReduxInitializer } from './Redux/reduxInitializer';
+import { store } from './Redux/store';
+import { queryClient } from './api/queryClient';
+import ProtAuth from './components/Auth/ProtAuth';
+import CategoryPage from './components/CategoryPage/CategoryPage';
+import CoursesDash from './components/Dashboard/CoursesDash/CoursesDash';
+import DashboardLayout from './components/Dashboard/DashboardLayout';
+import HomeDash from './components/Dashboard/HomeDash/HomeDash';
+import Revenue from './components/Dashboard/Revenue/Revenue';
 import { NotificationLayout } from './components/Dashboard/commuincation/notification/NotificationLayout';
+import SectionLessons from './components/Dashboard/lesssons/SectionLessons';
 import ReviewsCoursePage from './components/Dashboard/reviews/ReviewsCoursePage';
 import CourseSections from './components/Dashboard/sections/CourseSections';
 import { UserSettings } from './components/Dashboard/userSettings/UserSettings';
-import HomeDash from './components/Dashboard/HomeDash/HomeDash';
-import CoursesDash from './components/Dashboard/CoursesDash/CoursesDash';
-import Revenue from './components/Dashboard/Revenue/Revenue';
-import SectionLessons from './components/Dashboard/lesssons/SectionLessons';
-import LoginTest from './components/Test/LoginTest';
+import InstructorPage from './components/InstructorPage/Instructor';
+import Login from './components/Login/Login';
+import PersonalInformation from './components/Profile/PersonalInformation';
+import { CartPage } from './pages/CartPage';
+import CertificateDemo from './pages/CertificateDemo';
+import CourseDetails from './pages/CourseDetails';
+import CourseLearingPage from './pages/CourseLearingPage';
+import Home from './pages/Home';
+import { InstructorSignUp } from './pages/InstructorSignUp';
+import { Layout } from './pages/Layout';
+import { SignUp } from './pages/SignUp';
 
 function App() {
   const { i18n } = useTranslation();
@@ -53,6 +53,7 @@ function App() {
           { path: 'login', element: <Login /> },
           { path: 'allCourses', element: <CategoryPage /> },
           { path: 'personalInformation', element: <PersonalInformation /> },
+          { path: 'certificate-demo', element: <CertificateDemo /> },
 
           {
             path: 'signup',
@@ -73,10 +74,6 @@ function App() {
           {
             path: 'instructor',
             element: <InstructorPage />,
-          },
-          {
-            path: 'loginTest',
-            element: <LoginTest />,
           },
         ],
       },
@@ -109,6 +106,10 @@ function App() {
             element: <CourseSections />,
           },
           {
+            path: 'lessons/:sectionId',
+            element: <SectionLessons />,
+          },
+          {
             path: 'settings',
             element: <UserSettings />,
           },
@@ -118,8 +119,8 @@ function App() {
           },
         ],
       },
-    ]
-    // { basename: "/round-3-byway-front" }
+    ],
+    { basename: '/round-3-byway-front' }
   );
 
   return (

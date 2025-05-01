@@ -1,23 +1,22 @@
 import FavoritesButton from './FavoritesButton';
 import NotificationButton from './NotificationButton';
-import UserButton from './UserButton';
+import SideMenu from './SideMenu';
 
 type UserActionsProps = {
-  handleListToggle: (list: string) => void;
-  handleMenuVisibility: () => void;
+  isLoggedIn: boolean;
 };
 
-function UserActions({
-  handleListToggle,
-  handleMenuVisibility,
-}: UserActionsProps) {
+function UserActions({ isLoggedIn }: UserActionsProps) {
   return (
     <div className="flex items-center gap-1">
-      <FavoritesButton handleListToggle={handleListToggle} />
+      {isLoggedIn && (
+        <>
+          <FavoritesButton />
+          <NotificationButton />
+        </>
+      )}
 
-      <NotificationButton handleListToggle={handleListToggle} />
-
-      <UserButton handleMenuVisibility={handleMenuVisibility} />
+      <SideMenu isLoggedIn={isLoggedIn} />
     </div>
   );
 }
