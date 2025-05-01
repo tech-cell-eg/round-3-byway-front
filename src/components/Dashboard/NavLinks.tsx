@@ -4,11 +4,8 @@ const NavLinks = () => {
   const location = useLocation();
 
   const links = [
-    { name: 'Commission', path: '#' },
     { name: 'Reviews', path: '/dashboard/reviews' },
     { name: 'Chapters', path: '/dashboard/sections' },
-    { name: 'Promotion', path: '#' },
-    { name: 'Detail', path: '#' },
     { name: 'Settings', path: '#' },
   ];
 

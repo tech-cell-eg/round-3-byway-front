@@ -2,68 +2,35 @@ import Logo from '../CommonComponents/Logo';
 import HeaderActions from './HeaderActions';
 import Searchbar from './Searchbar';
 import CategoriesButton from './CategoriesButton';
-import CategoriesList from './CategoriesList';
-import { useState } from 'react';
 import TeachOnButton from './TeachOnButton';
-import CartDropdown from './CartDropdown';
-import SettingsPanel from './SettingsPanel';
-import FavoritesDropdown from './FavoritesDropdown';
-import NotificationsDropdown from './NotificationsDropdown';
+import SideMenu from './SideMenu';
 
 type HeaderProps = {
-  handleMenuVisibility: () => void;
+  isLoggedIn: boolean;
 };
 
-type VisibilityMap = {
-  [key: string]: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-function Header({ handleMenuVisibility }: HeaderProps) {
-  const [isLoggedIn] = useState<boolean>(false);
-  const [showCategoriesList, setShowCategoriesList] = useState<boolean>(false);
-  const [showCartDropdown, setShowCartDropdown] = useState<boolean>(false);
-  const [settingPanel, setSettingPanel] = useState<boolean>(false);
-  const [favoritesList, setFavoritesList] = useState<boolean>(false);
-  const [notificationsList, setNotificationsList] = useState<boolean>(false);
-
-  const handleListToggle = (list: string): void => {
-    const visibilityMap: VisibilityMap = {
-      'category-dropdown': setShowCategoriesList,
-      'cart-dropdown': setShowCartDropdown,
-      'settings-panel': setSettingPanel,
-      'favorites-list': setFavoritesList,
-      'notification-list': setNotificationsList,
-    };
-
-    Object.entries(visibilityMap).forEach(([key, setter]) => {
-      setter(key === list ? prev => !prev : false);
-    });
-  };
-
+function Header({ isLoggedIn }: HeaderProps) {
   return (
     <header
       dir="ltr"
-      className="sticky top-0 flex justify-between items-center h-[66px] py-3 responsive-primary-padding-x bg-surface-light-primary shadow-sm z-40"
+      className="sticky top-0 flex justify-between items-center gap-5 lg:gap-0 w-full h-[66px] py-3 responsive-primary-padding-x bg-surface-light-primary shadow-sm z-40 overflow-hidden"
     >
       <Logo />
 
-      <CategoriesButton handleListToggle={handleListToggle} />
+      <div className="flex items-center gap-7 w-3/5">
+        <CategoriesButton />
+        <Searchbar />
 
-      <Searchbar />
+        <div className="hidden lg:flex flex-1/4">
+          <TeachOnButton />
+        </div>
+      </div>
 
-      <TeachOnButton />
+      <div className="flex justify-between items-center">
+        <HeaderActions isLoggedIn={isLoggedIn} />
 
-      <HeaderActions
-        handleListToggle={handleListToggle}
-        isLoggedIn={isLoggedIn}
-        handleMenuVisibility={handleMenuVisibility}
-      />
-
-      {showCategoriesList && <CategoriesList />}
-      {showCartDropdown && <CartDropdown />}
-      {settingPanel && <SettingsPanel />}
-      {favoritesList && <FavoritesDropdown />}
-      {notificationsList && <NotificationsDropdown />}
+        {!isLoggedIn && <SideMenu />}
+      </div>
     </header>
   );
 }

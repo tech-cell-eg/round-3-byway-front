@@ -25,6 +25,8 @@ import CourseSections from './components/Dashboard/sections/CourseSections';
 import HomeDash from './components/Dashboard/HomeDash/HomeDash';
 import CoursesDash from './components/Dashboard/CoursesDash/CoursesDash';
 import Revenue from './components/Dashboard/Revenue/Revenue';
+import SectionLessons from './components/Dashboard/lesssons/SectionLessons';
+import CertificateDemo from './pages/CertificateDemo';
 
 function App() {
   const { i18n } = useTranslation();
@@ -50,6 +52,7 @@ function App() {
           { path: 'login', element: <Login /> },
           { path: 'allCourses', element: <CategoryPage /> },
           { path: 'personalInformation', element: <PersonalInformation /> },
+          { path: 'certificate-demo', element: <CertificateDemo /> },
 
           {
             path: 'signup',
@@ -101,10 +104,14 @@ function App() {
             path: 'sections',
             element: <CourseSections />,
           },
+          {
+            path: 'lessons/:sectionId',
+            element: <SectionLessons />,
+          },
         ],
       },
-    ]
-    // { basename: "/round-3-byway-front" }
+    ],
+    { basename: '/round-3-byway-front' }
   );
 
   return (

@@ -11,7 +11,6 @@ function CourseStickyCard() {
         <div className="hidden lg:block">
           <CourseStickyCardImage courseThumbnail={courseThumbnail} />
         </div>
-
         <CourseStickyCardPrice />
 
         <CourseStickyCardButtons />
