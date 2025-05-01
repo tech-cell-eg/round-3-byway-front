@@ -12,7 +12,7 @@ function Searchbar() {
   };
 
   return (
-    <div className="flex items-center w-[45%] h-[40px] border border-border-dark rounded-small overflow-hidden">
+    <div className="hidden lg:flex items-center w-full h-[40px] border border-border-dark rounded-small overflow-hidden">
       <div className="flex items-center w-full">
         <div className="h-full px-2.5">
           <Icon name="search" />
