@@ -1,0 +1,47 @@
+{
+  "Request": {
+    "URL": "/api/dashboard/:instructor-id",
+    "Method": "GET",
+    "Parameters": {
+      "instructor-id": "51151515"
+    },
+    "Authentication": true
+  },
+  "Response": {
+    "data": {
+      "sales (FOR YEAR)": {
+        "total": 1000,
+        "received": 800,
+        "pending": 200,
+        "data": [
+          {
+            "month": "March",
+            "sales": 200
+          }
+        ]
+      },
+      "reviews": {
+        "total": 1000,
+        "stars": {
+          "one": 200,
+          "two": 200,
+          "three": 200,
+          "four": 200,
+          "five": 200
+        }
+      },
+      "top-courses": [
+        {
+          "id": 1,
+          "course_name": "",
+          "reviews": 1122,
+          "sections_count": 12,
+          "price": 200,
+          "orders": 40,
+          "ertificates": 20,
+          "carts": 10
+        }
+      ]
+    }
+  }
+}

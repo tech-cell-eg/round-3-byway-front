@@ -1,0 +1,10 @@
+{
+  "categoriesButton": "Categories",
+  "search": {
+    "placeholder": "Search courses",
+    "button": "Search"
+  },
+  "becomeInstructorButton": "Teach on",
+  "loginButton": "Log In",
+  "signupButton": "Sign Up"
+}

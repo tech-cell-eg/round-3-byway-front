@@ -1,0 +1,15 @@
+{
+  "pageTitle": "Cart Page",
+  "emptyCart": "Your cart is empty",
+  "coursesInCart": "Courses in Cart",
+  "singleCourse": "Course in Cart",
+  "info": {
+    "otherDetails": "Other Details",
+    "price": "Price",
+    "tax": "Tax",
+    "discount": "Discount",
+    "grandTotal": "Total",
+    "proceedToCheckout": "Proceed to Checkout",
+    "pay": "Pay"
+  }
+}

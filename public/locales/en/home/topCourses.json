@@ -1,0 +1,67 @@
+{
+    "topCourses":"Top courses",
+    "seeMore":"see more",
+    "courses":{
+        "course1": {
+            "multiVariants": "Multiple Variants",
+            "discount": "Discount",
+            "category": "Beginner’s Guide to Design",
+            "description": "By ",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        },
+        "course3": {
+            "multiVariants": "Multiple Variants",
+            "discount": "Discount",
+            "category": "Beginner’s Guide to Design",
+            "description": "By ",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+
+
+        },
+        "course2": {
+            "multiVariants": "Multiple Variants",
+            "discount": "Discount",
+            "category": "Beginner’s Guide to Design",
+            "description": "By ",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+
+        },
+        "course4": {
+            "multiVariants": "Multiple Variants",
+            "discount": "Discount",
+            "category": "Beginner’s Guide to Design",
+            "description": "By ",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+
+
+        }
+    }
+  }

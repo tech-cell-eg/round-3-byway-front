@@ -1,0 +1,166 @@
+{
+    "sortBy":"sort by",
+    "featuredCourses":"Featured Courses",
+    "search":"search",
+    "courses":{
+        "course1": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        },
+        "course3": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+
+
+        },
+        "course2": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+
+        },
+        "course4": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        },
+        "course5": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        },
+        "course6": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        },
+        "course7": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        },
+        "course8": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        },
+        "course9": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        },
+        "course10": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        },
+        "course11": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        },
+        "course12": {
+            "category": "Beginner’s Guide to Design",
+            "discount": "Discount",
+            "description": "By",
+            "rating": "1200 Ratings",
+            "hours":" hours",
+            "lecs":" lectures",
+            "price": "$149.9",
+            "currency": "USD",
+            "originalPrice": "$199.9",
+            "students":"students",
+            "level":"peginners"
+        }
+    }
+}
