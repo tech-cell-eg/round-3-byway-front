@@ -1,6 +1,6 @@
 // if no user is logged in, show this page
 
-import { zodResolver } from '@hookForm/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import { FieldValues, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
