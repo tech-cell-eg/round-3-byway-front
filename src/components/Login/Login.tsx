@@ -19,7 +19,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
-import { zodResolver } from '@hookForm/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 const loginSchema = z.object({
   email: z.string().email({ message: 'Invalid email address' }),
