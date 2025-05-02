@@ -27,6 +27,7 @@ import CoursesDash from './components/Dashboard/CoursesDash/CoursesDash';
 import Revenue from './components/Dashboard/Revenue/Revenue';
 import SectionLessons from './components/Dashboard/lesssons/SectionLessons';
 import CertificateDemo from './pages/CertificateDemo';
+import EditCourseDetails from './components/Dashboared/EditCourseDetailsPage/EditCourseDetails';
 
 function App() {
   const { i18n } = useTranslation();
@@ -107,6 +108,10 @@ function App() {
           {
             path: 'lessons/:sectionId',
             element: <SectionLessons />,
+          },
+          {
+            path: 'EditCourseDetails/:courseId',
+            element: <EditCourseDetails />,
           },
         ],
       },
