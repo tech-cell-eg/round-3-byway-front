@@ -31,7 +31,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm i
 
       - name: Check @hookform/resolvers
         run: ls node_modules/@hookform/resolvers
