@@ -3,7 +3,11 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '@/Redux/store';
 import { IUserSave } from '@/types/types';
 
-const initialState: IUserSave = {
+interface UserState extends IUserSave {
+  isLoading: boolean;
+}
+
+const initialState: UserState = {
   first_name: '',
   last_name: '',
   username: '',
@@ -16,6 +20,7 @@ const initialState: IUserSave = {
   bio: '',
   title: '',
   profile_picture: '',
+  isLoading: true,
 };
 
 export const userSlice = createSlice({
@@ -35,14 +40,34 @@ export const userSlice = createSlice({
       state.bio = action.payload.bio;
       state.title = action.payload.title;
       state.profile_picture = action.payload.profile_picture;
+      state.isLoading = false;
     },
     setUserRole: (state, action: PayloadAction<string>) => {
       state.role = action.payload;
     },
+    setLoadingUser: (state, action: PayloadAction<boolean>) => {
+      state.isLoading = action.payload;
+    },
+    clearUserRedux: state => {
+      state.first_name = '';
+      state.last_name = '';
+      state.username = '';
+      state.email = '';
+      state.role = '';
+      state.updated_at = '';
+      state.created_at = '';
+      state.id = 0;
+      state.token = '';
+      state.bio = '';
+      state.title = '';
+      state.profile_picture = '';
+      state.isLoading = false;
+    },
   },
 });
 
-export const { saveUserRedux, setUserRole } = userSlice.actions;
+export const { saveUserRedux, setUserRole, setLoadingUser, clearUserRedux } =
+  userSlice.actions;
 export const selectUser = (state: RootState) => state.user;
 
 export default userSlice.reducer;
