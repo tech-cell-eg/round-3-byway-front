@@ -1,12 +1,18 @@
-import { Link } from 'react-router';
 import Icon from '../Icon';
 import { Button } from '../ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '../ui/dialog';
+import FavoriteListItem from './FavoriteListItem';
 
 export type Course = {
   id: string;
@@ -67,41 +73,34 @@ function FavoritesButton() {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent className="min-w-screen md:min-w-72 mt-dropdown p-0 bg-surface-light-primary border-none rounded-small shadow-panel">
-        {favoriteCourses.map((course, index) => (
-          <DropdownMenuItem
-            key={index}
-            className="hover:bg-surface-highlight cursor-pointer"
-          >
-            <Link
-              to="/"
-              className="flex items-center gap-4 py-2 px-4 focus:bg-surface-highlight active:bg-accent-primary duration-medium"
-            >
-              <div className="w-8 h-8 rounded-full overflow-hidden">
-                {/* <img
-        src={course.image}
-        alt="course image"
-        className="w-full h-full object-cover"
-        /> */}
-                <div className="w-full h-full bg-blue-200"></div>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-body-small group-active:text-surface-light-primary">
-                  {course.courseName}
-                </h4>
-                <h6 className="text-body-micro text-gray-500 group-active:text-surface-light-primary">
-                  {course.instructorName}
-                </h6>
-              </div>
-
-              <Icon
-                name="arrow-right"
-                size={16}
-                className="my-auto ms-auto me-1 text-content-dark group-active:text-surface-light-primary opacity-0 group-hover:opacity-100 duration-short animate-horizontal-move"
-              />
-            </Link>
-          </DropdownMenuItem>
+        {favoriteCourses.map(course => (
+          <FavoriteListItem key={course.id} favoriteCourse={course} />
         ))}
+
+        <Dialog>
+          <DialogTrigger className="w-full py-3 font-semibold text-content-dark hover:text-content-light active:text-content-light bg-surface-highlight hover:bg-accent-secondary active:bg-accent-primary cursor-pointer duration-short">
+            View More
+          </DialogTrigger>
+
+          <DialogContent className="p-2 md:p-5 bg-surface-light-primary border-0">
+            <DialogHeader>
+              <DialogTitle className="flex justify-center items-center gap-3">
+                <Icon name="heart" className="text-blue-300 fill-blue-300" />
+                Favorite Courses
+              </DialogTitle>
+            </DialogHeader>
+
+            <ul className="h-[240px] md:h-[300px] pt-2 border-t border-t-border-light overflow-y-scroll">
+              {favoriteCourses.map(course => (
+                <FavoriteListItem key={course.id} favoriteCourse={course} />
+              ))}
+            </ul>
+
+            <Button className="py-5 text-content-dark hover:text-content-light active:text-content-light bg-surface-highlight hover:bg-accent-secondary active:bg-accent-primary shadow-none hover:shadow-sm active:shadow-none cursor-pointer">
+              View More
+            </Button>
+          </DialogContent>
+        </Dialog>
       </DropdownMenuContent>
     </DropdownMenu>
   );
