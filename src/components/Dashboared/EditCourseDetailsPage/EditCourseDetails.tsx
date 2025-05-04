@@ -1,15 +1,14 @@
-// EditCourseDetails.tsx
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { X } from 'lucide-react';
-import { useSelector } from 'react-redux';
-import { selectUser } from '@/Redux/slices/auth/userSlice';
 import { useTranslation } from 'react-i18next';
+import { useGetQuery } from '@/api/useGetQuery';
+import { usePostMutation } from '@/api/usePostMutation';
 
 const EditCourseDetails = () => {
   const { courseId } = useParams();
   const navigate = useNavigate();
-  const user = useSelector(selectUser);
+
   const { t, i18n } = useTranslation(['DashBoard/editcourse']);
   const isRTL = i18n.language === 'ar';
 
@@ -25,36 +24,39 @@ const EditCourseDetails = () => {
     level: '',
   });
 
-  useEffect(() => {
-    const fetchCourse = async () => {
-      try {
-        const res = await fetch(
-          `https://lms.digital-vision-solutions.com/api/courses/${courseId}`,
-          {
-            headers: {
-              Authorization: `Bearer ${user.token}`,
-            },
-          }
-        );
-        const data = await res.json();
-        setFormData({
-          title: data.data.course.title,
-          description: data.data.course.description,
-          imageUrl: data.data.course.image,
-          video_url: data.data.course.video_url,
-          price: data.data.course.price || '',
-          discountPrice: data.data.course.discountPrice || '',
-          language: data.data.course.language || '',
-          cc: data.data.course.cc || [],
-          level: data.data.course.level || '',
-        });
-      } catch (err) {
-        console.error('Failed to load course:', err);
-      }
+  const { data: courseData } = useGetQuery<{
+    data: {
+      course: {
+        title: string;
+        description: string;
+        image: string;
+        video_url: string;
+        price: string;
+        discountPrice: string;
+        language: string;
+        cc: string[];
+        level: string;
+      };
     };
+  }>(`/coursespage/${courseId}`, courseId!);
+  const { mutateAsync: updateCourse } = usePostMutation(`/courses/${courseId}`);
 
-    fetchCourse();
-  }, [courseId, user.token]);
+  useEffect(() => {
+    if (courseData?.data?.course) {
+      const course = courseData.data.course;
+      setFormData({
+        title: course.title || '',
+        description: course.description || '',
+        imageUrl: course.image || '',
+        video_url: course.video_url || '',
+        price: course.price || '',
+        discountPrice: course.discountPrice || '',
+        language: course.language || '',
+        cc: course.cc || [],
+        level: course.level || '',
+      });
+    }
+  }, [courseData]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -66,44 +68,31 @@ const EditCourseDetails = () => {
   };
 
   const handleSave = () => {
-    fetch(`/api/courses/${courseId}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    })
-      .then(() => navigate(`/courses/${courseId}`))
-      .catch(() => alert('Error updating course.'));
+    navigate(`/courses/${courseId}`);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch(
-        `https://lms.digital-vision-solutions.com/api/courses/${courseId}`,
-        {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${user.token}`,
-          },
-          body: JSON.stringify({
-            title: formData.title,
-            description: formData.description,
-            image: formData.imageUrl,
-            video_url: formData.video_url,
-            price: formData.price,
-            discountPrice: formData.discountPrice,
-            language: formData.language,
-            cc: formData.cc,
-            level: formData.level,
-          }),
-        }
-      );
-      const result = await res.json();
+      const result = (await updateCourse({
+        id: courseId!,
+        data: {
+          title: formData.title,
+          description: formData.description,
+          image: formData.imageUrl,
+          video_url: formData.video_url,
+          price: formData.price,
+          discountPrice: formData.discountPrice,
+          language: formData.language,
+          cc: formData.cc,
+          level: formData.level,
+        },
+      })) as { success: boolean };
+
       if (result.success) {
-        alert('Course updated!');
+        console.log('Course updated!');
       } else {
-        alert('Update failed');
+        console.log('Update failed');
       }
     } catch (error) {
       console.error('Error updating course:', error);
@@ -133,7 +122,7 @@ const EditCourseDetails = () => {
           </div>
         </div>
 
-        <div
+        <form
           onSubmit={handleSubmit}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
@@ -246,14 +235,19 @@ const EditCourseDetails = () => {
                 <option value="">{t('editCourse.LevelPlaceholder')}</option>
                 <option>{t('editCourse.Beginner')}</option>
                 <option>{t('editCourse.Intermediate')}</option>
-                <option>
-                  {}
-                  {t('editCourse.Advanced')}
-                </option>
+                <option>{t('editCourse.Advanced')}</option>
               </select>
             </div>
+            <div className="flex mt-6 justify-center">
+              <p>Go to Captures</p>
+            </div>
+            <div className="mt-10">
+              <div className="flex flex-col items-center justify-center text-blue-600 cursor-pointer">
+                <Link to="/captures"> Add Section + </Link>
+              </div>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

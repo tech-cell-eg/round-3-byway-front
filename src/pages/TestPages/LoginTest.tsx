@@ -1,8 +1,7 @@
 'use client';
-import img from '../../assets/loginImage.jpg';
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { usePostMutation } from '@/api/usePostMutation';
+import { Button } from '@/components/ui/button';
+import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   Form,
   FormControl,
@@ -12,14 +11,18 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight } from 'lucide-react';
-import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
-import { useTranslation } from 'react-i18next';
+import { useAppDispatch } from '@/Redux/reduxHooks';
+import { saveUserRedux } from '@/Redux/slices/auth/userSlice';
+import { IUserSave } from '@/types/types';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { ArrowRight } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { z } from 'zod';
+import img from '../../assets/loginImage.jpg';
 
 const loginSchema = z.object({
   email: z.string().email({ message: 'Invalid email address' }),
@@ -30,8 +33,17 @@ const loginSchema = z.object({
 
 type LoginSchema = z.infer<typeof loginSchema>;
 
-export default function Login() {
+function saveUserData(data: IUserSave) {
+  localStorage.setItem('user', JSON.stringify(data));
+}
+interface ApiResponse {
+  data: IUserSave;
+  status: number;
+}
+
+export default function LoginTest() {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   // validation form
 
@@ -42,22 +54,32 @@ export default function Login() {
       password: '',
     },
   });
+
   const { t } = useTranslation(['login']);
 
   //submit fn
 
-  function onSubmit(values: LoginSchema) {
-    try {
-      console.log('Login data:', values);
-
-      localStorage.setItem('userData', JSON.stringify(values));
-
+  const {
+    mutate,
+    isPending,
+    error: loginError,
+  } = usePostMutation<ApiResponse>('/auth/login', {
+    onSuccess: data => {
+      console.log(data);
+      saveUserData(data.data);
+      dispatch(saveUserRedux(data.data));
       toast.success('Logged in successfully!');
       navigate('/');
-    } catch (error) {
-      console.error('error', error);
-      toast.error('Something went wrong!');
-    }
+    },
+  });
+
+  function onSubmit(values: LoginSchema) {
+    const dataToSend = {
+      login: values.email,
+      password: values.password,
+    };
+
+    mutate(dataToSend);
   }
 
   return (
@@ -115,9 +137,11 @@ export default function Login() {
                 <Button
                   type="submit"
                   className="w-[30%] bg-black text-white rounded p-4 transition-all  hover:bg-gray-600 hover:text-surface-light-primary "
+                  disabled={isPending}
                 >
                   {t('submit')} <ArrowRight className=" h-9 w-9 text-white" />
                 </Button>
+                {loginError && <p>{loginError.message}</p>}
               </form>
             </Form>
           </CardContent>

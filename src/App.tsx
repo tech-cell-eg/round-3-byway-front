@@ -27,6 +27,8 @@ import CoursesDash from './components/Dashboard/CoursesDash/CoursesDash';
 import Revenue from './components/Dashboard/Revenue/Revenue';
 import SectionLessons from './components/Dashboard/lesssons/SectionLessons';
 import CertificateDemo from './pages/CertificateDemo';
+import EditCourseDetails from './components/Dashboared/EditCourseDetailsPage/EditCourseDetails';
+import LoginTest from './pages/TestPages/LoginTest';
 
 function App() {
   const { i18n } = useTranslation();
@@ -74,6 +76,10 @@ function App() {
             path: 'instructor',
             element: <InstructorPage />,
           },
+          {
+            path: 'loginTest',
+            element: <LoginTest />,
+          },
         ],
       },
       {
@@ -108,10 +114,14 @@ function App() {
             path: 'lessons/:sectionId',
             element: <SectionLessons />,
           },
+          {
+            path: 'EditCourseDetails/:courseId',
+            element: <EditCourseDetails />,
+          },
         ],
       },
-    ]
-    // { basename: "/round-3-byway-front" }
+    ],
+    { basename: '/round-3-byway-front' }
   );
 
   return (
