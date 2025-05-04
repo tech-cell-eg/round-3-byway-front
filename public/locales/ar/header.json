@@ -6,5 +6,7 @@
   },
   "becomeInstructorButton": "درّس على",
   "loginButton": "تسجيل الدخول",
-  "signupButton": "إنشاء حساب"
+  "signupButton": "إنشاء حساب",
+  "goToCartButton": "الذهاب إلى العربة",
+  "viewMoreButton": "عرض المزيد"
 }

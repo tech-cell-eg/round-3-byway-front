@@ -6,5 +6,7 @@
   },
   "becomeInstructorButton": "Teach on",
   "loginButton": "Log In",
-  "signupButton": "Sign Up"
+  "signupButton": "Sign Up",
+  "goToCartButton": "Go To Cart",
+  "viewMoreButton": "View More"
 }
