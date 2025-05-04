@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import Icon from '../Icon';
 import { Button } from '../ui/button';
 import {
@@ -6,6 +7,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
+
+type cartButtonProps = {
+  isLoggedIn: boolean;
+};
 
 const courses = [
   {
@@ -58,7 +63,7 @@ const courses = [
   },
 ];
 
-function CartButton() {
+function CartButton({ isLoggedIn }: cartButtonProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -74,7 +79,7 @@ function CartButton() {
         {courses.map(course => (
           <DropdownMenuItem
             key={course.id}
-            className="group hover:bg-surface-highlight"
+            className="group bg-surface-light-primary hover:bg-surface-highlight cursor-pointer"
           >
             <div className="w-8 h-8 rounded-full overflow-hidden">
               {/* <img
@@ -101,6 +106,15 @@ function CartButton() {
             />
           </DropdownMenuItem>
         ))}
+
+        {isLoggedIn && (
+          <Link
+            to="/"
+            className="block py-2.5 font-semibold text-center text-content-dark hover:text-content-light active:text-content-light bg-surface-highlight hover:bg-accent-secondary active:bg-accent-primary border-t border-t-white rounded-none cursor-pointer duration-short"
+          >
+            Go to Cart
+          </Link>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );
