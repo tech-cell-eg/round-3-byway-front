@@ -13,7 +13,7 @@ function Header({ isLoggedIn }: HeaderProps) {
   return (
     <header
       dir="ltr"
-      className="sticky top-0 flex justify-between items-center gap-5 lg:gap-0 w-full h-[66px] py-3 responsive-primary-padding-x bg-surface-light-primary shadow-sm z-40 overflow-hidden"
+      className="sticky top-0 flex justify-between items-center gap-2 lg:gap-0 w-full h-[66px] py-3 responsive-primary-padding-x bg-surface-light-primary shadow-sm z-40 overflow-hidden"
     >
       <Logo />
 
