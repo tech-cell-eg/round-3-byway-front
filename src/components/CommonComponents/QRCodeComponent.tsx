@@ -14,8 +14,11 @@ const QRCodeComponent = forwardRef<SVGSVGElement, QRCodeComponentProps>(
     });
 
     return (
-      <div ref={containerRef}>
-        <QRCode value={courseUrl} />
+      <div ref={containerRef} className="w-full">
+        <QRCode
+          value={courseUrl}
+          style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
+        />
       </div>
     );
   }
