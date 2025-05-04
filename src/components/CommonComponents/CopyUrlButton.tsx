@@ -25,7 +25,7 @@ function CopyUrlButton({
   return (
     <Button
       onClick={handleClick}
-      className={`${className} lg:text-xs border border-border-light rounded-small shadow-none hover:shadow-sm active:shadow-none cursor-pointer`}
+      className={`${className} border border-border-light rounded-small shadow-none hover:shadow-sm active:shadow-none cursor-pointer`}
     >
       {value}
     </Button>
