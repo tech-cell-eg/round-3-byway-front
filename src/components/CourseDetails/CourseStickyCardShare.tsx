@@ -7,8 +7,8 @@ function CourseStickyCardShare() {
     <div className="flex flex-col gap-2 px-[22px]">
       <div className="flex justify-between items-center">
         <p className="">Share</p>
-        <div className="flex justfiy-between itesm-center gap-5 lg:gap-2">
-          <CopyUrlButton className="font-semibold text-sm " />
+        <div className="flex justfiy-between items-center gap-1 md:gap-2 font-semibold text-sm">
+          <CopyUrlButton className=" " />
           <QRCodeButton />
         </div>
       </div>
