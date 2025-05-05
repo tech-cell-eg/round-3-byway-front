@@ -11,5 +11,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/round-3-byway-front/'
+  base: '/round-3-byway-front/',
 });

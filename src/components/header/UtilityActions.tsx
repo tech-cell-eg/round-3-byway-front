@@ -8,7 +8,7 @@ type HeaderActionsProps = {
 function UtilityActions({ isLoggedIn }: HeaderActionsProps) {
   return (
     <div className="flex items-center gap-1">
-      <CartButton />
+      <CartButton isLoggedIn={isLoggedIn} />
       {!isLoggedIn && (
         <div className="hidden lg:block">
           <SettingsButton />

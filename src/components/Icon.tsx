@@ -38,6 +38,8 @@ import {
   Podcast,
   Library,
   Clapperboard,
+  Globe,
+  Download,
 } from 'lucide-react';
 
 export type IconName =
@@ -78,7 +80,9 @@ export type IconName =
   | 'messages-square'
   | 'menu'
   | 'podcast'
-  | 'library';
+  | 'library'
+  | 'globe'
+  | 'download';
 
 const iconMap: Record<IconName, LucideIcon> = {
   x: X,
@@ -119,6 +123,8 @@ const iconMap: Record<IconName, LucideIcon> = {
   graduationcap: GraduationCap,
   award: Award,
   play: Play,
+  globe: Globe,
+  download: Download,
 };
 
 interface IconProps {

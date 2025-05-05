@@ -11,7 +11,10 @@ interface CopyUrlButtonProps extends HTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-function CopyUrlButton({ value = 'Copy', className = '' }: CopyUrlButtonProps) {
+function CopyUrlButton({
+  value = 'Copy URL',
+  className = '',
+}: CopyUrlButtonProps) {
   const location = useLocation();
 
   const handleClick = () => {
