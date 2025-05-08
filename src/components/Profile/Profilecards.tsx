@@ -9,7 +9,7 @@ import UserprofileTeacher from '@/pages/UserprofileTeacher';
 
 export default function ProfileCards() {
   const [activeSection, setActiveSection] = useState<string>('profile');
-  const { t } = useTranslation('Profile/personProfile');
+  const { t } = useTranslation('profile/personProfile');
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);

@@ -1,0 +1,34 @@
+{
+  "Request": {
+    "URL": "/api/dashboard-courses/:instructor-id",
+    "Method": "GET",
+    "Parameters": {
+      "page!": 5,
+      "instructor-id": "51151515"
+    },
+    "Authentication": true
+  },
+  "Response": {
+    "data": {
+      "info": {
+        "current_page": 5,
+        "next": true,
+        "prev": true,
+        "total_courses": 40,
+        "per_page": 9
+      },
+      "courses": [
+        {
+          "id": 1,
+          "course_name": "",
+          "reviews": 1122,
+          "sections_count": 12,
+          "price": 200,
+          "orders": 40,
+          "ertificates": 20,
+          "carts": 10
+        }
+      ]
+    }
+  }
+}

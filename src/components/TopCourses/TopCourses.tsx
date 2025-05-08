@@ -19,7 +19,6 @@ export default function TopCourses() {
     isLoading,
     isError,
   } = useGetQuery<ApiResponse<ICourse[]>>('/courses', '/courses?rating=3');
-  console.log(response?.data.courses[1].title);
   if (isLoading) {
     return <div className="text-center py-8">جاري التحميل...</div>;
   }

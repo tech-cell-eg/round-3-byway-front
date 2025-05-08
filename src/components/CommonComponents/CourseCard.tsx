@@ -13,7 +13,6 @@ export const CourseCard = ({ course, percentage }: CourseCardProps) => {
   if (!course || Object.keys(course).length === 0) {
     return null; // Or return a placeholder/message if preferred
   }
-  console.log(course);
   const renderStars = (rating: number) => {
     if (!rating) return null;
 

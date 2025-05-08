@@ -1,4 +1,3 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
@@ -31,17 +30,14 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Clean npm cache
-        run: npm cache clean --force
-
       - name: Install dependencies
         run: npm ci
 
-      - name: Check installed dependencies
-        run: npm list @hookform/resolvers/zod
+      - name: Check @hookform/resolvers
+        run: ls node_modules/@hookform/resolvers
 
-      - name: Check TypeScript types
-        run: npm run tsc -- --noEmit
+      - name: TypeScript Check
+        run: npx tsc --noEmit
 
       - name: Build
         run: npm run build
