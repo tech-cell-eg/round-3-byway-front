@@ -1,7 +1,7 @@
 import { Input } from '@/components/ui/input';
 import { useAppDispatch } from '@/Redux/reduxHooks';
 import { setPaypalEmail } from '@/Redux/slices/payment/paypalSlice';
-import { zodResolver } from '@hookForm/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';

@@ -1,14 +1,20 @@
-import { Link } from 'react-router';
 import Icon from '../Icon';
 import { Button } from '../ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '../ui/dialog';
+import NotificationListItem from './NotificationListItem';
 
-type Notification = {
+export type Notification = {
   id: string;
   message: string;
   date: string;
@@ -48,26 +54,6 @@ const notifications: Notification[] = [
   },
 ];
 
-function formatDateTime(isoString: string) {
-  const date = new Date(isoString);
-
-  const formattedDate = date.toLocaleDateString(undefined, {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
-
-  const formattedTime = date.toLocaleTimeString(undefined, {
-    hour: '2-digit',
-    minute: '2-digit',
-  });
-
-  return {
-    date: formattedDate,
-    time: formattedTime,
-  };
-}
-
 function NotificationButton() {
   return (
     <DropdownMenu>
@@ -81,30 +67,46 @@ function NotificationButton() {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent className="min-w-screen md:min-w-72 w-fit mt-dropdown p-0 bg-surface-light-primary border-none rounded-small shadow-panel">
-        {notifications.map(notification => {
-          const { date, time } = formatDateTime(notification.date);
+        <ul>
+          {notifications.map(notification => {
+            return (
+              <NotificationListItem
+                key={notification.id}
+                notification={notification}
+              />
+            );
+          })}
+        </ul>
 
-          return (
-            <DropdownMenuItem
-              key={notification.id}
-              className="flex w-full p-0 hover:bg-surface-highlight"
-            >
-              <Link
-                to="/"
-                className="flex items-center gap-4 w-full py-2 px-4 duration-medium"
-              >
-                <div className="w-full py-2 ps-2">
-                  <h6 className="font-normal text-body-small">
-                    {notification.message}
-                  </h6>
-                  <p className="text-body-micro text-gray-500">
-                    {date} - {time}
-                  </p>
-                </div>
-              </Link>
-            </DropdownMenuItem>
-          );
-        })}
+        <Dialog>
+          <DialogTrigger className="w-full py-3 font-semibold text-content-dark hover:text-content-light active:text-content-light bg-surface-highlight hover:bg-accent-secondary active:bg-accent-primary border-t border-t-white cursor-pointer duration-short">
+            View More
+          </DialogTrigger>
+
+          <DialogContent className="p-2 md:p-5 bg-surface-light-primary border-0">
+            <DialogHeader>
+              <DialogTitle className="flex justify-center items-center gap-3">
+                <Icon name="bell" className="text-blue-300 fill-blue-300" />
+                Notifications
+              </DialogTitle>
+            </DialogHeader>
+
+            <ul className="h-[300px] pt-2 border-t border-t-border-light overflow-y-scroll">
+              {notifications.map(notification => {
+                return (
+                  <NotificationListItem
+                    key={notification.id}
+                    notification={notification}
+                  />
+                );
+              })}
+            </ul>
+
+            <Button className="py-5 text-content-dark hover:text-content-light active:text-content-light bg-surface-highlight hover:bg-accent-secondary active:bg-accent-primary shadow-none hover:shadow-sm active:shadow-none cursor-pointer">
+              View More
+            </Button>
+          </DialogContent>
+        </Dialog>
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -2,7 +2,7 @@ import { usePostMutation } from '@/api/usePostMutation';
 import { Input } from '@/components/ui/input';
 import { useAppDispatch, useAppSelector } from '@/Redux/reduxHooks';
 import { setUserRole } from '@/Redux/slices/auth/userSlice';
-import { zodResolver } from '@hookForm/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { FieldValues, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';

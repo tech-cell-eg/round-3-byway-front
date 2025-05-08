@@ -70,7 +70,7 @@ function CourseInfoPanel() {
         </div>
 
         <div className="flex items-center gap-2 text-content-dark">
-          <Icon name="sun" />
+          <Icon name="globe" />
           <p className="">English, Spanish, Italian, German</p>
         </div>
       </div>

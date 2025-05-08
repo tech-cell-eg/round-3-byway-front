@@ -1,11 +1,9 @@
 import defualtImg from '@/assets/InstructorImg.png';
-// import { useTranslation } from 'react-i18next';
 import { ShareSection } from './ShareSection';
 import ProfileCards from './Profilecards';
 import { useEffect, useState } from 'react';
 
 export default function PersonProfile() {
-  // const { t } = useTranslation('profile/personProfile');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 

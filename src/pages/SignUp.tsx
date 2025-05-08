@@ -1,5 +1,5 @@
 import signUpImg from '@/assets/images/signup/SignBannerImage.png';
-import { zodResolver } from '@hookForm/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 import { Input } from '@/components/ui/input';
 import { FieldValues, useForm } from 'react-hook-form';

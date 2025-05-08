@@ -8,7 +8,7 @@ import {
 import { Input } from '@/components/ui/input';
 
 import { z } from 'zod';
-import { zodResolver } from '@hookForm/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { FieldValues, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 

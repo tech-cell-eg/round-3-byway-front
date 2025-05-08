@@ -9,7 +9,7 @@ import { Input } from '../ui/input';
 import { CreditCard } from './payment/CreditCard';
 import { Paypal } from './payment/Paypal';
 import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookForm/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import PaypalImg from '@/assets/images/checkout/paypal.png';
 import VisaImg from '@/assets/images/checkout/visa.png';
 import { useTranslation } from 'react-i18next';
