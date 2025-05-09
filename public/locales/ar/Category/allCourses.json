@@ -1,6 +1,5 @@
 {
     "sortBy":"فرز حسب",
-    "featuredCourses":"دورات مميزة",
     "search":"بحث",
     "courses":{
         "course1": {
@@ -11,9 +10,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
 
@@ -25,9 +24,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
 
@@ -40,9 +39,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
 
@@ -54,9 +53,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
         },
@@ -67,9 +66,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
         },
@@ -80,9 +79,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
         },
@@ -93,9 +92,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
         },
@@ -106,9 +105,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
         },
@@ -119,9 +118,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9 ,
             "students":"طالب",
             "level":"للمبتدئين"
         },
@@ -133,9 +132,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
         },
@@ -147,9 +146,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
         },
@@ -161,9 +160,9 @@
             "rating": "1200 تقييم",
             "hours":" ساعات",
             "lecs":" محاضرات",
-            "price": "149.9 دولار",
+            "price": 149.9,
             "currency": "دولار",
-            "originalPrice": "199.9 دولار",
+            "discount_price": 199.9,
             "students":"طالب",
             "level":"للمبتدئين"
         }

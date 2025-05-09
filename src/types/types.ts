@@ -14,27 +14,29 @@ export interface Image {
 }
 
 export interface ICourse {
-  id2: number;
-  name: string;
-  description: string;
-  price?: string; // Optional
-  lectures?: string; // Optional
-  lecturesName?: number; // Optional
-  hours?: number; // Optional
-  level?: string; // Optional
-  students?: string; // Optional
+  id: number;
+  title?: string;
+  name?: string;
+  price?: string;
+  lectures?: string;
+  num_lessons?: string;
+  level?: string;
+  students?: string;
+  num_syllabi?: number;
+  hoursName?: string;
+  reviews_count?: string;
+  rating: number;
+  discount_price?: number;
+  currency?: string;
+  image?: string;
+  instructor?: string;
+  duration?: string;
+  description?: string;
+  lecturesName?: number;
+  hours?: number;
   numOfStu?: number;
-  hoursName?: string; // Optional
   purchased?: number;
-  small_desc: string;
-  sku: string;
-  reviews_count: string;
-  reviews_average: number;
-  reviews: unknown[];
-  has_discount: boolean;
-  discount: string;
-  category: { id: number; name: string };
-  images: { image: string }[];
+  reviews_average?: number;
 }
 
 export interface Review {
@@ -53,23 +55,13 @@ export interface Image {
 }
 
 export interface Iinstructor {
-  id2: number;
+  instructor_id: number;
   name: string;
-  description: string;
+  title: string;
   students: string;
-  numOfStu: number;
-  sku: string;
-  reviews_count: number;
-  reviews_average: number;
-  reviews: Review[];
-  has_discount?: boolean;
-  discount: string;
-  category: Category;
-  images: Image[];
-
-  //  Instructor info
-  instructorName: string;
-  instructorImage?: string;
+  total_reviews: number;
+  image?: string;
+  total_students: string;
 }
 
 // Cart and checkout

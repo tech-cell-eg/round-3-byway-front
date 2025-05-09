@@ -1,68 +1,15 @@
 {
-    "topCourses":"أفضل الدورات",
-    "seeMore":"عرض المزيد",
-    "courses":{
-        "course1": {
-            "multiVariants": "متعدد",
-            "discount": "خصم",
-            "category": "Beginner’s Guide to Design  ",
-            "description": "بواسطة ",
-            "rating": "1200 تقييم",
-            "hours":" ساعات",
-            "lecs":" محاضرات",
-            "price": "149.9 دولار",
-            "currency": "دولار",
-            "originalPrice": "199.9 دولار",
-            "students":"طالب",
-            "level":"للمبتدئين"
-
-        },
-        "course2": {
-            "multiVariants": "متعدد",
-            "discount": "خصم",
-            "category": "Beginner’s Guide to Design  ",
-            "description": "بواسطة  ",
-            "rating": "1200 تقييم",
-            "hours":" ساعات",
-            "lecs":" محاضرات",
-            "price": "149.9 دولار",
-            "currency": "دولار",
-            "originalPrice": "199.9 دولار",
-            "students":"طالب",
-            "level":"للمبتدئين"
-
-        }
-        ,
-        "course3": {
-            "multiVariants": "متعدد",
-            "discount": "خصم",
-            "category": "Beginner’s Guide to Design  ",
-            "description": "بواسطة  ",
-            "rating": "1200 تقييم",
-            "hours":" ساعات",
-            "lecs":" محاضرات",
-            "price": "149.9 دولار",
-            "currency": "دولار",
-            "originalPrice": "199.9 دولار",
-            "students":"طالب",
-            "level":"للمبتدئين"
-
-        },
-        "course4": {
-            "multiVariants": "متعدد",
-            "discount": "خصم",
-            "category": "Beginner’s Guide to Design  ",
-            "description": "بواسطة  ",
-            "rating": "1200 تقييم",
-            "hours":" ساعات",
-            "lecs":" محاضرات",
-            "price": "149.9 دولار",
-            "currency": "دولار",
-            "originalPrice": "199.9 دولار",
-            "students":"طالب",
-            "level":"للمبتدئين"
+    "topCourses":"الدورات",
+    "seeMore":"عرض المزيد", 
+    "featuredCourses":"دورات مميزة",       
+    "discount": "خصم",
+    "description": "بواسطة ",
+    "rating": " تقيمات",
+    "hours":"ساعة ",
+    "lecs":" محاضرات",
+    "price": " دولار",
+    "currency": "دولار",
+    "students":"طالب"
 
 
-        }
     }
-}

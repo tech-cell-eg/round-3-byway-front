@@ -55,7 +55,7 @@ export default function MoreCourses() {
 
   const courses = response?.data.courses.slice(0, 4) || [];
 
-  if (isLoading) return <div className="text-center py-8"> Loading...</div>;
+  if (isLoading) return <div className="text-center py-8">Loading...</div>;
 
   if (isError || courses.length === 0)
     return (
@@ -71,40 +71,25 @@ export default function MoreCourses() {
           {t('moreCourses')}
         </h3>
       </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
-        {courses.map(course => {
-          const hasDiscount = course.discount_price !== '0.00';
+        {courses.map((course, index) => {
           const courseData: ICourse = {
-            id2: course.id,
+            id: index,
             name: course.title,
             description: '',
-            price: hasDiscount
-              ? `${course.discount_price} $`
-              : `${course.price} $`,
-            lectures: `${course.num_lessons}`,
-            lecturesName: course.num_lessons,
-            hours: Math.floor(course.duration / 60),
-            hoursName: `${Math.floor(course.duration / 60)} Total Hours`,
+            price: course.discount_price || course.price,
+            lectures: String(course.num_lessons),
+            lecturesName: course.num_syllabi,
+            hours: Math.round(course.duration / 60),
+            hoursName: `${Math.round(course.duration / 60)}h`,
             level: course.level,
-            students: course.num_reviews.toString(),
-            numOfStu: course.num_reviews,
+            students: '0',
+            numOfStu: 0,
             purchased: 0,
-            small_desc: '',
-            sku: 'sku123',
-            reviews_count: course.num_reviews.toString(),
-            reviews_average: course.rating,
-            reviews: [],
-            has_discount: hasDiscount,
-            discount: hasDiscount
-              ? `${Math.round(
-                  ((parseFloat(course.price) -
-                    parseFloat(course.discount_price)) /
-                    parseFloat(course.price)) *
-                    100
-                )}%`
-              : '0%',
-            category: { id: 1, name: '' },
-            images: [{ image: course.image }],
+            reviews_count: String(course.num_reviews),
+            rating: course.rating,
+            image: course.image,
           };
 
           return <CourseCard key={course.id} course={courseData} />;

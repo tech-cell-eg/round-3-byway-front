@@ -1,6 +1,5 @@
 {
     "sortBy":"sort by",
-    "featuredCourses":"Featured Courses",
     "search":"search",
     "courses":{
         "course1": {
@@ -10,9 +9,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
         },
@@ -23,9 +22,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
 
@@ -38,9 +37,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
 
@@ -52,9 +51,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
         },
@@ -65,9 +64,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
         },
@@ -78,9 +77,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
         },
@@ -91,9 +90,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
         },
@@ -104,9 +103,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
         },
@@ -117,9 +116,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
         },
@@ -130,9 +129,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
         },
@@ -143,9 +142,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
         },
@@ -156,9 +155,9 @@
             "rating": "1200 Ratings",
             "hours":" hours",
             "lecs":" lectures",
-            "price": "$149.9",
+            "price": 149.9,
             "currency": "USD",
-            "originalPrice": "$199.9",
+            "discount_price": 199.9,
             "students":"students",
             "level":"peginners"
         }

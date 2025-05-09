@@ -49,7 +49,7 @@ const Banner = () => {
               isRTL ? 'items-end text-right' : 'items-start text-left'
             }`}
           >
-            <h2 className="text-xl text-content-primary font-bold text-black mb-4">
+            <h2 className="text-xl text-content-primary font-bold  mb-4">
               {t('Instructor.header')}
             </h2>
             <p className="text-[#1D2939] text-sm mb-4">
@@ -82,7 +82,7 @@ const Banner = () => {
               isRTL ? 'items-end text-right' : 'items-start text-left'
             }`}
           >
-            <h2 className="text-xl text-content-primary font-bold text-black mb-4">
+            <h2 className="text-xl text-content-primary font-bold  mb-4">
               {t('Student.header')}
             </h2>
             <p className="text-[#1D2939] text-sm mb-4">

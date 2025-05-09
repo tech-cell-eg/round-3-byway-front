@@ -10,15 +10,16 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useRef } from 'react';
 
 export interface CourseEntry {
-  title: string;
-  description: string;
-  price: number;
-  lecs: number;
-  level: string;
-  students: number;
-  rating: number;
-  hours: string;
-  category?: string;
+  id: number;
+  title?: string;
+  description?: string;
+  price?: number | string;
+  lecs?: number | string;
+  level?: string;
+  students?: number | string;
+  rating?: number | string;
+  hours?: string;
+  image?: string;
 }
 
 interface CoursesCarouselProps {
@@ -61,27 +62,33 @@ const CoursesCarousel = ({
         <CarouselContent className="gap-4">
           {courseEntries.map(([key, course], index) => {
             const courseData: ICourse = {
-              id2: index + 1,
-              name: course.title,
-              description: course.description,
-              price: String(course.price),
-              lectures: String(course.lecs),
+              id: index,
+              title: course.title || '',
+              description: course.description || '',
+              price:
+                typeof course.price === 'string'
+                  ? course.price
+                  : String(course.price ?? ''),
+              lectures:
+                typeof course.lecs === 'string'
+                  ? course.lecs
+                  : String(course.lecs ?? ''),
               lecturesName: 10,
               hours: 10,
-              level: course.level,
-              students: String(course.students),
+              level: course.level || '',
+              students:
+                typeof course.students === 'string'
+                  ? course.students
+                  : String(course.students ?? ''),
               numOfStu: 100,
-              hoursName: course.hours,
+              hoursName: course.hours || '',
               purchased: 100,
-              small_desc: '',
-              sku: 'sku123',
-              reviews_count: String(course.rating),
-              reviews_average: 4.5,
-              reviews: [],
-              has_discount: false,
-              discount: '',
-              category: { id: 1, name: course.category || '' },
-              images: [{ image: '/path/to/image.jpg' }],
+              reviews_count:
+                typeof course.rating === 'string'
+                  ? course.rating
+                  : String(course.rating ?? '0'),
+              rating: 4.5,
+              image: '',
             };
 
             return (
