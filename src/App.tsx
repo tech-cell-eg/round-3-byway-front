@@ -49,6 +49,8 @@ function App() {
         children: [
           { index: true, element: <Home /> },
           { path: 'coursespage', element: <CourseDetails /> },
+          { path: '/coursespage/:id', element: <CourseDetails /> },
+
           { path: 'courselearingpage', element: <CourseLearingPage /> },
 
           { path: 'login', element: <Login /> },

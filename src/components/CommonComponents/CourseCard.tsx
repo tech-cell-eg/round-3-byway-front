@@ -6,6 +6,7 @@ import { SliderDemo } from '../Courses/Slider';
 interface CourseCardProps {
   course: ICourse;
   percentage?: number;
+  onClick?: () => void;
 }
 
 export const CourseCard = ({ course, percentage }: CourseCardProps) => {

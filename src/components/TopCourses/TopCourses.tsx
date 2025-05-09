@@ -61,7 +61,11 @@ export default function TopCourses() {
               discount_price: course.discount_price,
               image: course.image,
             };
-            return <CourseCard key={course.id} course={courseData} />;
+            return (
+              <Link key={course.id} to={`/coursespage/${course.id}`}>
+                <CourseCard course={courseData} />
+              </Link>
+            );
           })}
         </div>
       </div>
